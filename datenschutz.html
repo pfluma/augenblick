@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Datenschutzerklärung — Augenblick</title>
+  <meta name="description" content="Rechtliche Informationen zur App Augenblick — Begegnungen im echten Leben.">
+  <style>
+  /* „Papier & Tinte": Werte aus src/theme/themes.ts (Farbwelt Papier).
+     Keine Schatten, kleine Radien, sichtbare Linien — wie in der App. */
+  :root {
+    --papier: #F4F4F2; --papier-hell: #FFFFFF; --papier-dunkel: #E9E9E5;
+    --linie: #D5D8E0;
+    --tinte: #16244A; --tinte-weich: #4A5570; --tinte-blass: #646B82;
+    --blau: #0078BF; --blau-text: #006AA8; --blau-hell: #DCEBF6;
+    --markierung-text: #B0006F; --markierung-hell: #FFE1F1;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--papier); color: var(--tinte);
+    font: 17px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  header {
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    max-width: 720px; margin: 0 auto; padding: 20px 20px 0;
+  }
+  header .marke {
+    display: flex; align-items: center; gap: 10px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px; font-weight: 700; text-decoration: none; color: var(--tinte);
+  }
+  nav { margin-left: auto; display: flex; flex-wrap: wrap; gap: 4px 14px; }
+  nav a { color: var(--tinte-weich); text-decoration: none; font-size: 14.5px; }
+  nav a:hover, nav a[aria-current] { color: var(--blau-text); }
+  nav a[aria-current] { font-weight: 600; border-bottom: 2px solid var(--blau); }
+  main {
+    max-width: 720px; margin: 24px auto 60px; padding: 34px 36px;
+    background: var(--papier-hell); border: 1px solid var(--linie);
+    border-radius: 6px;
+  }
+  @media (max-width: 760px) { main { margin: 16px 12px 40px; padding: 24px 20px; } }
+  h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 32px; line-height: 1.25; margin: 0 0 4px;
+    padding-bottom: 10px; border-bottom: 1px solid var(--tinte);
+  }
+  h2 { font-size: 19px; margin: 34px 0 8px; color: var(--tinte); font-weight: 600; }
+  p { margin: 0 0 14px; max-width: 640px; }
+  a { color: var(--blau-text); }
+  .stand { color: var(--tinte-blass); font-size: 14.5px; margin: 14px 0 22px; }
+  .einleitung { font-family: Georgia, "Times New Roman", serif; font-style: italic; font-size: 18.5px; color: var(--tinte-weich); }
+  .todo {
+    background: var(--markierung-hell); border: 1.5px solid var(--markierung-text); color: var(--tinte);
+    padding: 10px 14px; border-radius: 3px;
+  }
+  .entwurf-hinweis {
+    background: var(--markierung-hell); border-radius: 6px; padding: 12px 16px; margin-bottom: 24px;
+    font-size: 15px; color: var(--markierung-text);
+  }
+  .karte {
+    background: var(--papier); border: 1px solid var(--linie);
+    border-radius: 6px; padding: 16px 20px; margin: 18px 0;
+  }
+  .karte p:last-child { margin-bottom: 0; }
+  ol { padding-left: 22px; margin: 0 0 14px; }
+  ol li { margin-bottom: 8px; }
+  footer {
+    max-width: 720px; margin: 0 auto; padding: 0 20px 48px;
+    color: var(--tinte-blass); font-size: 14px; text-align: center;
+  }
+  footer a { color: var(--tinte-weich); }
+</style>
+</head>
+<body>
+  <header>
+    <a class="marke" href="index.html"><svg viewBox="0 0 64 44" width="46" height="32" aria-hidden="true">
+  <defs><clipPath id="l"><circle cx="24" cy="22" r="17"/></clipPath></defs>
+  <circle cx="24" cy="22" r="17" fill="#4AA3E3"/>
+  <circle cx="40" cy="22" r="17" fill="#FF48B0"/>
+  <circle cx="40" cy="22" r="17" fill="#4A2E9D" clip-path="url(#l)"/>
+</svg> Augenblick</a>
+    <nav>
+      <a href="index.html">Start</a>
+      <a href="rechtliches.html">Rechtliches</a>
+      <a href="datenschutz.html" aria-current="page">Datenschutz</a>
+      <a href="konto-loeschung.html">Konto löschen</a>
+      <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="community.html">Community</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Datenschutzerklärung</h1>
+    <p class="stand">Stand: Juli 2026 — Entwurf, vor Veröffentlichung rechtlich prüfen lassen</p>
+    <div class="entwurf-hinweis">Hinweis: Dieser Text ist ein Entwurf. Gelb markierte Stellen sind noch offene Platzhalter und werden vor dem offiziellen Start ergänzt und rechtlich geprüft.</div>
+    <p class="einleitung">Augenblick ist so gebaut, dass möglichst wenig über dich gespeichert wird — und nichts davon für Werbung. Hier steht ehrlich und konkret, was wir verarbeiten, warum, und welche Rechte du hast.</p>
+    <h2>1. Verantwortlicher</h2>
+      <p class="todo">[TODO: Name und Anschrift wie im Impressum, plus Kontakt-E-Mail für Datenschutzanfragen.]</p>
+    <h2>2. Unsere Grundsätze</h2>
+      <p>Kein Live-Standort: Die App erfasst niemals deinen Aufenthaltsort. Orte wählst du immer nachträglich aus einer kuratierten Liste (z. B. „Stadtpark"), Zeitangaben werden bewusst grob gespeichert („nachmittags", nie eine Uhrzeit).</p>
+      <p>Keine Werbung, kein Tracking: Es gibt keine Werbe-SDKs, keine Analyse-Tracker und keine Weitergabe von Daten zu Werbezwecken.</p>
+      <p>Anonymität bis zur Gegenseitigkeit: Dein Name wird anderen erst sichtbar, wenn ihr beide eine Verbindung unabhängig voneinander bestätigt habt.</p>
+    <h2>3. Welche Daten wir verarbeiten</h2>
+      <p>Konto: E-Mail-Adresse und Passwort (nur als kryptografischer Hash gespeichert), Registrierungszeitpunkt, Geburtsdatum (ausschließlich zur Prüfung des Mindestalters von 18 Jahren) sowie der Zeitpunkt, zu dem du diese Datenschutzerklärung und die Nutzungsbedingungen akzeptiert hast.</p>
+      <p>Profil: Vorname oder Spitzname, Stadt, Avatar-Farbe, deine Sichtbarkeits-Einstellungen sowie eine freiwillige Geschlechtsangabe. Letztere dient ausschließlich dazu, den „nur Frauen"-Filter serverseitig durchzusetzen, und wird nie angezeigt.</p>
+      <p>Augenblicke: der gewählte kuratierte Ort, der Tag, das grobe Zeitfenster, deine Beschreibung des Moments und optional ein Erkennungsmerkmal, das dich selbst beschreibt.</p>
+      <p>Verdeckte Erinnerungs-Details: Beim Festhalten und Beantworten eines Augenblicks gibst du private Details an. Diese sind zu keinem Zeitpunkt für andere Nutzer:innen einsehbar — nicht im Feed, nicht im Chat, auch nicht nach dem Kennenlernen. Sie dienen ausschließlich einem serverseitigen Ähnlichkeits-Abgleich gegen Trittbrettfahrer; gespeichert wird daraus nur ein Zahlenwert mit Stufe für die Moderation. Der Abgleich trifft keine automatische Entscheidung — er blockiert nichts, sondern markiert Auffälliges für menschliche Prüfung.</p>
+      <p>Resonanzen und Chat: der Verbindungsstatus zwischen zwei Augenblicken und die Nachrichten, die ihr nach beidseitiger Bestätigung schreibt.</p>
+      <p>Tische und Events: von dir erstellte Tische/Events, deine Beitritts-Anfragen samt kurzer Vorstellung und deine Event-Anmeldungen. Teilnehmerlisten sind nicht öffentlich.</p>
+      <p>Privater Sicherheits-Check: deine Antworten nach einem Treffen („Hast du dich sicher gefühlt?") kann außer dir nur die Moderation einsehen — nie die andere Person, nie andere Nutzer:innen.</p>
+      <p>Meldungen und Moderation: Wenn du jemanden meldest, sehen das nur wir als Moderation. Moderations-Entscheidungen (Verwarnung, Sperre) werden mit Zeitpunkt protokolliert.</p>
+      <p>Push-Benachrichtigungen: Wenn du Push erlaubst, speichern wir den Geräte-Token deines Handys. Vor einer bestätigten Verbindung enthalten Benachrichtigungen bewusst keine Namen.</p>
+      <p>Stammorte: die Orte, die du im Augenblick-Feed als deine Orte markierst, und ob du bei neuen Augenblicken dort benachrichtigt werden möchtest. Diese Liste siehst nur du. Eine Benachrichtigung nennt nur den Ort, nie Inhalt oder Person, und kommt nie für Augenblicke, die jemand mit Sichtbarkeits-Verzögerung festgehalten hat.</p>
+      <p>Warteliste auf der Website: Wenn du dich auf unserer Website für die Warteliste einträgst, speichern wir deine E-Mail-Adresse, freiwillig deinen Wiener Bezirk, den Zeitpunkt und den Wortlaut deiner Einwilligung. Deine IP-Adresse speichern wir dabei nicht. Die Website selbst lädt keine Skripte, keine fremden Schriften und setzt keine Cookies.</p>
+    <h2>4. Empfänger und Auftragsverarbeiter</h2>
+      <p class="todo">Supabase (Datenbank, Anmeldung und Hosting): Alle App-Daten und die Einträge der Website-Warteliste liegen in einem Supabase-Projekt in der EU-Region Frankfurt. [TODO: Abschluss eines Auftragsverarbeitungsvertrags (AVV/DPA) mit Supabase prüfen und dokumentieren.]</p>
+      <p class="todo">Expo (Versand von Push-Benachrichtigungen) und Google Firebase Cloud Messaging (Zustellung auf Android-Geräte): Für den Versand werden der Geräte-Token und der Benachrichtigungstext verarbeitet. Expo Inc. hat ihren Sitz in den USA; damit kann eine Übermittlung in ein Drittland verbunden sein. [TODO: Drittlandtransfer (Standardvertragsklauseln/DPF) rechtlich prüfen und hier präzisieren.]</p>
+      <p>Darüber hinaus geben wir keine Daten an Dritte weiter, außer wir sind gesetzlich dazu verpflichtet.</p>
+    <h2>5. Rechtsgrundlagen (Art. 6 DSGVO)</h2>
+      <p>Vertragserfüllung (Art. 6 Abs. 1 lit. b): alles, was die Kernfunktionen ausmacht — Konto, Profil, Augenblicke, Verbindungen, Chat, Tische, Events.</p>
+      <p>Einwilligung (Art. 6 Abs. 1 lit. a): Push-Benachrichtigungen, die freiwillige Geschlechtsangabe und die Warteliste auf der Website. Eine Einwilligung kannst du jederzeit widerrufen (Push in den Systemeinstellungen, die Angabe im Profil, die Warteliste per formloser E-Mail an die Kontaktadresse im Impressum).</p>
+      <p>Berechtigtes Interesse (Art. 6 Abs. 1 lit. f): Sicherheit und Missbrauchsvermeidung — Melden, Blockieren, der verdeckte Detail-Abgleich, Moderations-Protokoll und Konto-Sperren. Unser Interesse ist der Schutz der Nutzer:innen, insbesondere die Sicherheit von Frauen, die ein Gründungsprinzip dieser App ist.</p>
+    <h2>6. Speicherdauer</h2>
+      <p>Deine Daten bleiben gespeichert, bis du dein Konto löschst. Die Löschung kannst du jederzeit selbst in der App auslösen (Profil → „Konto löschen") — sie entfernt dein Profil und deine Inhalte unmittelbar und dauerhaft aus der Datenbank.</p>
+      <p>Einträge im Moderations-Protokoll bleiben nach einer Konto-Löschung ohne Personenbezug erhalten (der Verweis auf die Person wird entfernt); sie enthalten keine Inhalte.</p>
+      <p>Warteliste: Wir schreiben dir genau einmal, wenn Augenblick in Wien startet, und löschen deine Adresse danach. Möchtest du vorher gestrichen werden, genügt eine formlose E-Mail an die Kontaktadresse im Impressum.</p>
+    <h2>7. Deine Rechte</h2>
+      <p>Du hast das Recht auf Auskunft (Art. 15), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch (Art. 21).</p>
+      <p class="todo">Zwei davon kannst du direkt in der App ausüben: „Meine Daten exportieren" liefert dir deine Daten als maschinenlesbare Datei, „Konto löschen" entfernt sie dauerhaft. Für alles andere genügt eine formlose E-Mail an [TODO: Datenschutz-Kontaktadresse].</p>
+      <p>Außerdem kannst du dich bei der österreichischen Datenschutzbehörde beschweren (Barichgasse 40–42, 1030 Wien, <a href="https://www.dsb.gv.at" rel="noopener">www.dsb.gv.at</a>) — oder bei der Aufsichtsbehörde deines Aufenthaltsorts.</p>
+    <h2>8. Keine automatisierte Entscheidungsfindung</h2>
+      <p>Es gibt keine Entscheidungen, die ausschließlich auf automatisierter Verarbeitung beruhen und dir gegenüber rechtliche Wirkung entfalten. Der verdeckte Detail-Abgleich erzeugt nur einen Hinweis für die menschliche Moderation und blockiert nie automatisch.</p>
+    <h2>9. Änderungen</h2>
+      <p>Wenn sich diese Erklärung ändert (z. B. durch neue Funktionen), aktualisieren wir sie hier und weisen in der App darauf hin.</p>
+  </main>
+  <footer>
+    <p>Diese Seiten laden keine externen Ressourcen — keine Fonts, keine Skripte, kein Tracking.</p>
+  </footer>
+</body>
+</html>

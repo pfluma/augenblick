@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nutzungsbedingungen — Augenblick</title>
+  <meta name="description" content="Rechtliche Informationen zur App Augenblick — Begegnungen im echten Leben.">
+  <style>
+  /* „Papier & Tinte": Werte aus src/theme/themes.ts (Farbwelt Papier).
+     Keine Schatten, kleine Radien, sichtbare Linien — wie in der App. */
+  :root {
+    --papier: #F4F4F2; --papier-hell: #FFFFFF; --papier-dunkel: #E9E9E5;
+    --linie: #D5D8E0;
+    --tinte: #16244A; --tinte-weich: #4A5570; --tinte-blass: #646B82;
+    --blau: #0078BF; --blau-text: #006AA8; --blau-hell: #DCEBF6;
+    --markierung-text: #B0006F; --markierung-hell: #FFE1F1;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--papier); color: var(--tinte);
+    font: 17px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  header {
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    max-width: 720px; margin: 0 auto; padding: 20px 20px 0;
+  }
+  header .marke {
+    display: flex; align-items: center; gap: 10px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px; font-weight: 700; text-decoration: none; color: var(--tinte);
+  }
+  nav { margin-left: auto; display: flex; flex-wrap: wrap; gap: 4px 14px; }
+  nav a { color: var(--tinte-weich); text-decoration: none; font-size: 14.5px; }
+  nav a:hover, nav a[aria-current] { color: var(--blau-text); }
+  nav a[aria-current] { font-weight: 600; border-bottom: 2px solid var(--blau); }
+  main {
+    max-width: 720px; margin: 24px auto 60px; padding: 34px 36px;
+    background: var(--papier-hell); border: 1px solid var(--linie);
+    border-radius: 6px;
+  }
+  @media (max-width: 760px) { main { margin: 16px 12px 40px; padding: 24px 20px; } }
+  h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 32px; line-height: 1.25; margin: 0 0 4px;
+    padding-bottom: 10px; border-bottom: 1px solid var(--tinte);
+  }
+  h2 { font-size: 19px; margin: 34px 0 8px; color: var(--tinte); font-weight: 600; }
+  p { margin: 0 0 14px; max-width: 640px; }
+  a { color: var(--blau-text); }
+  .stand { color: var(--tinte-blass); font-size: 14.5px; margin: 14px 0 22px; }
+  .einleitung { font-family: Georgia, "Times New Roman", serif; font-style: italic; font-size: 18.5px; color: var(--tinte-weich); }
+  .todo {
+    background: var(--markierung-hell); border: 1.5px solid var(--markierung-text); color: var(--tinte);
+    padding: 10px 14px; border-radius: 3px;
+  }
+  .entwurf-hinweis {
+    background: var(--markierung-hell); border-radius: 6px; padding: 12px 16px; margin-bottom: 24px;
+    font-size: 15px; color: var(--markierung-text);
+  }
+  .karte {
+    background: var(--papier); border: 1px solid var(--linie);
+    border-radius: 6px; padding: 16px 20px; margin: 18px 0;
+  }
+  .karte p:last-child { margin-bottom: 0; }
+  ol { padding-left: 22px; margin: 0 0 14px; }
+  ol li { margin-bottom: 8px; }
+  footer {
+    max-width: 720px; margin: 0 auto; padding: 0 20px 48px;
+    color: var(--tinte-blass); font-size: 14px; text-align: center;
+  }
+  footer a { color: var(--tinte-weich); }
+</style>
+</head>
+<body>
+  <header>
+    <a class="marke" href="index.html"><svg viewBox="0 0 64 44" width="46" height="32" aria-hidden="true">
+  <defs><clipPath id="l"><circle cx="24" cy="22" r="17"/></clipPath></defs>
+  <circle cx="24" cy="22" r="17" fill="#4AA3E3"/>
+  <circle cx="40" cy="22" r="17" fill="#FF48B0"/>
+  <circle cx="40" cy="22" r="17" fill="#4A2E9D" clip-path="url(#l)"/>
+</svg> Augenblick</a>
+    <nav>
+      <a href="index.html">Start</a>
+      <a href="rechtliches.html">Rechtliches</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="konto-loeschung.html">Konto löschen</a>
+      <a href="nutzungsbedingungen.html" aria-current="page">Nutzungsbedingungen</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="community.html">Community</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Nutzungsbedingungen</h1>
+    <p class="stand">Stand: Juli 2026 — Entwurf, vor Veröffentlichung rechtlich prüfen lassen</p>
+    <div class="entwurf-hinweis">Hinweis: Dieser Text ist ein Entwurf. Gelb markierte Stellen sind noch offene Platzhalter und werden vor dem offiziellen Start ergänzt und rechtlich geprüft.</div>
+    <p class="einleitung">Kurz gesagt: Sei echt, sei respektvoll, sei mindestens 18. Hier steht das Gleiche noch einmal in verbindlich.</p>
+    <h2>1. Geltung und Anbieter</h2>
+      <p class="todo">Diese Nutzungsbedingungen gelten für die Nutzung der App „Augenblick", betrieben von [TODO: Name/Firmenwortlaut wie im Impressum]. Mit der Registrierung akzeptierst du sie.</p>
+    <h2>2. Was Augenblick ist — und was nicht</h2>
+      <p>Augenblick hilft Menschen, sich im echten Leben zu begegnen: verpasste Momente wiederzufinden, sich an offene Tische zu setzen, zu Events zu gehen. Wir vermitteln Gelegenheiten — wir versprechen keine Verbindungen, keine Antworten und keinen Erfolg.</p>
+    <h2>3. Nutzungsvoraussetzungen — Mindestalter 18</h2>
+      <p>Du musst mindestens 18 Jahre alt sein, um Augenblick zu nutzen. Das Geburtsdatum wird bei der Registrierung abgefragt und geprüft; die Angabe muss wahrheitsgemäß sein. Wer das Mindestalter nicht erreicht, darf die App nicht nutzen — ein solches Konto wird gelöscht.</p>
+      <p>Jede Person darf nur ein Konto führen, und nur für sich selbst. Deine Angaben (insbesondere Name und Erkennungsmerkmale) müssen dich wahrheitsgemäß beschreiben.</p>
+    <h2>4. Dein Verhalten</h2>
+      <p>Nicht erlaubt sind insbesondere: Belästigung, Bedrohung oder Herabwürdigung anderer; das Vortäuschen einer falschen Identität oder Anwesenheit (etwa das Beantworten von Augenblicken, bei denen du nicht dabei warst); das Umgehen oder Aushebeln von Sicherheitsmechanismen (z. B. Blockierungen, Sichtbarkeits-Einstellungen, „nur Frauen"-Räume, Detail-Abgleich); kommerzielle Nutzung, Werbung oder Anbahnung entgeltlicher Leistungen; sowie jede rechtswidrige Nutzung.</p>
+      <p>Erkennungsmerkmale beschreiben immer dich selbst — nie bewertend eine andere Person.</p>
+    <h2>5. Melden, Verwarnung, Sperre</h2>
+      <p>Du kannst andere Nutzer:innen jederzeit melden und blockieren; die gemeldete Person erfährt davon nichts. Bei Verstößen gegen diese Bedingungen können wir Inhalte entfernen, Verwarnungen aussprechen oder Konten sperren. Ein gesperrtes Konto kann keine neuen Inhalte mehr erstellen. Moderations-Entscheidungen werden intern protokolliert; es gibt keine öffentlichen Bewertungen von Personen — in keine Richtung.</p>
+    <h2>6. Treffen im echten Leben — Eigenverantwortung</h2>
+      <p>Augenblick bringt Menschen zusammen, die sich zuvor meist fremd sind. Wir können und wollen nicht garantieren, wer die andere Person wirklich ist: Es findet keine Identitäts- oder Altersverifikation anderer Nutzer:innen statt, Angaben beruhen auf Selbstauskunft. Triff Vorsichtsmaßnahmen, wie du sie auch sonst bei Verabredungen mit Unbekannten treffen würdest — öffentliche Orte, eigene Anreise, jemandem Bescheid sagen. Die Sicherheits-Werkzeuge der App (Blockieren, Melden, Sicherheits-Check) stehen dir jederzeit zur Verfügung.</p>
+      <p class="todo">Für das Verhalten anderer Nutzer:innen — in der App wie bei realen Treffen — übernehmen wir keine Verantwortung. Unsere gesetzliche Haftung bleibt davon unberührt; insbesondere haften wir unbeschränkt für Vorsatz und grobe Fahrlässigkeit sowie für Personenschäden. [TODO: Haftungsklausel anwaltlich prüfen lassen.]</p>
+    <h2>7. Verfügbarkeit</h2>
+      <p>Augenblick befindet sich im Aufbau. Wir bemühen uns um zuverlässigen Betrieb, schulden aber keine bestimmte Verfügbarkeit und können Funktionen weiterentwickeln, ändern oder einstellen.</p>
+    <h2>8. Laufzeit, Kündigung, Konto-Löschung</h2>
+      <p>Du kannst dein Konto jederzeit und ohne Angabe von Gründen selbst löschen (Profil → „Konto löschen"). Damit werden deine personenbezogenen Daten dauerhaft entfernt; Details in der Datenschutzerklärung. Wir können das Vertragsverhältnis bei schwerwiegenden oder wiederholten Verstößen gegen diese Bedingungen beenden oder das Konto sperren.</p>
+    <h2>9. Änderungen dieser Bedingungen</h2>
+      <p class="todo">Wir können diese Bedingungen anpassen, wenn sich die App oder die Rechtslage ändert. Über wesentliche Änderungen informieren wir in der App; die weitere Nutzung setzt die Zustimmung zur jeweils aktuellen Fassung voraus. [TODO: Änderungsmechanismus anwaltlich prüfen lassen.]</p>
+    <h2>10. Schlussbestimmungen</h2>
+      <p class="todo">Es gilt österreichisches Recht unter Ausschluss seiner Verweisungsnormen; gegenüber Verbraucher:innen bleiben zwingende Schutzbestimmungen des Aufenthaltsstaats unberührt. Sollten einzelne Bestimmungen unwirksam sein, bleibt der Rest wirksam. [TODO: Gerichtsstand und Schlussklauseln anwaltlich prüfen lassen.]</p>
+  </main>
+  <footer>
+    <p>Diese Seiten laden keine externen Ressourcen — keine Fonts, keine Skripte, kein Tracking.</p>
+  </footer>
+</body>
+</html>
