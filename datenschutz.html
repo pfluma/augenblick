@@ -11,7 +11,7 @@
   :root {
     --papier: #F4F4F2; --papier-hell: #FFFFFF; --papier-dunkel: #E9E9E5;
     --linie: #D5D8E0;
-    --tinte: #16244A; --tinte-weich: #4A5570; --tinte-blass: #646B82;
+    --tinte: #16244A; --tinte-weich: #4A5570; --tinte-blass: #5E6780;
     --blau: #0078BF; --blau-text: #006AA8; --blau-hell: #DCEBF6;
     --markierung-text: #B0006F; --markierung-hell: #FFE1F1;
   }
@@ -93,7 +93,7 @@
     <h1>Datenschutzerklärung</h1>
     <p class="stand">Stand: September 2026 — Entwurf, vor Veröffentlichung anwaltlich prüfen lassen</p>
     <div class="entwurf-hinweis">Hinweis: Dieser Text ist ein Entwurf. Gelb markierte Stellen sind noch offene Platzhalter und werden vor dem offiziellen Start ergänzt und rechtlich geprüft.</div>
-    <p class="einleitung">Augenblick ist so gebaut, dass möglichst wenig über dich gespeichert wird — und nichts davon für Werbung. Hier steht ehrlich und konkret, was wir verarbeiten, warum, wie lange, und welche Rechte du hast. Sie gilt für die App und für unsere Website mit der Warteliste.</p>
+    <p class="einleitung">Augenblick ist so gebaut, dass möglichst wenig über dich gespeichert wird — und nichts davon für Werbung. Hier steht ehrlich und konkret, was wir verarbeiten, warum, wie lange, und welche Rechte du hast. Sie gilt für die App und für unsere Website mit Warteliste und Fragebogen.</p>
     <h2>1. Wer verantwortlich ist</h2>
       <p class="todo">Verantwortlich für die Verarbeitung deiner Daten ist [TODO: Name bzw. Firmenwortlaut und Anschrift wie im Impressum]. Für alle Datenschutzanliegen erreichst du uns unter [TODO: Datenschutz-Kontaktadresse, kann dieselbe wie im Impressum sein].</p>
       <p>Einen Datenschutzbeauftragten haben wir nicht bestellt, weil wir dazu nach Art. 37 DSGVO derzeit nicht verpflichtet sind. Deine Anfragen beantworten wir selbst.</p>
@@ -149,6 +149,7 @@
     <h2>12. Was auf deinem Gerät gespeichert wird</h2>
       <p>Die App speichert auf deinem Gerät nur, was sie zum Funktionieren braucht: deine Anmeldung (damit du angemeldet bleibst), deine Darstellungs-Einstellungen und kurzfristige Zwischenstände (z. B. einen eingegebenen Einladungscode). Das ist technisch unbedingt erforderlich (§ 165 Abs. 3 TKG 2021) und braucht deshalb keine gesonderte Einwilligung. Es gibt keine Tracking-Cookies oder Werbe-Kennungen.</p>
     <h2>13. Website und Warteliste</h2>
+      <p>Den Fragebogen auf der Website beschreibt Abschnitt 22.</p>
       <p class="todo">Unsere Website lädt keine Skripte, keine fremden Schriften und setzt keine Cookies. Sie liegt bei GitHub Pages (GitHub Inc., USA). Beim Aufruf verarbeitet GitHub technisch bedingt deine IP-Adresse, um die Seite auszuliefern und vor Angriffen zu schützen. Rechtsgrundlage: unser berechtigtes Interesse an einer erreichbaren, sicheren Website (lit. f). [TODO: Prüfen, ob GitHub Pages für diesen Zweck ausreicht oder ein EU-Hoster mit Auftragsverarbeitungsvertrag die bessere Wahl ist — siehe RECHT_TODO.md.]</p>
       <p>Warteliste: Trägst du dich ein, speichern wir deine E-Mail-Adresse, freiwillig deinen Wiener Bezirk, den Zeitpunkt und den Wortlaut deiner Einwilligung. In die Warteliste schreiben wir keine IP-Adresse; unser Hoster protokolliert den Aufruf des Formulars technisch bedingt für kurze Zeit. Rechtsgrundlage: deine Einwilligung (lit. a).</p>
       <p>Ohne das zweite Häkchen (siehe unten) schreiben wir dir genau einmal, wenn Augenblick in Wien startet, und löschen deine Adresse danach. Möchtest du vorher gestrichen werden, genügt eine formlose E-Mail an die Kontaktadresse im Impressum.</p>
@@ -161,6 +162,7 @@
       <p class="todo">Expo (Versand von Push-Benachrichtigungen): 650 Industries, Inc. („Expo"), USA. Expo erhält den Push-Token und den Text der Benachrichtigung und leitet ihn an Google bzw. Apple weiter. Die Übermittlung in die USA stützen wir auf das EU-US Data Privacy Framework, dem Expo nach eigenen Angaben beigetreten ist. [TODO: Zertifizierung auf <a href="https://www.dataprivacyframework.gov" rel="noopener">www.dataprivacyframework.gov</a> prüfen und Vertragsgrundlage mit Expo klären — Expo bietet einen eigenen Auftragsverarbeitungsvertrag laut eigener Website nur Enterprise-Kunden an; siehe RECHT_TODO.md.]</p>
       <p>Google Firebase Cloud Messaging (Zustellung auf Android-Geräte): Google Ireland Ltd. bzw. Google LLC, USA. Verarbeitet werden Push-Token und Benachrichtigungstext. Grundlage für Übermittlungen in die USA: EU-US Data Privacy Framework bzw. Standardvertragsklauseln in den Firebase-Datenverarbeitungsbedingungen.</p>
       <p>GitHub (Hosting der Website): GitHub Inc., USA, siehe Abschnitt 13.</p>
+      <p>Supabase verarbeitet auch die Antworten des Fragebogens (Abschnitt 22). Einen weiteren Empfänger gibt es dafür nicht.</p>
       <p>Behörden erhalten Daten nur, wenn wir gesetzlich dazu verpflichtet sind. Darüber hinaus geben wir keine Daten weiter und verkaufen nie welche.</p>
     <h2>16. Deine Rechte</h2>
       <p>Du hast das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch (Art. 21). Eine Einwilligung kannst du jederzeit für die Zukunft widerrufen.</p>
@@ -184,7 +186,14 @@
       <p>Wozu: um Fehler zu finden und die App vor und nach dem Start zu verbessern. Das Schicken ist freiwillig, die App funktioniert genauso ohne.</p>
       <p>Rechtsgrundlage: unser berechtigtes Interesse an einer fehlerfreien, verständlichen App (Art. 6 Abs. 1 lit. f DSGVO). Weil du selbst entscheidest, ob und was du schickst, greift das kaum in deine Interessen ein.</p>
       <p>Wie lange: bis wir es ausgewertet haben, spätestens sechs Monate nach dem Eingang, und früher, wenn du dein Konto löschst. Bitte schreib nichts über deine Gesundheit und keine Angaben über andere Menschen hinein. Steht so etwas trotzdem drin, löschen wir den Eintrag, sobald wir es bemerken. Möchtest du ein Feedback früher gelöscht haben, genügt eine E-Mail an die Adresse in Abschnitt 1.</p>
-    <h2>22. Änderungen</h2>
+    <h2>22. Fragebogen</h2>
+      <p>Was: Wenn du den Fragebogen „Erzähl mal“ auf unserer Website ausfüllst (auch über den Link in der App oder in einer Mail von uns), speichern wir deine Antworten und den Zeitpunkt. Wir speichern keinen Namen, keine E-Mail-Adresse und keine IP-Adresse, und die Antworten sind mit keinem Konto und keinem Wartelisten-Eintrag verknüpft. Die Seite lädt beim Öffnen nichts von Dritten; erst beim Absenden gehen die Antworten an unseren Server (siehe unten).</p>
+      <p>Wozu: um zu verstehen, wie Menschen in Wien andere kennenlernen, und um Augenblick danach auszurichten. Das Ausfüllen ist freiwillig, und jede Frage darf übersprungen werden.</p>
+      <p>Wer es sieht: nur die Person, die Augenblick betreut. Die Antworten liegen in einer Datenbank, auf die aus dem Internet niemand lesend zugreifen kann.</p>
+      <p>Rechtsgrundlage: Wir speichern die Antworten ohne Namen, E-Mail und IP-Adresse und können sie deshalb im Regelfall keiner Person zuordnen. Ob die DSGVO dann überhaupt greift, hängt auch davon ab, was jemand in die Textfelder schreibt. Vorsorglich behandeln wir die Antworten deshalb so, als gälte sie, und stützen uns auf unser berechtigtes Interesse, eine App zu bauen, die zu den Bedürfnissen der Menschen passt (Art. 6 Abs. 1 lit. f DSGVO).</p>
+      <p>Technisch: Die Antworten gehen an unseren Server bei Supabase (siehe Abschnitt 15). Der Server protokolliert technisch bedingt Zugriffe, dazu kann deine IP-Adresse gehören; sie wird nicht mit den Antworten verknüpft.</p>
+      <p>Wie lange: bis die Auswertung abgeschlossen ist, spätestens zwölf Monate nach dem Ausfüllen. Bitte schreib keine Namen, nichts über andere Menschen und nichts über deine Gesundheit in die Textfelder. Steht so etwas trotzdem drin, löschen wir es, sobald wir es bemerken. Weil wir nicht wissen, welche Antworten von dir stammen, können wir sie nicht von uns aus heraussuchen. Nennst du uns per E-Mail (Kontaktadresse im Impressum) einen Satz oder eine Kombination von Antworten, die eindeutig von dir stammt, löschen wir diese Antwort. Deine übrigen Rechte (Abschnitt 16) gelten dann ebenfalls.</p>
+    <h2>23. Änderungen</h2>
       <p>Wenn sich diese Erklärung ändert (z. B. durch neue Funktionen), aktualisieren wir sie hier, passen das Datum oben an und weisen in der App darauf hin.</p>
   </main>
   <footer>
