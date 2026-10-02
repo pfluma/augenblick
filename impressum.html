@@ -3,8 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Impressum — Augenblick</title>
-  <meta name="description" content="Rechtliche Informationen zur App Augenblick — Begegnungen im echten Leben.">
+  <title data-en="Imprint — Augenblick">Impressum — Augenblick</title>
+  <meta name="description" content="Rechtliche Informationen zur App Augenblick — Begegnungen im echten Leben." data-en="Legal information about the Augenblick app: real-life encounters.">
+  <link rel="stylesheet" href="assets/lang.css">
+  <script src="assets/lang.js"></script>
   <style>
   /* „Papier & Tinte": Werte aus src/theme/themes.ts (Farbwelt Papier).
      Keine Schatten, kleine Radien, sichtbare Linien — wie in der App. */
@@ -80,16 +82,18 @@
   <circle cx="40" cy="22" r="17" fill="#4A2E9D" clip-path="url(#l)"/>
 </svg> Augenblick</a>
     <nav>
-      <a href="index.html">Start</a>
-      <a href="rechtliches.html">Rechtliches</a>
-      <a href="datenschutz.html">Datenschutz</a>
-      <a href="konto-loeschung.html">Konto löschen</a>
-      <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a>
-      <a href="impressum.html" aria-current="page">Impressum</a>
-      <a href="community.html">Community</a>
+      <a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span></a>
+      <a href="rechtliches.html"><span data-lang="de">Rechtliches</span><span data-lang="en">Legal</span></a>
+      <a href="datenschutz.html"><span data-lang="de">Datenschutz</span><span data-lang="en">Privacy</span></a>
+      <a href="konto-loeschung.html"><span data-lang="de">Konto löschen</span><span data-lang="en">Delete account</span></a>
+      <a href="nutzungsbedingungen.html"><span data-lang="de">Nutzungsbedingungen</span><span data-lang="en">Terms of use</span></a>
+      <a href="impressum.html" aria-current="page"><span data-lang="de">Impressum</span><span data-lang="en">Imprint</span></a>
+      <a href="community.html"><span data-lang="de">Community</span><span data-lang="en">Community</span></a>
     </nav>
+    <div class="lang-switch" role="group" aria-label="Sprache / Language"><button type="button" data-set-lang="de" lang="de" aria-label="Deutsch" aria-pressed="true">DE</button><span class="trenner" aria-hidden="true"></span><button type="button" data-set-lang="en" lang="en" aria-label="English" aria-pressed="false">EN</button></div>
   </header>
   <main>
+  <div data-lang="de">
     <h1>Impressum</h1>
     <p class="stand">Stand: September 2026 — Entwurf, vor Veröffentlichung anwaltlich prüfen lassen</p>
     <div class="entwurf-hinweis">Hinweis: Dieser Text ist ein Entwurf. Gelb markierte Stellen sind noch offene Platzhalter und werden vor dem offiziellen Start ergänzt und rechtlich geprüft.</div>
@@ -110,9 +114,34 @@
       <p>Rechtswidrige Inhalte kannst du in der App direkt am Inhalt oder an der Person melden. Ohne Konto geht das per E-Mail an dieselbe Adresse — bitte mit einer möglichst genauen Beschreibung, wo der Inhalt zu finden ist und warum er rechtswidrig ist.</p>
     <h2>Verbraucherstreitbeilegung</h2>
       <p>Wir sind nicht verpflichtet und derzeit nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen. Anliegen und Beschwerden beantworten wir gern direkt unter der oben genannten E-Mail-Adresse.</p>
+  </div>
+  <div data-lang="en">
+    <h1>Imprint</h1>
+    <p class="stand">As of: September 2026 — draft, have a lawyer review before publication</p>
+    <div class="entwurf-hinweis">Note: This text is a draft. Passages highlighted in yellow are open placeholders and will be completed and legally reviewed before the official launch.</div>
+    <div class="karte"><p><strong>Please note:</strong> This English version is a convenience translation. The German version is authoritative; in case of doubt, the German version applies.</p></div>
+    <h2>Service provider and media owner</h2>
+      <p>Michael Schnetzer</p>
+      <p>Arkenstraße 13</p>
+      <p>6835 Muntlix, Austria</p>
+      <p>Email: <a href="mailto:augenblick.app.team@gmail.com">augenblick.app.team@gmail.com</a></p>
+      <p>Phone: +43 664 3934287</p>
+    <h2>Business purpose</h2>
+      <p>Development and operation of the app “Augenblick” and the accompanying website: facilitating real-life encounters between people (finding missed moments again, open seats at tables, shared events).</p>
+    <h2>Register, trade and chamber</h2>
+      <p class="todo">[TODO: Fill in only when the time comes, and only register a trade after talking to AMS and Startup Vorarlberg. For a sole proprietorship: GISA number, membership of the Austrian Economic Chamber, competent trade authority (district authority or magistrate) and the applicable professional law (Gewerbeordnung, <a href="https://www.ris.bka.gv.at" rel="noopener">www.ris.bka.gv.at</a>). For a company (e.g. GmbH, FlexCo), additionally the commercial register number and court. State a VAT ID only if you have one.]</p>
+    <h2>Disclosure under § 25 Media Act</h2>
+      <p>Media owner: see above. Basic editorial direction: information about the Augenblick app and its use.</p>
+    <h2>Contact point under the Digital Services Act</h2>
+      <p>Authorities, the European Commission and users can reach us as the single point of contact (Articles 11 and 12 of Regulation (EU) 2022/2065) at the email address above. We communicate in German and English.</p>
+      <p>You can report illegal content directly in the app, on the content itself or on the person. Without an account, you can do so by email to the same address. Please describe as precisely as possible where the content can be found and why it is illegal.</p>
+    <h2>Consumer dispute resolution</h2>
+      <p>We are not obliged to take part in dispute resolution proceedings before a consumer arbitration board, and we are currently not willing to do so. We are happy to answer concerns and complaints directly at the email address above.</p>
+  </div>
   </main>
   <footer>
-    <p>Diese Seiten laden keine externen Ressourcen — keine Fonts, keine Skripte, kein Tracking.</p>
+    <p data-lang="de">Diese Seiten laden keine externen Ressourcen, keine fremden Fonts, keine fremden Skripte und kein Tracking.</p>
+    <p data-lang="en">These pages load no external resources: no third-party fonts, no third-party scripts, no tracking.</p>
   </footer>
 </body>
 </html>

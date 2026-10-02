@@ -3,8 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rechtliches — Augenblick</title>
-  <meta name="description" content="Rechtliche Informationen zur App Augenblick — Begegnungen im echten Leben.">
+  <title data-en="Legal — Augenblick">Rechtliches — Augenblick</title>
+  <meta name="description" content="Rechtliche Informationen zur App Augenblick — Begegnungen im echten Leben." data-en="Legal information about the Augenblick app: real-life encounters.">
+  <link rel="stylesheet" href="assets/lang.css">
+  <script src="assets/lang.js"></script>
   <style>
   /* „Papier & Tinte": Werte aus src/theme/themes.ts (Farbwelt Papier).
      Keine Schatten, kleine Radien, sichtbare Linien — wie in der App. */
@@ -80,16 +82,18 @@
   <circle cx="40" cy="22" r="17" fill="#4A2E9D" clip-path="url(#l)"/>
 </svg> Augenblick</a>
     <nav>
-      <a href="index.html">Start</a>
-      <a href="rechtliches.html" aria-current="page">Rechtliches</a>
-      <a href="datenschutz.html">Datenschutz</a>
-      <a href="konto-loeschung.html">Konto löschen</a>
-      <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a>
-      <a href="impressum.html">Impressum</a>
-      <a href="community.html">Community</a>
+      <a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span></a>
+      <a href="rechtliches.html" aria-current="page"><span data-lang="de">Rechtliches</span><span data-lang="en">Legal</span></a>
+      <a href="datenschutz.html"><span data-lang="de">Datenschutz</span><span data-lang="en">Privacy</span></a>
+      <a href="konto-loeschung.html"><span data-lang="de">Konto löschen</span><span data-lang="en">Delete account</span></a>
+      <a href="nutzungsbedingungen.html"><span data-lang="de">Nutzungsbedingungen</span><span data-lang="en">Terms of use</span></a>
+      <a href="impressum.html"><span data-lang="de">Impressum</span><span data-lang="en">Imprint</span></a>
+      <a href="community.html"><span data-lang="de">Community</span><span data-lang="en">Community</span></a>
     </nav>
+    <div class="lang-switch" role="group" aria-label="Sprache / Language"><button type="button" data-set-lang="de" lang="de" aria-label="Deutsch" aria-pressed="true">DE</button><span class="trenner" aria-hidden="true"></span><button type="button" data-set-lang="en" lang="en" aria-label="English" aria-pressed="false">EN</button></div>
   </header>
   <main>
+  <div data-lang="de">
     <h1>Rechtliches</h1>
     <p class="stand">Begegnungen im echten Leben — verpasste Momente wiederfinden, offene Tische, gemeinsame Events.</p>
     <p class="einleitung">Augenblick ist eine App, deren Erfolg so aussieht: Ihr trefft euch wirklich — und schließt die App. Kein Live-Standort, keine Werbung, keine Bewertungen von Menschen.</p>
@@ -102,9 +106,26 @@
       <p><strong><a href="community.html">Community-Richtlinien</a></strong> — unsere Haltung, in kurz.</p>
     </div>
     <p>Alle Texte hier sind wortgleich mit denen in der App — sie werden aus derselben Quelle erzeugt.</p>
+  </div>
+  <div data-lang="en">
+    <h1>Legal</h1>
+    <p class="stand">Encounters in real life: finding missed moments again, open tables, shared events.</p>
+    <p class="einleitung">Augenblick is an app whose success looks like this: you really meet, and you close the app. No live location, no ads, no ratings of people.</p>
+    <p>These pages are the public home for everything legal around the app:</p>
+    <div class="karte">
+      <p><strong><a href="datenschutz.html">Privacy policy</a></strong>: what we process, why, and which rights you have.</p>
+      <p><strong><a href="konto-loeschung.html">Delete account and data</a></strong>: how to remove your account, in the app or by email.</p>
+      <p><strong><a href="nutzungsbedingungen.html">Terms of use</a></strong>: the binding rules of use.</p>
+      <p><strong><a href="impressum.html">Imprint</a></strong>: who is behind Augenblick.</p>
+      <p><strong><a href="community.html">Community guidelines</a></strong>: our attitude, in short.</p>
+    </div>
+    <p>All texts here are identical to those in the app. They are generated from the same source.</p>
+    <p>The German version of the legal texts is authoritative; in case of doubt, the German version applies.</p>
+  </div>
   </main>
   <footer>
-    <p>Diese Seiten laden keine externen Ressourcen — keine Fonts, keine Skripte, kein Tracking.</p>
+    <p data-lang="de">Diese Seiten laden keine externen Ressourcen, keine fremden Fonts, keine fremden Skripte und kein Tracking.</p>
+    <p data-lang="en">These pages load no external resources: no third-party fonts, no third-party scripts, no tracking.</p>
   </footer>
 </body>
 </html>

@@ -3,8 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Datenschutzerklärung — Augenblick</title>
-  <meta name="description" content="Rechtliche Informationen zur App Augenblick — Begegnungen im echten Leben.">
+  <title data-en="Privacy policy — Augenblick">Datenschutzerklärung — Augenblick</title>
+  <meta name="description" content="Rechtliche Informationen zur App Augenblick — Begegnungen im echten Leben." data-en="Legal information about the Augenblick app: real-life encounters.">
+  <link rel="stylesheet" href="assets/lang.css">
+  <script src="assets/lang.js"></script>
   <style>
   /* „Papier & Tinte": Werte aus src/theme/themes.ts (Farbwelt Papier).
      Keine Schatten, kleine Radien, sichtbare Linien — wie in der App. */
@@ -80,16 +82,18 @@
   <circle cx="40" cy="22" r="17" fill="#4A2E9D" clip-path="url(#l)"/>
 </svg> Augenblick</a>
     <nav>
-      <a href="index.html">Start</a>
-      <a href="rechtliches.html">Rechtliches</a>
-      <a href="datenschutz.html" aria-current="page">Datenschutz</a>
-      <a href="konto-loeschung.html">Konto löschen</a>
-      <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a>
-      <a href="impressum.html">Impressum</a>
-      <a href="community.html">Community</a>
+      <a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span></a>
+      <a href="rechtliches.html"><span data-lang="de">Rechtliches</span><span data-lang="en">Legal</span></a>
+      <a href="datenschutz.html" aria-current="page"><span data-lang="de">Datenschutz</span><span data-lang="en">Privacy</span></a>
+      <a href="konto-loeschung.html"><span data-lang="de">Konto löschen</span><span data-lang="en">Delete account</span></a>
+      <a href="nutzungsbedingungen.html"><span data-lang="de">Nutzungsbedingungen</span><span data-lang="en">Terms of use</span></a>
+      <a href="impressum.html"><span data-lang="de">Impressum</span><span data-lang="en">Imprint</span></a>
+      <a href="community.html"><span data-lang="de">Community</span><span data-lang="en">Community</span></a>
     </nav>
+    <div class="lang-switch" role="group" aria-label="Sprache / Language"><button type="button" data-set-lang="de" lang="de" aria-label="Deutsch" aria-pressed="true">DE</button><span class="trenner" aria-hidden="true"></span><button type="button" data-set-lang="en" lang="en" aria-label="English" aria-pressed="false">EN</button></div>
   </header>
   <main>
+  <div data-lang="de">
     <h1>Datenschutzerklärung</h1>
     <p class="stand">Stand: September 2026 — Entwurf, vor Veröffentlichung anwaltlich prüfen lassen</p>
     <div class="entwurf-hinweis">Hinweis: Dieser Text ist ein Entwurf. Gelb markierte Stellen sind noch offene Platzhalter und werden vor dem offiziellen Start ergänzt und rechtlich geprüft.</div>
@@ -149,7 +153,7 @@
     <h2>12. Was auf deinem Gerät gespeichert wird</h2>
       <p>Die App speichert auf deinem Gerät nur, was sie zum Funktionieren braucht: deine Anmeldung (damit du angemeldet bleibst), deine Darstellungs-Einstellungen und kurzfristige Zwischenstände (z. B. einen eingegebenen Einladungscode). Das ist technisch unbedingt erforderlich (§ 165 Abs. 3 TKG 2021) und braucht deshalb keine gesonderte Einwilligung. Es gibt keine Tracking-Cookies oder Werbe-Kennungen.</p>
     <h2>13. Website und Warteliste</h2>
-      <p class="todo">Unsere Website lädt keine Skripte, keine fremden Schriften und setzt keine Cookies. Sie liegt bei GitHub Pages (GitHub Inc., USA). Beim Aufruf verarbeitet GitHub technisch bedingt deine IP-Adresse, um die Seite auszuliefern und vor Angriffen zu schützen. Rechtsgrundlage: unser berechtigtes Interesse an einer erreichbaren, sicheren Website (lit. f). [TODO: Prüfen, ob GitHub Pages für diesen Zweck ausreicht oder ein EU-Hoster mit Auftragsverarbeitungsvertrag die bessere Wahl ist — siehe RECHT_TODO.md.]</p>
+      <p class="todo">Unsere Website lädt keine fremden Skripte und keine fremden Schriften und setzt keine Cookies. Ein kleines eigenes Skript merkt sich nur, ob du die Seite auf Deutsch oder Englisch lesen möchtest; diese Wahl speichern wir ausschließlich in deinem Browser (Local Storage) und übertragen sie nicht an uns. Sie liegt bei GitHub Pages (GitHub Inc., USA). Beim Aufruf verarbeitet GitHub technisch bedingt deine IP-Adresse, um die Seite auszuliefern und vor Angriffen zu schützen. Rechtsgrundlage: unser berechtigtes Interesse an einer erreichbaren, sicheren Website (lit. f). [TODO: Prüfen, ob GitHub Pages für diesen Zweck ausreicht oder ein EU-Hoster mit Auftragsverarbeitungsvertrag die bessere Wahl ist — siehe RECHT_TODO.md.]</p>
       <p>Warteliste: Trägst du dich ein, speichern wir deine E-Mail-Adresse, freiwillig deinen Wiener Bezirk, den Zeitpunkt und den Wortlaut deiner Einwilligung. In die Warteliste schreiben wir keine IP-Adresse; unser Hoster protokolliert den Aufruf des Formulars technisch bedingt für kurze Zeit. Rechtsgrundlage: deine Einwilligung (lit. a).</p>
       <p>Ohne das zweite Häkchen (siehe unten) schreiben wir dir genau einmal, wenn Augenblick in Wien startet, und löschen deine Adresse danach. Möchtest du vorher gestrichen werden, genügt eine formlose E-Mail an die Kontaktadresse im Impressum.</p>
       <p>Zweites, freiwilliges Häkchen: Setzt du es, dürfen wir dich vor dem Start per E-Mail fragen, ob du bei einem kurzen Gespräch oder beim Testen der App mitmachst. Wir speichern dazu den Wortlaut und den Zeitpunkt dieser Einwilligung. Ob du mitmachst, entscheidest du bei jeder Anfrage neu. Rechtsgrundlage: deine Einwilligung (lit. a). Du kannst sie jederzeit per E-Mail an die Kontaktadresse im Impressum widerrufen; die Start-Nachricht bekommst du dann trotzdem, wenn du das willst. Die Einwilligung endet spätestens mit dem Start in Wien, danach löschen wir die Adresse wie oben beschrieben. Notizen aus Gesprächen halten wir ohne Namen und ohne Kontaktdaten fest.</p>
@@ -186,9 +190,110 @@
       <p>Wie lange: bis wir es ausgewertet haben, spätestens sechs Monate nach dem Eingang, und früher, wenn du dein Konto löschst. Bitte schreib nichts über deine Gesundheit und keine Angaben über andere Menschen hinein. Steht so etwas trotzdem drin, löschen wir den Eintrag, sobald wir es bemerken. Möchtest du ein Feedback früher gelöscht haben, genügt eine E-Mail an die Adresse in Abschnitt 1.</p>
     <h2>22. Änderungen</h2>
       <p>Wenn sich diese Erklärung ändert (z. B. durch neue Funktionen), aktualisieren wir sie hier, passen das Datum oben an und weisen in der App darauf hin.</p>
+  </div>
+  <div data-lang="en">
+    <h1>Privacy policy</h1>
+    <p class="stand">As of: September 2026 — draft, have a lawyer review before publication</p>
+    <div class="entwurf-hinweis">Note: This text is a draft. Passages highlighted in yellow are open placeholders and will be completed and legally reviewed before the official launch.</div>
+    <div class="karte"><p><strong>Please note:</strong> This English version is a convenience translation. The German version is authoritative; in case of doubt, the German version applies.</p></div>
+    <p class="einleitung">Augenblick is built so that as little as possible is stored about you, and none of it for advertising. This policy states honestly and concretely what we process, why, for how long, and which rights you have. It applies to the app and to our website with the waitlist.</p>
+    <h2>1. Who is responsible</h2>
+      <p>The controller for processing your data is Michael Schnetzer, Arkenstraße 13, 6835 Muntlix, Austria. For all privacy matters, you can reach us at <a href="mailto:augenblick.app.team@gmail.com">augenblick.app.team@gmail.com</a>.</p>
+      <p>We have not appointed a data protection officer because we are currently not required to under Art. 37 GDPR. We answer your requests ourselves.</p>
+    <h2>2. Our principles</h2>
+      <p>No live location: the app never asks for location permission and never records where your device is. You always choose places yourself from a curated list (for example “Stadtpark”). Missed moments deliberately store only a rough time window (“afternoon”), never a clock time.</p>
+      <p>No advertising, no tracking: there are no advertising SDKs, no analytics or crash trackers, and no sharing of data for advertising. We do not build profiles of your behaviour.</p>
+      <p>Anonymity until it is mutual: your name only becomes visible to others once you have both confirmed a connection independently of each other.</p>
+      <p>No ratings of people: there are no stars, no points and no public comments about people.</p>
+    <h2>3. Account and sign-in</h2>
+      <p>What: email address, password (only as a cryptographic hash, we do not know it), an internal account ID, the time of registration, your date of birth and the server-set time at which you accepted this privacy policy and the terms of use. When you sign in, our host logs the IP address and the device or browser identifier for technical reasons.</p>
+      <p>Why: to run your account, sign you in, send you account security emails (for example password reset) and enforce the minimum age of 18. Nobody but you can see your date of birth; it is used only for the age check. The logs serve security (for example to detect attacks on accounts).</p>
+      <p>Legal basis: performance of a contract (Art. 6(1)(b) GDPR); for the logs, our legitimate interest in secure operation (point (f)).</p>
+      <p class="todo">How long: until you delete your account. Security logs only for as long as our host keeps them technically. [TODO: Check the retention period of the Supabase logs (sign-in and access logs) for the plan in use and enter it here.]</p>
+    <h2>4. Profile</h2>
+      <p>What: first name or nickname, city, avatar colour, your visibility settings (for example invisible mode, visibility delay, who may reply to you) and an optional gender entry.</p>
+      <p>Why: so that the app works and your settings take effect on the server. The gender entry is used solely to enforce, on the server, areas that someone has opened “for women only”. It is never shown to others and is self-declared; we do not verify it.</p>
+      <p>Legal basis: performance of a contract (point (b)); for the gender entry, your consent (point (a)), which you can withdraw at any time by setting the entry in your profile to “no answer”.</p>
+      <p>How long: until you change the entry or delete your account.</p>
+    <h2>5. Missed moments and hidden memory details</h2>
+      <p>What: the place you chose, the day, the rough time window, your description of the moment and, optionally, a distinguishing feature that describes you. This information is visible to other users in your city, without your name.</p>
+      <p>In addition there are private memory details that you give when capturing and replying. Nobody but you can see these: not in the feed, not in the chat, not even after you have met. The server compares the details from both sides and stores only a number with a level from that. Even the people involved never see this value, only moderation does, and without the texts from the other side.</p>
+      <p>Why: so that people who experienced the same moment can find each other, and to make it harder for free riders who merely claim to have been there. The match never blocks automatically; it flags anything unusual for human review (more in section 17).</p>
+      <p>Legal basis: performance of a contract (point (b)); for the detail match, our legitimate interest (point (f)) in protecting users from deception, in particular the safety of women.</p>
+      <p>How long: until you delete the missed moment or your account.</p>
+    <h2>6. Connections, chat and meet-up plans</h2>
+      <p>What: the status of a connection between two missed moments (or a QR connection), the messages you write to each other after mutual confirmation, and a shared meet-up plan, if you make one: place, day, time and who has accepted. The time in the meet-up plan is the only exact time in the app, and it is visible only to the two of you.</p>
+      <p>Why: so that you can write to each other and arrange to meet. Messages and plans can only be read by the two people involved; the database itself enforces this, not just the app.</p>
+      <p>Legal basis: performance of a contract (point (b)).</p>
+      <p>How long: until one of you deletes their account. If one person deletes their account, the connection, all messages and the plan disappear for both, including the other person's messages. This is intentional: otherwise a conversation between two specific people would keep referring to the deleted person.</p>
+    <h2>7. Connecting by QR code</h2>
+      <p>What: when you use “Connect”, the server creates a one-time code (valid for three minutes) and stores who created it and who redeemed it. To scan, the app uses your device's camera, only with your permission and only to read the code. Camera images are processed solely on your device, not stored and not transmitted.</p>
+      <p>Legal basis: performance of a contract (point (b)).</p>
+      <p class="todo">How long: the connection remains until one of you ends it or deletes their account. [TODO: Delete expired codes regularly (see RECHT_TODO.md) and state the period here.]</p>
+    <h2>8. Tables, events and your places</h2>
+      <p>Tables: tables you have opened, your join requests with a short introduction, and the answers in the mutual mini exchange. Only the table and you can see these.</p>
+      <p>Events: events you create, including the painted poster, and your sign-ups. Participant lists are not public; only the number is shown.</p>
+      <p>Your places: the places you mark as yours, and whether you want to be notified there about new missed moments. Only you can see this list. A notification names only the place, never content or person, and never comes for missed moments that someone captured with a visibility delay.</p>
+      <p>Legal basis: performance of a contract (point (b)). How long: until you delete the entry or your account.</p>
+    <h2>9. Invitations and real meetings</h2>
+      <p>Invitations: every profile has an invitation code. If someone redeems your code, we store who invited whom. Only the two of you can see this; you can also see how many people joined through you. Anyone who knows your code sees your first name before registering (“You were invited by …”).</p>
+      <p>Real meetings: if you both confirm “We really met”, it counts as one real meeting for each of you. Only this number is visible: no names, no rating.</p>
+      <p>Legal basis: performance of a contract (point (b)). How long: until the account is deleted.</p>
+    <h2>10. Safety: safety check, reporting, blocking, moderation</h2>
+      <p>Private safety check: your answers after a meeting (“Did you feel safe?”). Apart from you, only moderation sees these, never the other person and never other users.</p>
+      <p>Reporting and blocking: we store whom you block so that the block takes effect everywhere. If you report someone, we store the reason, context and time; only moderation sees this. The person reported is not told who reported them.</p>
+      <p>Moderation: decisions such as a warning or suspension are logged with a timestamp. A suspended account can no longer create new content.</p>
+      <p>Legal basis: our legitimate interest (point (f)) in protecting users and in a safe service; where laws impose obligations on us (for example the Digital Services Act when handling reports), compliance with these obligations (point (c)). Where there are concrete indications of a criminal offence that threatens a person's life or safety, we are required to inform the authorities (Art. 18 DSA).</p>
+      <p class="todo">How long: reports and the moderation log, for as long as needed for safety. [TODO: Set fixed periods, for example delete resolved reports after 24 months (see RECHT_TODO.md).] After an account is deleted, a log entry remains without any reference to the person; it contains no content.</p>
+    <h2>11. Push notifications</h2>
+      <p>What: if you allow push, we store your device's push token. For every notification sent, we store the title, text and time. Before a confirmed connection, notifications deliberately contain no names, and never the content of a message.</p>
+      <p>Legal basis: your consent (point (a)). You can withdraw it at any time in your phone's system settings.</p>
+      <p class="todo">How long: the token until you sign out, switch push off or delete your account. [TODO: Automatically delete the notification log after 30 days (see RECHT_TODO.md) and state the period here.]</p>
+    <h2>12. What is stored on your device</h2>
+      <p>The app stores on your device only what it needs to work: your sign-in (so that you stay signed in), your display settings and short-term intermediate states (for example an invitation code you have entered). This is strictly necessary technically (§ 165(3) TKG 2021) and therefore needs no separate consent. There are no tracking cookies or advertising identifiers.</p>
+    <h2>13. Website and waitlist</h2>
+      <p class="todo">Our website loads no third-party scripts and no third-party fonts and sets no cookies. A small script of our own only remembers whether you want to read the site in German or English; this choice is stored solely in your browser (local storage) and is not transmitted to us. The site is hosted on GitHub Pages (GitHub Inc., USA). When you visit, GitHub processes your IP address for technical reasons, to deliver the page and protect it from attacks. Legal basis: our legitimate interest in an available, secure website (point (f)). [TODO: Check whether GitHub Pages is sufficient for this purpose or whether an EU host with a data processing agreement is the better choice, see RECHT_TODO.md.]</p>
+      <p>Waitlist: if you sign up, we store your email address, optionally your Vienna district, the time, and the wording of your consent. We do not write any IP address into the waitlist; our host logs the call to the form for a short time for technical reasons. Legal basis: your consent (point (a)).</p>
+      <p>Without the second tick box (see below), we write to you exactly once when Augenblick launches in Vienna, and delete your address afterwards. If you would like to be removed before that, an informal email to the contact address in the imprint is enough.</p>
+      <p>Second, optional tick box: if you tick it, we may ask you by email before launch whether you would join a short conversation or help test the app. For this, we store the wording and time of this consent. Whether you take part is up to you each time we ask. Legal basis: your consent (point (a)). You can withdraw it at any time by email to the contact address in the imprint; if you want, you will still receive the launch message. The consent ends at the latest with the launch in Vienna, after which we delete the address as described above. We record notes from conversations without names and without contact details.</p>
+    <h2>14. Particularly sensitive information</h2>
+      <p>We never ask about sexual orientation, health, religion, origin or political opinion. In freely written texts (descriptions of missed moments, chat, introductions at a table, feedback), you can yourself say things that allow such conclusions, for example whom you would like to see again. Think about what you share: missed moments are visible to others in your city. We do not analyse such information, we do not form categories from it, and we process it only to provide the function you are currently using.</p>
+      <p class="todo">[TODO: Have a lawyer clarify whether explicit consent under Art. 9(2)(a) GDPR should be obtained for such information shared voluntarily in free text (see RECHT_TODO.md, item “Special categories”).]</p>
+    <h2>15. Who else processes your data</h2>
+      <p class="todo">Supabase (database, sign-in, server functions): Supabase Inc., USA. All app data and the waitlist are in a Supabase project in the EU region Stockholm (Sweden), operated on Amazon Web Services servers. Supabase acts as our processor; access from the USA (for example for support) cannot be ruled out and is covered by the EU Standard Contractual Clauses, which are part of Supabase's data processing agreement. [TODO: Record the date and version of the accepted Supabase data processing agreement (DPA).]</p>
+      <p class="todo">Expo (sending push notifications): 650 Industries, Inc. (“Expo”), USA. Expo receives the push token and the text of the notification and forwards it to Google or Apple. We base the transfer to the USA on the EU-US Data Privacy Framework, which Expo says it has joined. [TODO: Check the certification at <a href="https://www.dataprivacyframework.gov" rel="noopener">www.dataprivacyframework.gov</a> and clarify the contractual basis with Expo. According to its own website, Expo offers its own data processing agreement only to enterprise customers; see RECHT_TODO.md.]</p>
+      <p>Google Firebase Cloud Messaging (delivery to Android devices): Google Ireland Ltd. or Google LLC, USA. Push token and notification text are processed. Basis for transfers to the USA: the EU-US Data Privacy Framework or standard contractual clauses in the Firebase data processing terms.</p>
+      <p>GitHub (hosting of the website): GitHub Inc., USA, see section 13.</p>
+      <p>Authorities receive data only if we are legally required to provide it. Beyond that, we do not pass on data and never sell any.</p>
+    <h2>16. Your rights</h2>
+      <p>You have the right of access (Art. 15 GDPR), rectification (Art. 16), erasure (Art. 17), restriction of processing (Art. 18), data portability (Art. 20) and objection (Art. 21). You can withdraw consent at any time with effect for the future.</p>
+      <p>Objection: where we rely on legitimate interests (point (f)), you can object on grounds relating to your particular situation. For safety functions (reports, moderation, detail match), we will then weigh the interests; the protection of other people may prevail.</p>
+      <p>You can exercise two rights directly in the app: “Export my data” gives you your data as a machine-readable file, and “Delete account” removes it permanently. For everything else, an informal email to the address in section 1 is enough. We answer within one month.</p>
+      <p>You can also complain to the Austrian Data Protection Authority (Datenschutzbehörde, Barichgasse 40–42, 1030 Vienna, <a href="https://www.dsb.gv.at" rel="noopener">www.dsb.gv.at</a>), or to the supervisory authority where you live or work in the EU.</p>
+    <h2>17. No automated decision-making</h2>
+      <p>There are no decisions based solely on automated processing that have legal or similarly significant effects on you (Art. 22 GDPR). The hidden detail match calculates by a fixed, simple rule (word overlap and similarity of spelling), it does not learn from your data, and it is not artificial intelligence. It only produces a hint for human moderation and never blocks.</p>
+    <h2>18. Retention overview and deletion</h2>
+      <p>In principle, we store your data until you delete it or your account. You can trigger account deletion yourself at any time (Profile → “Delete account”); it removes your profile and content from the database immediately. Without access to the app, an email from your registered address is enough.</p>
+      <p class="todo">[TODO: Set a period for inactive accounts, for example “Accounts that have not been used for 24 months are deleted after prior notice by email”, see RECHT_TODO.md.]</p>
+      <p class="todo">[TODO: Clarify whether and for how long Supabase keeps technical backups; if so, add here: “Deleted data may still exist in backups for up to X days before they are automatically overwritten.”]</p>
+    <h2>19. Data security</h2>
+      <p>All connections are encrypted (TLS). Who may see what is enforced by the database itself with per-row access rules, not just by the app. Only expressly named people have moderation rights, and every moderation action is logged. Should a data breach happen anyway, we will report it to the data protection authority within 72 hours and inform you if there is a high risk for you (Art. 33 and 34 GDPR).</p>
+    <h2>20. What is mandatory and what is voluntary</h2>
+      <p>Without an email address, password, first name, city and date of birth, we cannot create an account. Everything else (gender entry, push, places, invitations, meet-up plans, feedback) is voluntary; the app also works without it.</p>
+      <p>Augenblick is only for people aged 18 and over. If we learn that an account belongs to a minor, we delete it.</p>
+    <h2>21. Feedback on the test</h2>
+      <p>What: if you send something under “Feedback on the test” in your profile, we store your text, the app version, the version of your operating system (for example “Android 14 (API 34)”) and the time. We do not store the device model or your IP address with it. The feedback is linked to your account so that it appears in your data export and is deleted with your account. It is displayed without your name.</p>
+      <p>Who sees it: only the people who look after Augenblick (moderation rights). The database itself enforces this. Other users never see it.</p>
+      <p>Why: to find errors and improve the app before and after launch. Sending feedback is voluntary; the app works just the same without it.</p>
+      <p>Legal basis: our legitimate interest in an error-free, understandable app (Art. 6(1)(f) GDPR). Because you decide yourself whether and what to send, this hardly affects your interests.</p>
+      <p>How long: until we have evaluated it, at the latest six months after receipt, and earlier if you delete your account. Please do not write anything about your health or any details about other people in it. If something like that is in there anyway, we delete the entry as soon as we notice. If you would like feedback deleted earlier, an email to the address in section 1 is enough.</p>
+    <h2>22. Changes</h2>
+      <p>If this policy changes (for example through new features), we update it here, adjust the date above and point it out in the app.</p>
+  </div>
   </main>
   <footer>
-    <p>Diese Seiten laden keine externen Ressourcen — keine Fonts, keine Skripte, kein Tracking.</p>
+    <p data-lang="de">Diese Seiten laden keine externen Ressourcen, keine fremden Fonts, keine fremden Skripte und kein Tracking.</p>
+    <p data-lang="en">These pages load no external resources: no third-party fonts, no third-party scripts, no tracking.</p>
   </footer>
 </body>
 </html>

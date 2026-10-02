@@ -1,0 +1,32 @@
+/* Sprachumschalter DE | EN — Papier & Tinte.
+   Jeder Text steht in zwei Fassungen (data-lang="de" / data-lang="en");
+   assets/lang.js setzt <html lang>, dieses Stylesheet blendet die andere aus. */
+html[lang="en"] [data-lang="de"],
+html:not([lang="en"]) [data-lang="en"] { display: none !important; }
+
+.lang-switch {
+  display: inline-flex; flex: none; align-items: center;
+  border: 1.5px solid #16244A; border-radius: 999px; overflow: hidden;
+  background: #FFFFFF; margin-left: 14px;
+}
+.lang-switch button,
+.lang-switch button:hover {
+  font: 700 14px/1 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: 0.05em; min-width: 42px; min-height: 36px; padding: 0 12px;
+  background: transparent; color: #16244A; border: 0; border-radius: 0; cursor: pointer;
+}
+.lang-switch button:hover { background: #DCEBF6; }
+.lang-switch button[aria-pressed="true"],
+.lang-switch button[aria-pressed="true"]:hover { background: #16244A; color: #FFFFFF; cursor: default; }
+.lang-switch button:focus-visible { outline: 3px solid #0078BF; outline-offset: -3px; }
+.lang-switch .trenner { width: 1.5px; align-self: stretch; background: #16244A; }
+
+/* Handy: Umschalter neben der Marke, Navigation in eigener Zeile */
+@media (max-width: 760px) {
+  header .lang-switch { margin-left: auto; order: 2; }
+  header nav { order: 3; flex-basis: 100%; margin-left: 0; }
+}
+
+/* lange Wörter und Links (Datenschutzerklärung, E-Mail, URLs) dürfen auf kleinen Handys umbrechen statt die Seite zu verbreitern */
+main { overflow-wrap: break-word; }
+main a { overflow-wrap: anywhere; }

@@ -3,8 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Augenblick — verpasste Begegnungen, zweite Chance</title>
-  <meta name="description" content="Du hast jemanden gesehen und nichts gesagt? Augenblick gibt verpassten Begegnungen eine zweite Chance. Ohne Live-Standort, ohne Swipen. Bald in Wien.">
+  <title data-en="Augenblick — missed encounters, a second chance">Augenblick — verpasste Begegnungen, zweite Chance</title>
+  <meta name="description" content="Du hast jemanden gesehen und nichts gesagt? Augenblick gibt verpassten Begegnungen eine zweite Chance. Ohne Live-Standort, ohne Swipen. Bald in Wien." data-en="You noticed someone and said nothing? Augenblick gives missed encounters a second chance. No live location, no swiping. Coming soon to Vienna.">
+  <link rel="stylesheet" href="assets/lang.css">
+  <script src="assets/lang.js"></script>
   <style>
     @font-face { font-family: "AB Plakat"; src: url("fonts/BricolageGrotesqueCondensed-ExtraBold.ttf") format("truetype"); font-weight: 800; font-display: swap; }
     :root {
@@ -14,6 +16,7 @@
       --blau: #0078BF; --blau-text: #006AA8; --druck: #4AA3E3; --violett: #4A2E9D;
     }
     * { box-sizing: border-box; }
+    html { scroll-padding-top: 12px; }
     body { margin: 0; background: var(--papier); color: var(--tinte); font: 18px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
     .plakat { font-family: "AB Plakat", "Arial Narrow", system-ui, sans-serif; font-weight: 800; letter-spacing: -0.015em; }
     .rand { max-width: 1080px; margin: 0 auto; padding: 0 22px; }
@@ -77,6 +80,7 @@
       .schritte { grid-template-columns: 1fr; }
       .zitat { grid-template-columns: 1fr; }
       header nav { display: none; }
+      header .lang-switch { margin-left: auto; }
       form { box-shadow: 7px 7px 0 var(--pink); }
     }
   </style>
@@ -90,87 +94,109 @@
   <circle cx="40" cy="22" r="17" fill="#FF48B0"/>
   <circle cx="40" cy="22" r="17" fill="#4A2E9D" clip-path="url(#l)"/>
 </svg> Augenblick</a>
-      <nav><a href="rechtliches.html">Rechtliches</a><a href="datenschutz.html">Datenschutz</a></nav>
+      <nav><a href="rechtliches.html"><span data-lang="de">Rechtliches</span><span data-lang="en">Legal</span></a><a href="datenschutz.html"><span data-lang="de">Datenschutz</span><span data-lang="en">Privacy</span></a></nav>
+      <div class="lang-switch" role="group" aria-label="Sprache / Language"><button type="button" data-set-lang="de" lang="de" aria-label="Deutsch" aria-pressed="true">DE</button><span class="trenner" aria-hidden="true"></span><button type="button" data-set-lang="en" lang="en" aria-label="English" aria-pressed="false">EN</button></div>
     </header>
 
     <div class="kopf">
       <div>
-        <h1 class="plakat">Du hast jemanden gesehen <span class="p">und nichts gesagt.</span></h1>
-        <p class="lead">Augenblick gibt verpassten Begegnungen eine zweite Chance. Ohne Live-Standort, ohne Swipen, ohne Profil als Schaufenster. Bald in Wien.</p>
+        <h1 class="plakat"><span data-lang="de">Du hast jemanden gesehen <span class="p">und nichts gesagt.</span></span><span data-lang="en">You noticed someone <span class="p">and said nothing.</span></span></h1>
+        <p class="lead" data-lang="de">Augenblick gibt verpassten Begegnungen eine zweite Chance. Ohne Live-Standort, ohne Swipen, ohne Profil als Schaufenster. Bald in Wien.</p>
+        <p class="lead" data-lang="en">Augenblick gives missed encounters a second chance. No live location, no swiping, no profile as a shop window. Coming soon to Vienna.</p>
         <ul class="fakten">
-          <li>kostenlos</li><li>anonym, bis beide wollen</li><li>Schutz für alle</li>
+          <li data-lang="de">kostenlos</li><li data-lang="de">anonym, bis beide wollen</li><li data-lang="de">Schutz für alle</li>
+          <li data-lang="en">free</li><li data-lang="en">anonymous until you both want it</li><li data-lang="en">protection for everyone</li>
         </ul>
       </div>
 
       <form action="https://rkfgetfazupaurgxjnkz.supabase.co/functions/v1/warteliste" method="post" accept-charset="utf-8">
-        <h2 class="plakat">Sag mir Bescheid, wenn es losgeht</h2>
-        <label for="email">E-Mail-Adresse
-          <input type="email" id="email" name="email" required maxlength="254" autocomplete="email" placeholder="name@beispiel.at">
+        <h2 class="plakat"><span data-lang="de">Sag mir Bescheid, wenn es losgeht</span><span data-lang="en">Tell me when it starts</span></h2>
+        <label for="email"><span data-lang="de">E-Mail-Adresse</span><span data-lang="en">Email address</span>
+          <input type="email" id="email" name="email" required maxlength="254" autocomplete="email" placeholder="name@beispiel.at" data-en-placeholder="name@example.com">
         </label>
-        <label for="bezirk">In welchem Bezirk bist du oft? <small>freiwillig, hilft uns beim Start Grätzl für Grätzl</small>
-          <select id="bezirk" name="bezirk"><option value="">keine Angabe</option><option value="1">1., Innere Stadt</option><option value="2">2., Leopoldstadt</option><option value="3">3., Landstraße</option><option value="4">4., Wieden</option><option value="5">5., Margareten</option><option value="6">6., Mariahilf</option><option value="7">7., Neubau</option><option value="8">8., Josefstadt</option><option value="9">9., Alsergrund</option><option value="10">10., Favoriten</option><option value="11">11., Simmering</option><option value="12">12., Meidling</option><option value="13">13., Hietzing</option><option value="14">14., Penzing</option><option value="15">15., Rudolfsheim-Fünfhaus</option><option value="16">16., Ottakring</option><option value="17">17., Hernals</option><option value="18">18., Währing</option><option value="19">19., Döbling</option><option value="20">20., Brigittenau</option><option value="21">21., Floridsdorf</option><option value="22">22., Donaustadt</option><option value="23">23., Liesing</option></select>
+        <label for="bezirk"><span data-lang="de">In welchem Bezirk bist du oft?</span><span data-lang="en">Which district of Vienna are you in often?</span> <small><span data-lang="de">freiwillig, hilft uns beim Start Grätzl für Grätzl</span><span data-lang="en">optional, helps us launch one neighbourhood (Grätzl) at a time</span></small>
+          <select id="bezirk" name="bezirk"><option value="" data-en="no answer">keine Angabe</option><option value="1" data-en="1st – Innere Stadt">1., Innere Stadt</option><option value="2" data-en="2nd – Leopoldstadt">2., Leopoldstadt</option><option value="3" data-en="3rd – Landstraße">3., Landstraße</option><option value="4" data-en="4th – Wieden">4., Wieden</option><option value="5" data-en="5th – Margareten">5., Margareten</option><option value="6" data-en="6th – Mariahilf">6., Mariahilf</option><option value="7" data-en="7th – Neubau">7., Neubau</option><option value="8" data-en="8th – Josefstadt">8., Josefstadt</option><option value="9" data-en="9th – Alsergrund">9., Alsergrund</option><option value="10" data-en="10th – Favoriten">10., Favoriten</option><option value="11" data-en="11th – Simmering">11., Simmering</option><option value="12" data-en="12th – Meidling">12., Meidling</option><option value="13" data-en="13th – Hietzing">13., Hietzing</option><option value="14" data-en="14th – Penzing">14., Penzing</option><option value="15" data-en="15th – Rudolfsheim-Fünfhaus">15., Rudolfsheim-Fünfhaus</option><option value="16" data-en="16th – Ottakring">16., Ottakring</option><option value="17" data-en="17th – Hernals">17., Hernals</option><option value="18" data-en="18th – Währing">18., Währing</option><option value="19" data-en="19th – Döbling">19., Döbling</option><option value="20" data-en="20th – Brigittenau">20., Brigittenau</option><option value="21" data-en="21th – Floridsdorf">21., Floridsdorf</option><option value="22" data-en="22th – Donaustadt">22., Donaustadt</option><option value="23" data-en="23th – Liesing">23., Liesing</option></select>
         </label>
         <label class="haken" for="einwilligung">
           <input type="checkbox" id="einwilligung" name="einwilligung" value="ja" required>
-          <span>Ich möchte eine E-Mail bekommen, wenn Augenblick in Wien startet. Ohne das zweite Häkchen wird meine Adresse nur dafür verwendet und danach gelöscht. Ich kann mich jederzeit austragen lassen. Mehr in der <a href="datenschutz.html">Datenschutzerklärung</a>.</span>
+          <span data-lang="de">Ich möchte eine E-Mail bekommen, wenn Augenblick in Wien startet. Ohne das zweite Häkchen wird meine Adresse nur dafür verwendet und danach gelöscht. Ich kann mich jederzeit austragen lassen. Mehr in der <a href="datenschutz.html">Datenschutzerklärung</a>.</span>
+          <span data-lang="en">I would like an email when Augenblick launches in Vienna. Without the second tick box, my address is used only for that and then deleted. I can ask to be removed at any time. More in the <a href="datenschutz.html">privacy policy</a>.</span>
         </label>
         <label class="haken" for="anfragen">
           <input type="checkbox" id="anfragen" name="anfragen" value="ja">
-          <span>Freiwillig: Ihr dürft mich vor dem Start per E-Mail fragen, ob ich bei einem kurzen Gespräch (etwa 30 Minuten) oder beim Testen der App mitmache. Das kann ich jederzeit widerrufen.</span>
+          <span data-lang="de">Freiwillig: Ihr dürft mich vor dem Start per E-Mail fragen, ob ich bei einem kurzen Gespräch (etwa 30 Minuten) oder beim Testen der App mitmache. Das kann ich jederzeit widerrufen.</span>
+          <span data-lang="en">Optional: before launch you may email me to ask whether I would join a short conversation (about 30 minutes) or help test the app. I can withdraw this at any time.</span>
         </label>
         <div class="falle" aria-hidden="true">
-          <label for="website">Bitte leer lassen <input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></label>
+          <label for="website"><span data-lang="de">Bitte leer lassen</span><span data-lang="en">Please leave empty</span> <input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></label>
         </div>
-        <button type="submit">Auf die Warteliste</button>
-        <p class="fein">Keine Werbung, kein Newsletter. Ohne das zweite Häkchen schreiben wir dir genau einmal.</p>
+        <button type="submit"><span data-lang="de">Auf die Warteliste</span><span data-lang="en">Join the waitlist</span></button>
+        <p class="fein" data-lang="de">Keine Werbung, kein Newsletter. Ohne das zweite Häkchen schreiben wir dir genau einmal.</p>
+        <p class="fein" data-lang="en">No ads, no newsletter. Without the second tick box, we write to you exactly once.</p>
       </form>
     </div>
 
     <section aria-labelledby="h-so">
-      <h2 id="h-so" class="plakat gross">So funktioniert es</h2>
+      <h2 id="h-so" class="plakat gross"><span data-lang="de">So funktioniert es</span><span data-lang="en">How it works</span></h2>
       <ol class="schritte">
-        <li><b>Festhalten</b><span>Nachträglich, nie live: Ort, ungefähre Zeit, was passiert ist. Du beschreibst dich selbst, nie die andere Person.</span></li>
-        <li><b>Gegenstück</b><span>Hat die andere Person denselben Moment festgehalten, findet die App ihn. Niemand muss den ganzen Feed lesen.</span></li>
-        <li class="ja"><b>Beide bestätigen</b><span>Erst wenn ihr beide Ja sagt, seht ihr euch. Vorher gibt es keinen Namen.</span></li>
-        <li><b>Treffen</b><span>Der Chat hat ein Ziel: Ort, Tag, Uhrzeit. Danach braucht ihr uns nicht mehr.</span></li>
+        <li data-lang="de"><b>Festhalten</b><span>Nachträglich, nie live: Ort, ungefähre Zeit, was passiert ist. Du beschreibst dich selbst, nie die andere Person.</span></li>
+        <li data-lang="de"><b>Gegenstück</b><span>Hat die andere Person denselben Moment festgehalten, findet die App ihn. Niemand muss den ganzen Feed lesen.</span></li>
+        <li data-lang="de" class="ja"><b>Beide bestätigen</b><span>Erst wenn ihr beide Ja sagt, seht ihr euch. Vorher gibt es keinen Namen.</span></li>
+        <li data-lang="de"><b>Treffen</b><span>Der Chat hat ein Ziel: Ort, Tag, Uhrzeit. Danach braucht ihr uns nicht mehr.</span></li>
+        <li data-lang="en"><b>Capture it</b><span>Afterwards, never live: where, roughly when, what happened. You describe yourself, never the other person.</span></li>
+        <li data-lang="en"><b>Find the match</b><span>If the other person captured the same moment, the app finds it. Nobody has to read through a whole feed.</span></li>
+        <li data-lang="en" class="ja"><b>Both confirm</b><span>Only when you both say yes do you see each other. Until then, there is no name.</span></li>
+        <li data-lang="en"><b>Meet</b><span>The chat has one goal: place, day, time. After that, you don't need us anymore.</span></li>
       </ol>
     </section>
 
     <section aria-labelledby="h-wege">
-      <h2 id="h-wege" class="plakat gross">Drei Wege zueinander</h2>
+      <h2 id="h-wege" class="plakat gross"><span data-lang="de">Drei Wege zueinander</span><span data-lang="en">Three ways to each other</span></h2>
       <div class="wege">
-        <div class="weg a"><h3>Augenblick</h3><p>Die Begegnung, die fast passiert wäre, im Café, in der U6, im Augarten.</p></div>
-        <div class="weg t"><h3>Offener Tisch</h3><p>Ihr sitzt schon zusammen, ein Stuhl ist frei. Wer mag, kommt dazu. Kein Match nötig.</p></div>
-        <div class="weg e"><h3>Event</h3><p>Spieleabend, Lauftreff, Spaziergang: kleine Runden für Leute, die niemanden kennen.</p></div>
+        <div class="weg a" data-lang="de"><h3>Augenblick</h3><p>Die Begegnung, die fast passiert wäre, im Café, in der U6, im Augarten.</p></div>
+        <div class="weg t" data-lang="de"><h3>Offener Tisch</h3><p>Ihr sitzt schon zusammen, ein Stuhl ist frei. Wer mag, kommt dazu. Kein Match nötig.</p></div>
+        <div class="weg e" data-lang="de"><h3>Event</h3><p>Spieleabend, Lauftreff, Spaziergang: kleine Runden für Leute, die niemanden kennen.</p></div>
+        <div class="weg a" data-lang="en"><h3>Missed moments</h3><p>The encounter that almost happened: in a café, on the U6, in the Augarten.</p></div>
+        <div class="weg t" data-lang="en"><h3>A seat at the table</h3><p>You are already sitting together, and one chair is free. Whoever wants to, joins. No match needed.</p></div>
+        <div class="weg e" data-lang="en"><h3>Event</h3><p>Game night, running group, a walk: small gatherings for people who don't know anyone yet.</p></div>
       </div>
     </section>
 
     <section aria-labelledby="h-schutz">
-      <h2 id="h-schutz" class="plakat gross">Schutz ist das Fundament</h2>
+      <h2 id="h-schutz" class="plakat gross"><span data-lang="de">Schutz ist das Fundament</span><span data-lang="en">Safety is the foundation</span></h2>
       <ul class="schutz">
-        <li>Kein Live-Standort. Niemand sieht, wo du gerade bist.</li>
-        <li>Namen erst, wenn beide bestätigen.</li>
-        <li>Unsichtbar-Modus und verzögerte Sichtbarkeit.</li>
-        <li>„Nur Frauen“ bei Antworten und Tischen.</li>
-        <li>Melden und Blockieren überall, echte Moderation.</li>
-        <li>Mindestalter 18. Deine Daten kannst du jederzeit exportieren oder löschen.</li>
+        <li data-lang="de">Kein Live-Standort. Niemand sieht, wo du gerade bist.</li>
+        <li data-lang="de">Namen erst, wenn beide bestätigen.</li>
+        <li data-lang="de">Unsichtbar-Modus und verzögerte Sichtbarkeit.</li>
+        <li data-lang="de">„Nur Frauen“ bei Antworten und Tischen.</li>
+        <li data-lang="de">Melden und Blockieren überall, echte Moderation.</li>
+        <li data-lang="de">Mindestalter 18. Deine Daten kannst du jederzeit exportieren oder löschen.</li>
+        <li data-lang="en">No live location. Nobody sees where you are right now.</li>
+        <li data-lang="en">Names only once you both confirm.</li>
+        <li data-lang="en">Invisible mode and delayed visibility.</li>
+        <li data-lang="en">“Women only” for replies and tables.</li>
+        <li data-lang="en">Report and block everywhere, with real moderation.</li>
+        <li data-lang="en">Minimum age 18. You can export or delete your data at any time.</li>
       </ul>
     </section>
 
-    <section class="zitat" aria-label="Zitat">
+    <section class="zitat" aria-label="Zitat" data-en-aria-label="Quote">
       <div class="kreise" aria-hidden="true"><i></i><i></i></div>
       <div>
-        <p class="plakat">Alles wirkliche Leben ist <span>Begegnung.</span></p>
-        <p class="fein">Martin Buber, „Ich und Du“, 1923. Geboren 1878 in Wien.</p>
+        <p class="plakat" data-lang="de">Alles wirkliche Leben ist <span>Begegnung.</span></p>
+        <p class="plakat" data-lang="en">All real living is <span>meeting.</span></p>
+        <p class="fein" data-lang="de">Martin Buber, „Ich und Du“, 1923. Geboren 1878 in Wien.</p>
+        <p class="fein" data-lang="en">Martin Buber, “I and Thou”, 1923. Born in Vienna in 1878.</p>
       </div>
     </section>
 
     <footer>
-      <span>Augenblick, Wien</span>
-      <a href="rechtliches.html">Rechtliches</a>
-      <a href="datenschutz.html">Datenschutz</a>
-      <a href="impressum.html">Impressum</a>
-      <span class="rechts">Diese Seite lädt keine Skripte, keine fremden Schriften und setzt keine Cookies.</span>
+      <span><span data-lang="de">Augenblick, Wien</span><span data-lang="en">Augenblick, Vienna</span></span>
+      <a href="rechtliches.html"><span data-lang="de">Rechtliches</span><span data-lang="en">Legal</span></a>
+      <a href="datenschutz.html"><span data-lang="de">Datenschutz</span><span data-lang="en">Privacy</span></a>
+      <a href="impressum.html"><span data-lang="de">Impressum</span><span data-lang="en">Imprint</span></a>
+      <span class="rechts" data-lang="de">Diese Seite lädt keine fremden Skripte oder Schriften und setzt keine Cookies.</span>
+      <span class="rechts" data-lang="en">This page loads no third-party scripts or fonts and sets no cookies.</span>
     </footer>
   </div>
 </body>

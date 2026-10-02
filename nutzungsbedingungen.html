@@ -3,8 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nutzungsbedingungen — Augenblick</title>
-  <meta name="description" content="Rechtliche Informationen zur App Augenblick — Begegnungen im echten Leben.">
+  <title data-en="Terms of use — Augenblick">Nutzungsbedingungen — Augenblick</title>
+  <meta name="description" content="Rechtliche Informationen zur App Augenblick — Begegnungen im echten Leben." data-en="Legal information about the Augenblick app: real-life encounters.">
+  <link rel="stylesheet" href="assets/lang.css">
+  <script src="assets/lang.js"></script>
   <style>
   /* „Papier & Tinte": Werte aus src/theme/themes.ts (Farbwelt Papier).
      Keine Schatten, kleine Radien, sichtbare Linien — wie in der App. */
@@ -80,16 +82,18 @@
   <circle cx="40" cy="22" r="17" fill="#4A2E9D" clip-path="url(#l)"/>
 </svg> Augenblick</a>
     <nav>
-      <a href="index.html">Start</a>
-      <a href="rechtliches.html">Rechtliches</a>
-      <a href="datenschutz.html">Datenschutz</a>
-      <a href="konto-loeschung.html">Konto löschen</a>
-      <a href="nutzungsbedingungen.html" aria-current="page">Nutzungsbedingungen</a>
-      <a href="impressum.html">Impressum</a>
-      <a href="community.html">Community</a>
+      <a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span></a>
+      <a href="rechtliches.html"><span data-lang="de">Rechtliches</span><span data-lang="en">Legal</span></a>
+      <a href="datenschutz.html"><span data-lang="de">Datenschutz</span><span data-lang="en">Privacy</span></a>
+      <a href="konto-loeschung.html"><span data-lang="de">Konto löschen</span><span data-lang="en">Delete account</span></a>
+      <a href="nutzungsbedingungen.html" aria-current="page"><span data-lang="de">Nutzungsbedingungen</span><span data-lang="en">Terms of use</span></a>
+      <a href="impressum.html"><span data-lang="de">Impressum</span><span data-lang="en">Imprint</span></a>
+      <a href="community.html"><span data-lang="de">Community</span><span data-lang="en">Community</span></a>
     </nav>
+    <div class="lang-switch" role="group" aria-label="Sprache / Language"><button type="button" data-set-lang="de" lang="de" aria-label="Deutsch" aria-pressed="true">DE</button><span class="trenner" aria-hidden="true"></span><button type="button" data-set-lang="en" lang="en" aria-label="English" aria-pressed="false">EN</button></div>
   </header>
   <main>
+  <div data-lang="de">
     <h1>Nutzungsbedingungen</h1>
     <p class="stand">Stand: September 2026 — Entwurf, vor Veröffentlichung anwaltlich prüfen lassen</p>
     <div class="entwurf-hinweis">Hinweis: Dieser Text ist ein Entwurf. Gelb markierte Stellen sind noch offene Platzhalter und werden vor dem offiziellen Start ergänzt und rechtlich geprüft.</div>
@@ -137,9 +141,61 @@
     <h2>12. Schlussbestimmungen</h2>
       <p>Es gilt österreichisches Recht unter Ausschluss des UN-Kaufrechts und der Verweisungsnormen des internationalen Privatrechts. Bist du Verbraucher:in mit gewöhnlichem Aufenthalt in einem anderen EU-Staat, behältst du zusätzlich den Schutz der zwingenden Verbraucherschutzvorschriften deines Aufenthaltsstaats.</p>
       <p>Für Klagen gegen Verbraucher:innen sind die Gerichte an ihrem Wohnsitz, gewöhnlichen Aufenthalt oder Beschäftigungsort zuständig. Sollte eine Bestimmung unwirksam sein, bleiben die übrigen wirksam.</p>
+  </div>
+  <div data-lang="en">
+    <h1>Terms of use</h1>
+    <p class="stand">As of: September 2026 — draft, have a lawyer review before publication</p>
+    <div class="entwurf-hinweis">Note: This text is a draft. Passages highlighted in yellow are open placeholders and will be completed and legally reviewed before the official launch.</div>
+    <div class="karte"><p><strong>Please note:</strong> This English version is a convenience translation. The German version is authoritative; in case of doubt, the German version applies.</p></div>
+    <p class="einleitung">In short: be real, be respectful, be at least 18, and look after yourself when you meet someone. Here is the same thing again, in binding form.</p>
+    <h2>1. Provider and scope</h2>
+      <p>These terms of use govern your use of the app “Augenblick” between you and Michael Schnetzer, Arkenstraße 13, 6835 Muntlix, Austria (“we”). You accept them when you register. The community guidelines are part of these terms.</p>
+      <p>Using the app is free for you. There are no in-app purchases and no subscription.</p>
+    <h2>2. What Augenblick is, and what it is not</h2>
+      <p>Augenblick helps people meet in real life: finding missed moments again (“Missed moments”), taking an open seat at a table (“A seat at the table”), connecting by QR code after a meeting (“Connect”), and going to events together.</p>
+      <p>We provide the platform. We create opportunities, not introductions to specific people. We promise no connections, no replies and no success, and we are not the organiser of the tables, meetings or events that users create.</p>
+      <p>Some places are marked as a “partner place”. These are venues that regularly keep a table free for open gatherings. They pay us nothing for this. Tapping the label explains what the partnership means. The label does not influence the order in which missed moments, tables or events are shown.</p>
+    <h2>3. Requirements: 18 years, one account, truthful information</h2>
+      <p>You must be at least 18 years old. When you register, we ask for your date of birth, and it must be true. If it turns out that someone is younger, we delete the account.</p>
+      <p>Each person may keep only one account, and only for themselves. Your details, in particular your name, your gender information and distinguishing features, must describe you truthfully.</p>
+      <p>Keep your password secret. If you believe someone else has access to your account, change it and write to us.</p>
+    <h2>4. Your content</h2>
+      <p>What you write or create in Augenblick (descriptions, messages, tables, events, posters) remains yours. You only allow us to store it and to show it within the app to the people you intended it for, until you delete it or your account. We do not use your content for advertising outside the app without your separate consent.</p>
+      <p>You are responsible for your content. It must not infringe the rights of others, in particular their personality rights, copyright or the right to their own image, and it must not violate any laws.</p>
+    <h2>5. What is not allowed</h2>
+      <p>In particular, the following are not allowed: harassing, threatening, stalking or demeaning others; sexual content or advances against the other person's will; pretending to have a false identity, a false age or to have been present (for example, replying to moments you were not part of); describing or identifying people in a way that exposes or endangers them; getting around safety features (blocks, visibility settings, “women only” areas, the hidden detail match, suspensions, for example with a new account); advertising, spam, or soliciting paid services, in particular sexual ones; automated scraping of the app; and any unlawful use.</p>
+      <p>Distinguishing features always describe yourself, never another person in an evaluative way.</p>
+    <h2>6. Reporting, moderation and your right to appeal</h2>
+      <p>You can report and block content and people in the app at any time. The person reported is not told who reported them. Anyone, including people without an account, can report illegal content by email to the address in the imprint.</p>
+      <p>People review reports, not machines. We decide carefully, impartially and as quickly as possible. If laws or these terms are violated, we may remove content, issue warnings, restrict features, or suspend an account temporarily or permanently. How severe a measure is depends on the seriousness and frequency of the violation. Where other people are at risk, we suspend immediately.</p>
+      <p>Aid: the hidden detail match (see the privacy policy) uses a fixed rule to calculate how well two people's private memories agree. It decides nothing itself. It helps moderation to spot anything unusual.</p>
+      <p>If we restrict your content or your account, we tell you what we did and why, which rule we based it on, and how you can challenge it (Article 17 DSA). If you think the decision is wrong, write to us at the address in the imprint within six months. A different person from the one who decided will look at the case again. You can also turn to a certified out-of-court dispute settlement body (in Austria, the RTR) or to the courts.</p>
+      <p>If information points to a criminal offence that threatens a person's life or safety, we inform the authorities (Article 18 DSA).</p>
+      <p class="todo">[TODO: The statement of reasons to affected persons (Article 17 DSA) is not yet implemented in the app. Suspended people currently see only a banner. To be added before launch, see RECHT_TODO.md.]</p>
+    <h2>7. Meeting in real life: your own responsibility</h2>
+      <p>Augenblick brings together people who mostly don't know each other yet. We check neither the identity, nor the age, nor the gender of other users. All information is self-declared. A “women only” area is also based on self-declaration and is not a guarantee.</p>
+      <p>You decide whether, when and where you meet someone. The first time, meet in a busy public place, travel there and back on your own, tell someone (the app has “Tell a friend” for this), and end a meeting if it doesn't feel right. In an emergency: police 133, European emergency number 112, women's helpline 0800 222 555.</p>
+      <p>Other users are responsible for their own behaviour, in the app and when meeting. We are not a party to your arrangements. What we do: take reports seriously, review reported people and suspend dangerous accounts.</p>
+    <h2>8. Liability</h2>
+      <p>We are liable without limitation for damage we cause intentionally or through gross negligence, and for personal injury. We are not liable for property damage and financial loss caused by slight negligence, as far as the law allows.</p>
+      <p>For content that users post, we are liable under the statutory rules for hosting services: only once we know of illegal content and do not remove it promptly.</p>
+      <p class="todo">[TODO: Have the liability clause reviewed by a lawyer, in particular its delimitation from § 6 (1) no. 9 KSchG (Austrian Consumer Protection Act), and whether professional indemnity or cyber insurance makes sense.]</p>
+    <h2>9. Availability and further development</h2>
+      <p>Augenblick is under construction. We aim for reliable operation, but as a free service we do not owe any particular availability. We keep developing the app and may change or discontinue features; we will inform you in good time in the app about significant changes. If we shut down Augenblick completely, we will say so at least one month beforehand so that you can export your data.</p>
+    <h2>10. Term, termination, suspension</h2>
+      <p>The user agreement runs for an indefinite period. You can end it at any time without giving a reason by deleting your account (Profile → “Delete account”); this permanently removes your personal data (details in the privacy policy).</p>
+      <p>We can terminate the agreement with one month's notice, and immediately for good cause, for example in case of serious or repeated violations of these terms or danger to others. Suspended people may not create a new account.</p>
+    <h2>11. Changes to these terms</h2>
+      <p>If the app or the legal situation changes, we may adjust these terms. Changes that only clarify or do not put you at a disadvantage, we will tell you about in the app. For significant changes, we will explicitly ask for your consent in the app. If you don't agree, you can delete your account at any time.</p>
+      <p class="todo">[TODO: Implement technically: store a version number of the accepted terms on the profile and show a consent screen when there is a new version, see RECHT_TODO.md.]</p>
+    <h2>12. Final provisions</h2>
+      <p>Austrian law applies, excluding the UN Convention on Contracts for the International Sale of Goods and the conflict-of-law rules of private international law. If you are a consumer with habitual residence in another EU member state, you additionally keep the protection of the mandatory consumer protection rules of the state where you live.</p>
+      <p>For actions against consumers, the courts at their place of residence, habitual residence or place of employment have jurisdiction. If any provision is invalid, the remaining provisions stay in effect.</p>
+  </div>
   </main>
   <footer>
-    <p>Diese Seiten laden keine externen Ressourcen — keine Fonts, keine Skripte, kein Tracking.</p>
+    <p data-lang="de">Diese Seiten laden keine externen Ressourcen, keine fremden Fonts, keine fremden Skripte und kein Tracking.</p>
+    <p data-lang="en">These pages load no external resources: no third-party fonts, no third-party scripts, no tracking.</p>
   </footer>
 </body>
 </html>

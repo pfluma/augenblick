@@ -3,8 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Community-Richtlinien — Augenblick</title>
-  <meta name="description" content="Rechtliche Informationen zur App Augenblick — Begegnungen im echten Leben.">
+  <title data-en="Community guidelines — Augenblick">Community-Richtlinien — Augenblick</title>
+  <meta name="description" content="Rechtliche Informationen zur App Augenblick — Begegnungen im echten Leben." data-en="Legal information about the Augenblick app: real-life encounters.">
+  <link rel="stylesheet" href="assets/lang.css">
+  <script src="assets/lang.js"></script>
   <style>
   /* „Papier & Tinte": Werte aus src/theme/themes.ts (Farbwelt Papier).
      Keine Schatten, kleine Radien, sichtbare Linien — wie in der App. */
@@ -80,16 +82,18 @@
   <circle cx="40" cy="22" r="17" fill="#4A2E9D" clip-path="url(#l)"/>
 </svg> Augenblick</a>
     <nav>
-      <a href="index.html">Start</a>
-      <a href="rechtliches.html">Rechtliches</a>
-      <a href="datenschutz.html">Datenschutz</a>
-      <a href="konto-loeschung.html">Konto löschen</a>
-      <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a>
-      <a href="impressum.html">Impressum</a>
-      <a href="community.html" aria-current="page">Community</a>
+      <a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span></a>
+      <a href="rechtliches.html"><span data-lang="de">Rechtliches</span><span data-lang="en">Legal</span></a>
+      <a href="datenschutz.html"><span data-lang="de">Datenschutz</span><span data-lang="en">Privacy</span></a>
+      <a href="konto-loeschung.html"><span data-lang="de">Konto löschen</span><span data-lang="en">Delete account</span></a>
+      <a href="nutzungsbedingungen.html"><span data-lang="de">Nutzungsbedingungen</span><span data-lang="en">Terms of use</span></a>
+      <a href="impressum.html"><span data-lang="de">Impressum</span><span data-lang="en">Imprint</span></a>
+      <a href="community.html" aria-current="page"><span data-lang="de">Community</span><span data-lang="en">Community</span></a>
     </nav>
+    <div class="lang-switch" role="group" aria-label="Sprache / Language"><button type="button" data-set-lang="de" lang="de" aria-label="Deutsch" aria-pressed="true">DE</button><span class="trenner" aria-hidden="true"></span><button type="button" data-set-lang="en" lang="en" aria-label="English" aria-pressed="false">EN</button></div>
   </header>
   <main>
+  <div data-lang="de">
     <h1>Community-Richtlinien</h1>
     <p class="stand">Stand: September 2026</p>
     <p class="einleitung">Augenblick gibt es, damit aus fast-Begegnungen echte werden. Damit das funktioniert, braucht es weniger Regeln als Haltung — hier ist unsere.</p>
@@ -106,9 +110,30 @@
     <h2>Deine Werkzeuge</h2>
       <p>Blockieren wirkt sofort und überall, die andere Person erfährt nichts. Melden geht in zwei Taps und landet nur bei der Moderation. Der private Sicherheits-Check nach einem Treffen ist nur für dich und uns — nie öffentlich.</p>
       <p>Wir moderieren aktiv: Verstöße können zu Verwarnungen oder zur Sperrung des Kontos führen. Den verbindlichen Rahmen dazu findest du in den Nutzungsbedingungen.</p>
+  </div>
+  <div data-lang="en">
+    <h1>Community guidelines</h1>
+    <p class="stand">As of: September 2026</p>
+    <div class="karte"><p><strong>Please note:</strong> This English version is a convenience translation. The German version is authoritative; in case of doubt, the German version applies.</p></div>
+    <p class="einleitung">Augenblick exists so that almost-encounters can become real ones. For that to work, it takes fewer rules than attitude. Here is ours.</p>
+    <h2>What is welcome here</h2>
+      <p>Being real: you are here as yourself, with your first name, your moments, your curiosity.</p>
+      <p>Respect: behind every moment is a person who dared to do something. A no (or silence) is a complete answer.</p>
+      <p>Offline wins: the best outcome is that you meet and close the app. We don't build anything that wants to hold on to you.</p>
+    <h2>What has no place here</h2>
+      <p>Harassment and pressure: if you keep going after a no, you are in the wrong place.</p>
+      <p>False identity: pretending to be someone else, or replying to moments you were not part of. This is exactly what we built the hidden detail match against.</p>
+      <p>Exposing people: describe what you noticed, not what you disliked about someone. No photos, names or details that could be used to find a person against their will.</p>
+      <p>Getting around safety features: blocks, “women only” areas and visibility settings are boundaries, not challenges.</p>
+      <p>Anything that is illegal anyway: threats, incitement to hatred, sexual harassment, content involving minors, trade in sex or drugs.</p>
+    <h2>Your tools</h2>
+      <p>Blocking takes effect immediately and everywhere, and the other person is not told. Reporting takes two taps and goes only to moderation. The private safety check after a meeting is only for you and us, never public.</p>
+      <p>We moderate actively: violations can lead to warnings or to your account being suspended. The binding framework is in the terms of use.</p>
+  </div>
   </main>
   <footer>
-    <p>Diese Seiten laden keine externen Ressourcen — keine Fonts, keine Skripte, kein Tracking.</p>
+    <p data-lang="de">Diese Seiten laden keine externen Ressourcen, keine fremden Fonts, keine fremden Skripte und kein Tracking.</p>
+    <p data-lang="en">These pages load no external resources: no third-party fonts, no third-party scripts, no tracking.</p>
   </footer>
 </body>
 </html>

@@ -3,8 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Konto löschen — Augenblick</title>
-  <meta name="description" content="Rechtliche Informationen zur App Augenblick — Begegnungen im echten Leben.">
+  <title data-en="Delete account — Augenblick">Konto löschen — Augenblick</title>
+  <meta name="description" content="Rechtliche Informationen zur App Augenblick — Begegnungen im echten Leben." data-en="Legal information about the Augenblick app: real-life encounters.">
+  <link rel="stylesheet" href="assets/lang.css">
+  <script src="assets/lang.js"></script>
   <style>
   /* „Papier & Tinte": Werte aus src/theme/themes.ts (Farbwelt Papier).
      Keine Schatten, kleine Radien, sichtbare Linien — wie in der App. */
@@ -80,16 +82,18 @@
   <circle cx="40" cy="22" r="17" fill="#4A2E9D" clip-path="url(#l)"/>
 </svg> Augenblick</a>
     <nav>
-      <a href="index.html">Start</a>
-      <a href="rechtliches.html">Rechtliches</a>
-      <a href="datenschutz.html">Datenschutz</a>
-      <a href="konto-loeschung.html" aria-current="page">Konto löschen</a>
-      <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a>
-      <a href="impressum.html">Impressum</a>
-      <a href="community.html">Community</a>
+      <a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span></a>
+      <a href="rechtliches.html"><span data-lang="de">Rechtliches</span><span data-lang="en">Legal</span></a>
+      <a href="datenschutz.html"><span data-lang="de">Datenschutz</span><span data-lang="en">Privacy</span></a>
+      <a href="konto-loeschung.html" aria-current="page"><span data-lang="de">Konto löschen</span><span data-lang="en">Delete account</span></a>
+      <a href="nutzungsbedingungen.html"><span data-lang="de">Nutzungsbedingungen</span><span data-lang="en">Terms of use</span></a>
+      <a href="impressum.html"><span data-lang="de">Impressum</span><span data-lang="en">Imprint</span></a>
+      <a href="community.html"><span data-lang="de">Community</span><span data-lang="en">Community</span></a>
     </nav>
+    <div class="lang-switch" role="group" aria-label="Sprache / Language"><button type="button" data-set-lang="de" lang="de" aria-label="Deutsch" aria-pressed="true">DE</button><span class="trenner" aria-hidden="true"></span><button type="button" data-set-lang="en" lang="en" aria-label="English" aria-pressed="false">EN</button></div>
   </header>
   <main>
+  <div data-lang="de">
     <h1>Konto und Daten löschen</h1>
     <p class="stand">Gilt für die App „Augenblick" (Android)</p>
     <p class="einleitung">Du kannst dein Konto jederzeit selbst löschen — direkt in der App, ohne Angabe von Gründen, ohne Wartezeit.</p>
@@ -116,9 +120,40 @@
 
     <h2>Vorher noch deine Daten mitnehmen?</h2>
     <p>In der App findest du unter Profil auch <strong>„Meine Daten exportieren"</strong> — damit erhältst du vor der Löschung eine maschinenlesbare Kopie deiner Daten.</p>
+  </div>
+  <div data-lang="en">
+    <h1>Delete account and data</h1>
+    <p class="stand">Applies to the app “Augenblick” (Android)</p>
+    <div class="karte"><p><strong>Please note:</strong> This English version is a convenience translation. The German version is authoritative; in case of doubt, the German version applies.</p></div>
+    <p class="einleitung">You can delete your account yourself at any time, right in the app, without giving a reason and without waiting.</p>
+
+    <h2>How to delete your account in the app</h2>
+    <ol>
+      <li>In the app, open the <strong>Profile</strong> tab.</li>
+      <li>Tap <strong>“Delete account”</strong>.</li>
+      <li>Confirm the deletion.</li>
+    </ol>
+    <p>Deletion takes effect immediately and is final. There is no way to restore an account.</p>
+
+    <h2>Without access to the app</h2>
+    <div class="karte">
+      <p>No longer have the app installed, or can't get into your account? Send us an informal email from the email address you registered with to: <a href="mailto:augenblick.app.team@gmail.com">augenblick.app.team@gmail.com</a></p>
+      <p>We will then delete the account for you and confirm the deletion by reply.</p>
+    </div>
+
+    <h2>What gets deleted</h2>
+    <p>Deleting your account permanently removes all personal data from the database: your profile (name, email address, date of birth, settings), your missed moments including private details, your connections, chat messages and meet-up plans, your tables, events and join requests, your places, invitations and safety checks, the notification log and your device's push token.</p>
+
+    <h2>What remains without any link to you</h2>
+    <p>Entries in the internal moderation log (for example, a warning that was issued) are kept in anonymised form: the reference to you is removed, and no content is stored in them. Details are in the <a href="datenschutz.html">privacy policy</a>.</p>
+
+    <h2>Want to take your data with you first?</h2>
+    <p>In the app, under Profile, you will also find <strong>“Export my data”</strong>, which gives you a machine-readable copy of your data before you delete.</p>
+  </div>
   </main>
   <footer>
-    <p>Diese Seiten laden keine externen Ressourcen — keine Fonts, keine Skripte, kein Tracking.</p>
+    <p data-lang="de">Diese Seiten laden keine externen Ressourcen, keine fremden Fonts, keine fremden Skripte und kein Tracking.</p>
+    <p data-lang="en">These pages load no external resources: no third-party fonts, no third-party scripts, no tracking.</p>
   </footer>
 </body>
 </html>
