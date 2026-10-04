@@ -1,0 +1,113 @@
+import React from 'react';
+import {useCurrentFrame} from 'remotion';
+import {colors, fonts} from '../config/brand';
+import {ease, progress} from '../motion';
+
+// Headline block used by every feature scene: small label → headline lines → supporting line.
+// Frames are local to the parent <Sequence>. `exitAt` = local frame where the block starts leaving.
+export const TextBlock: React.FC<{
+  label?: React.ReactNode;
+  headline: readonly string[];
+  sub?: string;
+  x?: number;
+  y?: number;
+  width?: number;
+  headlineSize?: number;
+  subSize?: number;
+  delay?: number;
+  exitAt?: number;
+  accentLast?: boolean;
+}> = ({
+  label,
+  headline,
+  sub,
+  x = 80,
+  y = 150,
+  width = 920,
+  headlineSize = 112,
+  subSize = 38,
+  delay = 4,
+  exitAt,
+  accentLast = false,
+}) => {
+  const frame = useCurrentFrame();
+  const exit = exitAt === undefined ? 0 : progress(frame, exitAt, exitAt + 12, ease.in);
+  const lineDelay = 5;
+  const labelIn = progress(frame, delay, delay + 16);
+  const headStart = delay + (label ? 6 : 0);
+  const subStart = headStart + headline.length * lineDelay + 8;
+  const subIn = progress(frame, subStart, subStart + 18);
+
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        left: x,
+        top: y,
+        width,
+        opacity: 1 - exit,
+        transform: `translateY(${-30 * exit}px)`,
+      }}
+    >
+      {label ? (
+        <div
+          style={{
+            fontFamily: fonts.text,
+            fontWeight: 600,
+            fontSize: 30,
+            letterSpacing: '0.04em',
+            color: colors.pinkText,
+            marginBottom: 22,
+            opacity: labelIn,
+            transform: `translateY(${(1 - labelIn) * 16}px)`,
+          }}
+        >
+          {label}
+        </div>
+      ) : null}
+      <div
+        style={{
+          fontFamily: fonts.display,
+          fontWeight: 800,
+          fontSize: headlineSize,
+          lineHeight: 0.94,
+          letterSpacing: '-0.015em',
+          color: colors.ink,
+        }}
+      >
+        {headline.map((line, i) => {
+          const t = progress(frame, headStart + i * lineDelay, headStart + i * lineDelay + 20);
+          return (
+            <div key={i} style={{overflow: 'hidden', paddingBottom: '0.06em', marginBottom: '-0.06em'}}>
+              <div
+                style={{
+                  transform: `translateY(${(1 - t) * 105}%)`,
+                  color: accentLast && i === headline.length - 1 ? colors.pinkText : undefined,
+                }}
+              >
+                {line}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      {sub ? (
+        <div
+          style={{
+            fontFamily: fonts.text,
+            fontWeight: 500,
+            fontSize: subSize,
+            lineHeight: 1.32,
+            color: colors.inkSoft,
+            marginTop: 26,
+            opacity: subIn,
+            transform: `translateY(${(1 - subIn) * 14}px)`,
+            textWrap: 'balance',
+          }}
+        >
+          {sub}
+        </div>
+      ) : null}
+    </div>
+  );
+};

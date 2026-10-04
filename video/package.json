@@ -1,0 +1,26 @@
+{
+  "name": "augenblick-video",
+  "version": "1.0.0",
+  "description": "Augenblick product video (Remotion)",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts Augenblick out/augenblick.mp4",
+    "still": "remotion still src/index.ts Augenblick out/still.png",
+    "typecheck": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@remotion/cli": "^4.0.532",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "^4.0.532"
+  },
+  "devDependencies": {
+    "@remotion/bundler": "^4.0.532",
+    "@remotion/renderer": "^4.0.532",
+    "@types/react": "^18.3.31",
+    "typescript": "^7.0.2"
+  },
+  "private": true
+}
