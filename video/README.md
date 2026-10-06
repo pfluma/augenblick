@@ -1,52 +1,78 @@
 # Augenblick – Produktvideo (Remotion)
 
-9:16 · 1080×1920 · 30 fps · ca. 25 s · Ergebnis: `out/augenblick.mp4`
+9:16 · 1080×1920 · 30 fps · 29,9 s · ohne Ton · Ergebnis: `out/augenblick.mp4`
+
+> Dieser Ordner liegt nur auf dem Branch `ccr-dc9daf8e-yuqab9`. `main` ist die öffentliche Website.
 
 ## Storyboard
 
-| # | Szene | Was man sieht | Was man verstehen soll | Text | Dauer | Übergang |
-|---|---|---|---|---|---|---|
-| 1 | Hook | Profilkarten fliegen nach links/rechts weg, immer schneller. Zu jedem Swipe erscheint ein „Swipen.“ | Endloses Swipen bringt dich nicht weiter. | „Swipen. Swipen. Swipen.“ / „Und wann triffst du endlich jemanden?“ | 3,3 s | Die letzte Karte bleibt stehen und wird zum Handy-Bildschirm. |
-| 2 | Produkt | Ganzes Handy, Event-Liste „Diese Woche in Wien“, Logo + Wortmarke | Augenblick ist eine App, die dich zu echten Treffen bringt. | „Die App für echte Begegnungen.“ / „Für alle, die Menschen lieber in echt kennenlernen.“ | 3,3 s | Die Kamera zoomt auf die erste Event-Karte. |
-| 3 | Feature 1: Events | Nahaufnahme. Antippen der Karte öffnet das Event: runder Tisch mit freien Plätzen, „Ich bin dabei“ → „Du bist dabei“, ein Platz füllt sich | Events und kleine Runden statt Feed. Mitmachen ist ein Tipp. | „01 — Events & Treffen“ / „Echte Treffen statt Endlos-Feed.“ / „Kleine Runden für Leute, die noch niemanden kennen.“ | 4,6 s | Die Kamera zieht zurück, der Schutz-Bildschirm schiebt sich herein. |
-| 4 | Feature 2: Schutz | Ganzes Handy mit den Schutz-Einstellungen. Die Zeile „Nur Frauen“ hebt sich als große Karte heraus, der Schalter geht an, darunter das Label „Serverseitig durchgesetzt“ | Schutz ist kein optionaler Schalter, die Datenbank setzt ihn durch. | „02 — Schutz für alle“ / „Sicherheit ist eingebaut.“ / „Wer was sehen darf, regelt die Datenbank selbst – nicht nur ein Schalter in der App.“ | 5,0 s | Die Karte gleitet zurück ins Handy, das Handy rückt nach rechts. |
-| 5 | Feature 3: Orte | Weitere Einstellung: Straßennetz zeichnet sich über das ganze Bild, Handy mit Karte, Pin und dem Partnerort „Café Feder“, Text links | Treffen finden an echten Orten statt, bei Partnerlokalen. | „03 — Partnerorte“ / „An echten Orten.“ / „Partnerlokale halten Tische für offene Runden frei.“ | 4,2 s | Das Handy verlässt das Bild nach unten, die Karte verblasst. |
-| 6 | Abschluss | Zwei Kreise (zwei Menschen) treffen sich und bilden das Logo, dann Wortmarke und Claim. Ruhiges Endbild. | Marke + Botschaft. | „Weniger swipen. Mehr erleben.“ · Augenblick | 4,6 s (ca. 2,3 s stehendes Endbild) | – |
+| # | Szene | Dauer | Was man sieht | Text | Übergang |
+|---|---|---|---|---|---|
+| 1 | Hook | 3,3 s | Neutrale Profilkarten (Silhouetten) werden weggeswipt, immer schneller | „Swipen. Swipen. Swipen.“ / auf Pink: „Und wann triffst du endlich jemanden?“ | Die letzte Karte wird zum Handy-Bildschirm. |
+| 2 | Intro | 3,0 s | Handy mit dem echten Screen „Verpasste Begegnungen“, Logo | „Für alle Momente, die fast was geworden wären.“ / „Eine App aus Wien, die Menschen offline zusammenbringt.“ | Kamera fährt näher, der nächste Screen schiebt sich herein. |
+| 3 | Augenblicke | 3,5 s | Nahaufnahme „Augenblick festhalten“: erst Ortswahl (Café Landtmann), dann „Was ist passiert?“ | „Du hast jemanden gesehen und nichts gesagt?“ / „Halte den Moment fest: nachträglich, mit Ort und ungefährer Zeit.“ | Das Handy fährt nach unten aus dem Bild. |
+| 4 | Resonanz | 4,0 s | Zwei Zettel, pink und blau (zwei Menschen, derselbe Moment), schieben sich übereinander. Die Überlappung wird violett: „Resonanz“. | „Wenn zwei dasselbe erzählen, finden sie sich.“ / „Vorher sieht niemand einen Namen.“ | Die Zettel gehen, das Handy kommt von unten zurück. |
+| 5 | Ein Platz am Tisch | 4,4 s | Screen „Ein Platz am Tisch“, danach die Events-Liste | „Ein Stuhl ist frei? Setz dich dazu.“ / „Offene Runden und Events an echten Orten. Kein Match nötig.“ | Push zum nächsten Screen. |
+| 6 | Schutz | 4,0 s | Screen „Tisch öffnen“. Der Ausschnitt „Wer darf anfragen? Alle / Nur Frauen“ hebt sich vergrößert heraus, dazu „Serverseitig durchgesetzt“. | „Sicherheit ist eingebaut.“ / „Wer was sehen darf, regelt die Datenbank selbst.“ | Ausschnitt sinkt zurück, Push. |
+| 7 | Verbinden | 3,0 s | Screen „Verbinden“ mit QR-Code | „Kontakt erst beim echten Treffen.“ / „Per QR-Code, wenn ihr euch gegenübersteht.“ | Das Handy fährt nach unten weg. |
+| 8 | Schluss | 4,7 s | Blauer und pinker Kreis treffen sich, die Überlappung wird violett: das Logo. Dann Wortmarke und Claim. Etwa 2 s stehendes Endbild. | „Weniger swipen.“ / auf Pink: „Mehr erleben.“ · Augenblick · „Bald in Wien.“ · pfluma.github.io/augenblick | – |
 
-Durchgehendes Motiv: Im Hintergrund nähern sich ein blauer und ein pinker Lichtkreis über den ganzen Film langsam an. Am Ende werden sie zum Logo.
+## Design „Überdruck“
 
-## Annahmen
+- **Farben:** Pink `#FF48B0` = Augenblick, Blau `#0078BF` = Struktur/Tisch. Violett `#5A3BA3` nur dort, wo sich Pink und Blau überlagern (Zettel-Überlappung, Logo). Tinte `#16244A` für Text, Papier `#F4F4F2` als Grund. Auf Pink steht immer Tinte.
+- **Textur:** leichte Papierkörnung im Hintergrund und Rasterpunkte auf den Zetteln. Die Körnung liegt *unter* dem Handy, die Screenshots bleiben unverändert.
+- Alles in `src/config/brand.ts`.
 
-- **Marke:** Farben („Papier & Tinte“), die Plakatschrift (Bricolage Grotesque Condensed ExtraBold) und das Zwei-Kreise-Logo stammen von der bestehenden Website im Repo (`../index.html`). Für Fließtext wird Inter verwendet. Beide Schriften liegen lokal in `public/fonts` und stehen unter der OFL-Lizenz.
-- **UI:** Die vereinfachten Screens sind nachgebaut. „Café Feder“, „Gasthaus Lindengrün“ und die Event-Daten sind erfunden und dienen nur als Platzhalter.
-- **Texte:** Die Aussagen zur Sicherheit halten sich an die Formulierungen aus Datenschutzerklärung und Nutzungsbedingungen („erzwingt die Datenbank selbst, nicht nur die App“). Bewusst gibt es keine Garantie-Aussage, weil „Nur Frauen“ laut den Nutzungsbedingungen auf Selbstauskunft beruht. Es gibt keinen Store-Badge, keine Zahlen und keine Nutzerstimmen.
+## Screenshots (Quellen)
+
+Alle Screens im Video sind echte, unveränderte Screenshots der App. Sie wurden nur skaliert und im Handy-Rahmen beschnitten.
+
+| Im Video | Datei | Quelle |
+|---|---|---|
+| Intro | `public/screenshots/phone/02-augenblicke.jpg` | Android-Handy, App `de.augenblick.app`, 06.10.2026 |
+| Augenblicke 1 | `public/screenshots/web/03-augenblick-festhalten-ort-und-zeit.png` | Web-Build der App |
+| Augenblicke 2 | `public/screenshots/web/04-augenblick-festhalten-text.png` | Web-Build der App |
+| Tisch | `public/screenshots/phone/04-am-tisch.jpg` | Android-Handy |
+| Events | `public/screenshots/phone/09-events-liste.jpg` | Android-Handy |
+| Schutz | `public/screenshots/phone/06-tisch-oeffnen-schutz.jpg` | Android-Handy |
+| Verbinden | `public/screenshots/phone/07-verbinden.jpg` | Android-Handy |
+
+- **Handy-Fotos (`phone/`):** Die Android-Statusleiste wird gleichmäßig abgeschnitten (oberste 4,4 % des Bildes, `STATUS_BAR` in `src/config/assets.ts`). Danach füllt das Bild die Bildschirmhöhe. Links und rechts fallen dabei je etwa 1,3 % weg.
+- **Web-PNGs (`web/`):** Sie haben keine Statusleiste, beginnen unter der Kamera-Insel und werden unten beschnitten.
+- Die übrigen Dateien in `public/screenshots/` (Anmelden, Sicherheits-Check, Melden, Event starten, Plakat malen, Website-Plakatwerkstatt) sind vorhanden, werden aber nicht verwendet.
+- Die Zettel in Szene 4 sind eine Illustration, keine App-Oberfläche. Ihr Text paraphrasiert das Beispiel aus dem Screenshot „Was ist passiert?“.
+
+## Schriften (beide SIL Open Font License 1.1, lokal eingebunden)
+
+- **Bricolage Grotesque Condensed ExtraBold** für Überschriften und Wortmarke: `public/fonts/BricolageGrotesqueCondensed-ExtraBold.ttf`, Lizenz in `public/fonts/OFL-BricolageGrotesque.txt`.
+- **Figtree** (400/500/600/700, latin) für Fließtext: `public/fonts/figtree-latin-*.woff2` aus dem npm-Paket `@fontsource/figtree` 5.3.0, Lizenz in `public/fonts/OFL-Figtree.txt`.
 
 ## Bedienung
 
 ```bash
 npm install
-npm run studio   # Vorschau im Browser (Remotion Studio)
+npm run studio   # Vorschau im Browser
 npm run render   # → out/augenblick.mp4
 node scripts/stills.mjs 120 300 600   # einzelne Frames → out/stills/
 ```
 
-Falls Remotion keinen eigenen Browser herunterladen kann, gib mit `REMOTION_BROWSER=/pfad/zu/chrome-headless-shell` einen lokalen an.
+Ohne eigenen Remotion-Browser kannst du einen lokalen Chrome Headless Shell angeben: `REMOTION_BROWSER=/pfad/zu/headless_shell`.
 
 ## Was wo geändert wird
 
-- **Texte:** `src/config/copy.ts`. `copy` enthält die Headlines (ein Array-Eintrag = eine Zeile, so legst du die Umbrüche selbst fest), `ui` die Inhalte der Handy-Screens.
-- **Farben, Schriften, Logo:** `src/config/brand.ts`. `colors` sind die Farbtokens, `fontFiles` die Schriftdateien, `logo` die drei Logofarben.
-- **Echte Screenshots und Logo:** Dateien nach `public/screenshots/` legen und den Pfad in `src/config/assets.ts` eintragen, z. B. `eventList: 'screenshots/event-list.png'`. Das Handy zeigt dann den Screenshot statt des Mock-Screens (Seitenverhältnis ca. 9:19,5). `logoFile` ersetzt das gezeichnete Logo.
-- **Dauer:** `src/config/timing.ts`, `durations` in Frames (30 = 1 s). Alle späteren Szenen verschieben sich automatisch. Momente innerhalb der Szenen (Antippen, Schalter, Pin) sind relativ zum Szenenbeginn in `src/components/PhoneLayer.tsx` (`beats`) definiert.
-- **Bildausschnitt des Handys:** `src/poses.ts`, Position und Skalierung pro Szene.
+- **Texte:** `src/config/copy.ts`. Ein Array-Eintrag in einer Headline ist eine Zeile.
+- **Farben, Schriften, Logo:** `src/config/brand.ts`
+- **Screenshots:** `src/config/assets.ts` (`shots`: Datei und Art, `safetyDetail`: der vergrößerte Ausschnitt). Welcher Screen wann im Handy erscheint, steht in `screenTimeline` in `src/components/PhoneLayer.tsx`.
+- **Dauer:** `src/config/timing.ts`, `durations` in Frames (30 = 1 s). Spätere Szenen verschieben sich automatisch.
+- **Bildausschnitt des Handys:** `src/poses.ts`. Faustregel: Die Oberkante des Handys bleibt bei y ≥ 620, damit es nicht mit den Headlines kollidiert.
 
 ## Aufbau
 
 ```
 src/
-  config/      brand.ts · copy.ts · assets.ts · timing.ts   ← alles Editierbare
-  components/  Phone, PhoneLayer (ein durchgehendes Handy + Kamerafahrten), TextBlock, Logo, Icon, Background
-  screens/     EventList, EventDetail, Safety, Place (Mock-UI)
-  scenes/      Hook, TextScenes, SafetyCallout, PlacesMap, Closing
+  config/      brand · copy · assets · timing        ← alles Editierbare
+  components/  Phone, PhoneLayer (ein durchgehendes Handy + Kamerafahrten), Screenshot,
+               TextBlock, Logo, Icon, Background (Papier, Körnung, Rasterpunkte)
+  scenes/      Hook, TextScenes, Resonance, SafetyCallout, Closing
   Video.tsx    Ebenen- und Szenenreihenfolge
 ```

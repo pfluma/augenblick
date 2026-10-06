@@ -36,7 +36,7 @@ export const Phone: React.FC<{children: React.ReactNode; shadow?: number}> = ({c
       borderRadius: PHONE.radius,
       background: colors.device,
       padding: PHONE.bezel,
-      boxShadow: `0 ${70 * shadow}px ${140 * shadow}px rgba(22,36,74,${0.2 * shadow}), 0 ${18 * shadow}px ${
+      boxShadow: `0 ${70 * shadow}px ${140 * shadow}px rgba(22,36,74,${0.18 * shadow}), 0 ${18 * shadow}px ${
         36 * shadow
       }px rgba(22,36,74,${0.16 * shadow}), inset 0 0 0 2px rgba(255,255,255,0.08)`,
       position: 'relative',
@@ -59,11 +59,11 @@ export const Phone: React.FC<{children: React.ReactNode; shadow?: number}> = ({c
       <div
         style={{
           position: 'absolute',
-          top: 16,
-          left: SCREEN.w / 2 - 70,
-          width: 140,
-          height: 40,
-          borderRadius: 20,
+          top: 12,
+          left: SCREEN.w / 2 - 62,
+          width: 124,
+          height: 34,
+          borderRadius: 17,
           background: '#05070D',
           zIndex: 50,
         }}

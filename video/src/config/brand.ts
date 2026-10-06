@@ -1,46 +1,46 @@
-// Brand tokens. Values mirror the existing Augenblick website ("Papier & Tinte").
-// Swap any value here and every scene picks it up.
+// Brand tokens, design "Überdruck" (two-colour riso print).
+// Pink = Augenblick, Blue = structure / table. Violet appears ONLY where pink and blue
+// overlap (resonance, logo), never as a free accent. Ink text on paper; on pink always ink.
 
 export const colors = {
-  paper: '#F4F4F2', // background
-  paperDark: '#E9E9E5',
-  white: '#FFFFFF',
-  line: '#D5D8E0',
-  ink: '#16244A', // primary text
-  inkSoft: '#4A5570', // secondary text
-  inkPale: '#5E6780', // tertiary text / labels
-  pink: '#FF48B0', // accent fill
-  pinkText: '#B0006F', // accent text (AA on paper)
-  pinkLight: '#FFE1F1',
+  paper: '#F4F4F2',
+  ink: '#16244A',
+  inkSoft: 'rgba(22, 36, 74, 0.74)', // ink at reduced strength for supporting text
+  inkFaint: 'rgba(22, 36, 74, 0.14)', // hairlines, silhouettes
+  pink: '#FF48B0',
   blue: '#0078BF',
-  blueText: '#006AA8',
-  blueLight: '#DCEBF6',
-  sky: '#4AA3E3', // logo circle left
-  violet: '#4A2E9D', // logo overlap
-  device: '#10162A', // phone bezel
+  violet: '#5A3BA3', // overlap of pink + blue only
+  white: '#FFFFFF',
+  device: '#121A33', // phone bezel (deep ink)
+} as const;
+
+// Light tints of the two print colours (pink/blue on paper), for the hook cards.
+export const tints = {
+  pink: '#FFD3EB',
+  blue: '#CCE2F1',
 } as const;
 
 export const fonts = {
-  // Poster face for headlines and the wordmark (Bricolage Grotesque Condensed ExtraBold).
+  // Headlines and wordmark: Bricolage Grotesque Condensed ExtraBold (OFL).
   display: '"AB Plakat", "Arial Narrow", sans-serif',
-  // Interface and supporting text.
-  text: 'Inter, system-ui, sans-serif',
+  // Body text: Figtree (OFL).
+  text: 'Figtree, system-ui, sans-serif',
 } as const;
 
-// Font files in /public/fonts. Loaded once before rendering (see src/fonts.ts).
+// Font files in /public/fonts, loaded before the first frame (see src/fonts.ts).
 export const fontFiles = [
   {family: 'AB Plakat', file: 'fonts/BricolageGrotesqueCondensed-ExtraBold.ttf', weight: '800'},
-  {family: 'Inter', file: 'fonts/inter-latin-400-normal.woff2', weight: '400'},
-  {family: 'Inter', file: 'fonts/inter-latin-500-normal.woff2', weight: '500'},
-  {family: 'Inter', file: 'fonts/inter-latin-600-normal.woff2', weight: '600'},
-  {family: 'Inter', file: 'fonts/inter-latin-700-normal.woff2', weight: '700'},
+  {family: 'Figtree', file: 'fonts/figtree-latin-400-normal.woff2', weight: '400'},
+  {family: 'Figtree', file: 'fonts/figtree-latin-500-normal.woff2', weight: '500'},
+  {family: 'Figtree', file: 'fonts/figtree-latin-600-normal.woff2', weight: '600'},
+  {family: 'Figtree', file: 'fonts/figtree-latin-700-normal.woff2', weight: '700'},
 ] as const;
 
 export const wordmark = 'Augenblick';
 
-// Logo: two overlapping circles, the overlap is the "Augenblick" (encounter).
+// Logo: two overlapping circles; the overlap is the Augenblick.
 export const logo = {
-  left: colors.sky,
+  left: colors.blue,
   right: colors.pink,
   overlap: colors.violet,
 };

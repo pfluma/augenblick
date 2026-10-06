@@ -7,17 +7,19 @@ export const WIDTH = 1080;
 export const HEIGHT = 1920;
 
 export const durations = {
-  hook: 100, // 3.3 s
-  intro: 100, // 3.3 s
-  events: 138, // 4.6 s
-  safety: 150, // 5.0 s
-  places: 126, // 4.2 s
-  closing: 138, // 4.6 s
+  hook: 100, // 3.3 s  Swipen. Swipen. Swipen.
+  intro: 90, // 3.0 s  Für alle Momente, die fast was geworden wären.
+  moment: 105, // 3.5 s  Augenblick festhalten
+  resonance: 120, // 4.0 s  zwei Zettel → Resonanz
+  table: 132, // 4.4 s  Ein Platz am Tisch / Events
+  safety: 120, // 4.0 s  Schutz
+  connect: 90, // 3.0 s  Verbinden per QR
+  closing: 140, // 4.7 s  Weniger swipen. Mehr erleben.
 };
 
 export type SceneName = keyof typeof durations;
 
-const order: SceneName[] = ['hook', 'intro', 'events', 'safety', 'places', 'closing'];
+export const order = Object.keys(durations) as SceneName[];
 
 export const starts = order.reduce(
   (acc, name, i) => {
@@ -29,7 +31,7 @@ export const starts = order.reduce(
 
 export const TOTAL = starts.closing + durations.closing;
 
-// Global frame helper: at('events', 40) = 40 frames into the events scene,
-// at('events', -10) = 10 frames before it ends.
+// Global frame helper: at('table', 40) = 40 frames into the table scene,
+// at('table', -10) = 10 frames before it ends.
 export const at = (scene: SceneName, offset = 0) =>
   offset >= 0 ? starts[scene] + offset : starts[scene] + durations[scene] + offset;

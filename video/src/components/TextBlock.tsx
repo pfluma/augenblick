@@ -3,10 +3,19 @@ import {useCurrentFrame} from 'remotion';
 import {colors, fonts} from '../config/brand';
 import {ease, progress} from '../motion';
 
-// Headline block used by every feature scene: small label → headline lines → supporting line.
+// Small scene label: a printed colour chip + ink text.
+export const Label: React.FC<{children: React.ReactNode; chip?: string}> = ({children, chip = colors.pink}) => (
+  <div style={{display: 'flex', alignItems: 'center', gap: 14}}>
+    <div style={{width: 22, height: 22, borderRadius: 11, background: chip}} />
+    <span style={{fontFamily: fonts.text, fontWeight: 700, fontSize: 30, letterSpacing: '0.02em', color: colors.ink}}>{children}</span>
+  </div>
+);
+
+// Headline block used by every scene: label → headline lines → supporting line.
 // Frames are local to the parent <Sequence>. `exitAt` = local frame where the block starts leaving.
 export const TextBlock: React.FC<{
   label?: React.ReactNode;
+  chip?: string;
   headline: readonly string[];
   sub?: string;
   x?: number;
@@ -16,20 +25,7 @@ export const TextBlock: React.FC<{
   subSize?: number;
   delay?: number;
   exitAt?: number;
-  accentLast?: boolean;
-}> = ({
-  label,
-  headline,
-  sub,
-  x = 80,
-  y = 150,
-  width = 920,
-  headlineSize = 112,
-  subSize = 38,
-  delay = 4,
-  exitAt,
-  accentLast = false,
-}) => {
+}> = ({label, chip, headline, sub, x = 80, y = 150, width = 920, headlineSize = 108, subSize = 38, delay = 4, exitAt}) => {
   const frame = useCurrentFrame();
   const exit = exitAt === undefined ? 0 : progress(frame, exitAt, exitAt + 12, ease.in);
   const lineDelay = 5;
@@ -50,19 +46,8 @@ export const TextBlock: React.FC<{
       }}
     >
       {label ? (
-        <div
-          style={{
-            fontFamily: fonts.text,
-            fontWeight: 600,
-            fontSize: 30,
-            letterSpacing: '0.04em',
-            color: colors.pinkText,
-            marginBottom: 22,
-            opacity: labelIn,
-            transform: `translateY(${(1 - labelIn) * 16}px)`,
-          }}
-        >
-          {label}
+        <div style={{marginBottom: 22, opacity: labelIn, transform: `translateY(${(1 - labelIn) * 16}px)`}}>
+          {typeof label === 'string' ? <Label chip={chip}>{label}</Label> : label}
         </div>
       ) : null}
       <div
@@ -79,14 +64,7 @@ export const TextBlock: React.FC<{
           const t = progress(frame, headStart + i * lineDelay, headStart + i * lineDelay + 20);
           return (
             <div key={i} style={{overflow: 'hidden', paddingBottom: '0.06em', marginBottom: '-0.06em'}}>
-              <div
-                style={{
-                  transform: `translateY(${(1 - t) * 105}%)`,
-                  color: accentLast && i === headline.length - 1 ? colors.pinkText : undefined,
-                }}
-              >
-                {line}
-              </div>
+              <div style={{transform: `translateY(${(1 - t) * 105}%)`}}>{line}</div>
             </div>
           );
         })}
@@ -97,9 +75,9 @@ export const TextBlock: React.FC<{
             fontFamily: fonts.text,
             fontWeight: 500,
             fontSize: subSize,
-            lineHeight: 1.32,
+            lineHeight: 1.3,
             color: colors.inkSoft,
-            marginTop: 26,
+            marginTop: 24,
             opacity: subIn,
             transform: `translateY(${(1 - subIn) * 14}px)`,
             textWrap: 'balance',

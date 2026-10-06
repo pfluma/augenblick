@@ -1,5 +1,6 @@
-// All on-screen text lives here. Line breaks in headlines are explicit (arrays),
-// so you control exactly where a line wraps.
+// All on-screen text. Headlines are arrays: one entry = one line, so you decide the breaks.
+// Tone: du-form, warm, short, honest. No store badges, numbers, testimonials or promises
+// the app does not keep.
 
 export const copy = {
   hook: {
@@ -7,79 +8,43 @@ export const copy = {
     question: ['Und wann triffst du', 'endlich jemanden?'],
   },
   intro: {
-    headline: ['Die App für echte', 'Begegnungen.'],
-    sub: 'Für alle, die Menschen lieber in echt kennenlernen.',
+    headline: ['Für alle Momente,', 'die fast was', 'geworden wären.'],
+    sub: 'Eine App aus Wien, die Menschen offline zusammenbringt.',
   },
-  events: {
-    label: '01 — Events & Treffen',
-    headline: ['Echte Treffen statt', 'Endlos-Feed.'],
-    sub: 'Kleine Runden für Leute, die noch niemanden kennen.',
+  moment: {
+    label: 'Augenblicke',
+    headline: ['Du hast jemanden', 'gesehen und', 'nichts gesagt?'],
+    sub: 'Halte den Moment fest: nachträglich, mit Ort und ungefährer Zeit.',
+  },
+  resonance: {
+    headline: ['Wenn zwei dasselbe', 'erzählen, finden', 'sie sich.'],
+    sub: 'Vorher sieht niemand einen Namen.',
+    // the two notes (illustration, not app UI)
+    place: 'Café Landtmann · nachmittags',
+    pink: '„Am Nebentisch, mit der Zeitung. Ich hätte so gern gefragt.“',
+    blue: '„Die Person mit der Zeitung am Nebentisch. Ich hab mich nicht getraut.“',
+    hidden: 'Name erst, wenn beide Ja sagen',
+    overlap: 'Resonanz',
+  },
+  table: {
+    label: 'Ein Platz am Tisch',
+    headline: ['Ein Stuhl ist frei?', 'Setz dich dazu.'],
+    sub: 'Offene Runden und Events an echten Orten. Kein Match nötig.',
   },
   safety: {
-    label: '02 — Schutz für alle',
+    label: 'Schutz',
     headline: ['Sicherheit ist', 'eingebaut.'],
-    sub: 'Wer was sehen darf, regelt die Datenbank selbst – nicht nur ein Schalter in der App.',
+    sub: 'Wer was sehen darf, regelt die Datenbank selbst.',
     tag: 'Serverseitig durchgesetzt',
   },
-  places: {
-    label: '03 — Partnerorte',
-    headline: ['An echten', 'Orten.'],
-    sub: 'Partnerlokale halten Tische für offene Runden frei.',
+  connect: {
+    label: 'Verbinden',
+    headline: ['Kontakt erst beim', 'echten Treffen.'],
+    sub: 'Per QR-Code, wenn ihr euch gegenübersteht.',
   },
   closing: {
     tagline: ['Weniger swipen.', 'Mehr erleben.'],
-  },
-} as const;
-
-// Content of the simplified phone screens (placeholder until real screenshots exist).
-export const ui = {
-  statusTime: '18:24',
-  eventList: {
-    kicker: 'Wien · diese Woche',
-    title: 'Events',
-    chips: ['Alle', 'Spieleabend', 'Laufen', 'Spaziergang'],
-    items: [
-      {day: 'DO', time: '19:00', title: 'Spieleabend für Neue', place: 'Café Feder', seats: '5 von 8 Plätzen frei', partner: true, color: 'pink'},
-      {day: 'SA', time: '10:00', title: 'Lauftreff am Augarten', place: 'Augarten', seats: '6 von 12 Plätzen frei', partner: false, color: 'blue'},
-      {day: 'SO', time: '17:30', title: 'Abendspaziergang', place: 'Donaukanal', seats: '4 von 6 Plätzen frei', partner: false, color: 'violet'},
-      {day: 'MO', time: '19:30', title: 'Kochen zu viert', place: 'Gasthaus Lindengrün', seats: '2 von 4 Plätzen frei', partner: true, color: 'sky'},
-    ],
-    tabs: ['Entdecken', 'Augenblicke', 'Tische', 'Profil'],
-  },
-  eventDetail: {
-    back: 'Events',
-    kicker: 'Spieleabend · kleine Runde',
-    title: 'Spieleabend für Neue',
-    when: 'Donnerstag, 19:00 – 22:00',
-    where: 'Café Feder, Neubau',
-    seats: (free: number, total: number) => `${free} von ${total} Plätzen frei`,
-    seatsTotal: 8,
-    seatsTaken: 3,
-    description: 'Brettspiele und Getränke. Keine Vorkenntnisse nötig.',
-    cta: 'Ich bin dabei',
-    ctaDone: 'Du bist dabei',
-  },
-  safety: {
-    back: 'Profil',
-    title: ['Schutz &', 'Sichtbarkeit'],
-    intro: 'Du entscheidest, wer dich sieht.',
-    rows: [
-      {icon: 'location', title: 'Kein Live-Standort', sub: 'Niemand sieht, wo du gerade bist.', control: 'always'},
-      {icon: 'eye', title: 'Namen erst nach Ja', sub: 'Vorher bleibt ihr anonym.', control: 'always'},
-      {icon: 'shield', title: 'Nur Frauen', sub: 'Für deine Runden und Antworten', control: 'toggle'},
-      {icon: 'pause', title: 'Unsichtbar-Modus', sub: 'Pause, wann du willst.', control: 'off'},
-      {icon: 'flag', title: 'Melden & Blockieren', sub: 'Überall, mit echter Moderation.', control: 'chevron'},
-    ],
-    always: 'immer',
-    footnote: 'Diese Regeln setzt der Server durch, nicht nur die App.',
-  },
-  place: {
-    badge: 'Partnerort',
-    title: 'Café Feder',
-    area: 'Neubau · Wien',
-    text: 'Hält jeden Donnerstag einen Tisch für offene Runden frei.',
-    nextLabel: 'Nächstes Event',
-    next: 'Spieleabend für Neue',
-    nextWhen: 'Do, 19:00',
+    soon: 'Bald in Wien.',
+    url: 'pfluma.github.io/augenblick',
   },
 } as const;

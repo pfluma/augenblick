@@ -1,14 +1,30 @@
-// Real screenshots: drop PNG/JPG files into /public/screenshots and set the path here,
-// e.g. eventList: 'screenshots/event-list.png'. Use the device's native aspect ratio
-// (about 9:19.5, e.g. 1179×2556). When a path is set, the phone shows the image instead
-// of the built-in mock screen. null = use the mock.
+// Real app screenshots in /public/screenshots (sources: see README.md).
+//
+// kind 'phone': photo from an Android phone. The system status bar at the top is cut
+//   off evenly (cropTop = share of the image height), then the image fills the screen.
+// kind 'web':   PNG from the web build, no status bar. It starts below the camera
+//   island (topInset) and is cut off at the bottom if it is taller than the screen.
+//
+// To swap a screen: replace the file or change the path. Keep the 9:19.5 aspect ratio.
 
-export const screenshots: Record<'eventList' | 'eventDetail' | 'safety' | 'place', string | null> = {
-  eventList: null,
-  eventDetail: null,
-  safety: null,
-  place: null,
-};
+export type Shot = {src: string; kind: 'phone' | 'web'; cropTop?: number; bg?: string};
+
+export const STATUS_BAR = 0.044; // share of a phone screenshot taken by the status bar
+export const WEB_TOP_INSET = 62; // px of empty screen above a web screenshot
+
+export const shots = {
+  augenblicke: {src: 'screenshots/phone/02-augenblicke.jpg', kind: 'phone'},
+  festhaltenOrt: {src: 'screenshots/web/03-augenblick-festhalten-ort-und-zeit.png', kind: 'web'},
+  festhaltenText: {src: 'screenshots/web/04-augenblick-festhalten-text.png', kind: 'web'},
+  amTisch: {src: 'screenshots/phone/04-am-tisch.jpg', kind: 'phone'},
+  events: {src: 'screenshots/phone/09-events-liste.jpg', kind: 'phone'},
+  tischSchutz: {src: 'screenshots/phone/06-tisch-oeffnen-schutz.jpg', kind: 'phone'},
+  verbinden: {src: 'screenshots/phone/07-verbinden.jpg', kind: 'phone'},
+} satisfies Record<string, Shot>;
+
+// Detail that lifts out of the phone in the safety scene: "Wer darf anfragen?"
+// (vertical range of the tischSchutz screenshot, as share of the full image height).
+export const safetyDetail = {shot: 'tischSchutz' as const, from: 0.685, to: 0.858};
 
 // Optional logo file (SVG/PNG in /public). null = draw the two-circle mark in code.
 export const logoFile: string | null = null;

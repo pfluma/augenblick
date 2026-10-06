@@ -1,17 +1,17 @@
 import React from 'react';
 import {AbsoluteFill, useCurrentFrame} from 'remotion';
 import {colors, fonts} from '../config/brand';
-import {copy, ui} from '../config/copy';
+import {copy} from '../config/copy';
+import {safetyDetail, shots} from '../config/assets';
 import {Icon} from '../components/Icon';
 import {beats} from '../components/PhoneLayer';
-import {screenToCanvas} from '../components/Phone';
+import {screenToCanvas, SCREEN} from '../components/Phone';
+import {Screenshot, shotBox} from '../components/Screenshot';
 import {ease, mix, progress} from '../motion';
 import {POSES} from '../poses';
-import {PAD} from '../screens/common';
-import {SAFETY_FOCUS_ROW, SAFETY_ROW_H, SAFETY_ROW_W, SAFETY_ROWS_Y, SafetyRow} from '../screens/SafetyScreen';
 
-// The "Nur Frauen" row lifts out of the phone as a larger card: the close-up detail.
-// Uses global frames (rendered outside any Sequence).
+// A strip of the real screenshot ("Wer darf anfragen? Alle / Nur Frauen") lifts out of
+// the phone as a larger card: the close-up. Same pixels, only enlarged.
 export const SafetyCallout: React.FC = () => {
   const frame = useCurrentFrame();
   const up = progress(frame, beats.lift, beats.lift + 18, ease.inOut);
@@ -19,19 +19,21 @@ export const SafetyCallout: React.FC = () => {
   const t = up * (1 - down);
   if (t <= 0) return null;
 
+  const shot = shots[safetyDetail.shot];
+  const b = shotBox(shot);
+  const y0 = b.top + safetyDetail.from * b.h; // in screen pixels
+  const y1 = b.top + safetyDetail.to * b.h;
+  const h = y1 - y0;
+
   const pose = POSES.safety;
-  const origin = screenToCanvas(pose, PAD, SAFETY_ROWS_Y + SAFETY_ROW_H * SAFETY_FOCUS_ROW);
-  const startScale = pose.s;
-  const endScale = 1.48;
-  const scale = mix(startScale, endScale, t);
-  const endLeft = 540 - (SAFETY_ROW_W * endScale) / 2;
-  const endTop = origin.y - 40;
+  const origin = screenToCanvas(pose, 0, y0);
+  const endScale = 1.5;
+  const scale = mix(pose.s, endScale, t);
+  const endLeft = 540 - (SCREEN.w * endScale) / 2;
+  const endTop = origin.y - (h * (endScale - pose.s)) / 2 - 30;
   const left = mix(origin.x, endLeft, t);
   const top = mix(origin.y, endTop, t);
-
-  const toggle = progress(frame, beats.toggle, beats.toggle + 10, ease.inOut);
-  const tag = progress(frame, beats.toggle + 8, beats.toggle + 24) * (1 - down);
-  const row = ui.safety.rows[SAFETY_FOCUS_ROW];
+  const tag = progress(frame, beats.lift + 16, beats.lift + 32) * (1 - down);
 
   return (
     <AbsoluteFill>
@@ -40,24 +42,25 @@ export const SafetyCallout: React.FC = () => {
           position: 'absolute',
           left,
           top,
-          width: SAFETY_ROW_W,
-          height: SAFETY_ROW_H,
+          width: SCREEN.w,
+          height: h,
           transform: `scale(${scale})`,
           transformOrigin: '0 0',
-          borderRadius: 22,
+          borderRadius: 18,
           overflow: 'hidden',
-          background: colors.white,
-          boxShadow: `0 ${24 * t}px ${50 * t}px rgba(22,36,74,${0.22 * t}), 0 0 0 ${1.5}px ${colors.line}`,
+          boxShadow: `0 ${24 * t}px ${50 * t}px rgba(22,36,74,${0.24 * t}), 0 0 0 2px ${colors.inkFaint}`,
         }}
       >
-        <SafetyRow row={row} toggle={toggle} last highlight />
+        <div style={{marginTop: -y0}}>
+          <Screenshot shot={shot} />
+        </div>
       </div>
       <div
         style={{
           position: 'absolute',
           left: 0,
           right: 0,
-          top: endTop + SAFETY_ROW_H * endScale + 34,
+          top: endTop + h * endScale + 34,
           display: 'flex',
           justifyContent: 'center',
           opacity: tag,
@@ -70,7 +73,7 @@ export const SafetyCallout: React.FC = () => {
             alignItems: 'center',
             gap: 14,
             background: colors.ink,
-            color: colors.white,
+            color: colors.paper,
             borderRadius: 999,
             padding: '18px 30px 18px 24px',
             fontFamily: fonts.text,

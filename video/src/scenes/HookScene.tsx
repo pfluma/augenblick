@@ -1,6 +1,6 @@
 import React from 'react';
 import {AbsoluteFill, useCurrentFrame} from 'remotion';
-import {colors, fonts} from '../config/brand';
+import {colors, fonts, tints} from '../config/brand';
 import {copy} from '../config/copy';
 import {durations} from '../config/timing';
 import {SCREEN} from '../components/Phone';
@@ -8,9 +8,9 @@ import {ease, mix, progress} from '../motion';
 import {POSES} from '../poses';
 
 // Swipe cards fly off faster and faster; the last one stays and becomes the phone screen.
-const SWIPES = [8, 22, 33, 42, 50]; // local frames
+const SWIPES = [6, 18, 28, 37, 45]; // local frames
 const DIRS = [-1, 1, -1, -1, 1];
-const TINTS = [colors.blueLight, colors.pinkLight, '#E6E2F3', colors.paperDark, colors.blueLight, colors.pinkLight];
+const TINTS = [tints.blue, tints.pink, tints.blue, tints.pink, tints.blue, tints.pink];
 
 const CARD_W = SCREEN.w * POSES.intro.s;
 const CARD_H = 690;
@@ -31,28 +31,28 @@ const ProfileCard: React.FC<{tint: string; fade?: number}> = ({tint, fade = 0}) 
       <circle cx="100" cy="72" r="38" fill={colors.white} opacity={0.75} />
       <path d="M30 200c4-48 34-72 70-72s66 24 70 72Z" fill={colors.white} opacity={0.75} />
     </svg>
-    <div style={{position: 'absolute', left: 32, bottom: 92, width: '52%', height: 22, borderRadius: 11, background: colors.line}} />
-    <div style={{position: 'absolute', left: 32, bottom: 52, width: '32%', height: 18, borderRadius: 9, background: colors.paperDark}} />
+    <div style={{position: 'absolute', left: 32, bottom: 92, width: '52%', height: 22, borderRadius: 11, background: colors.inkFaint}} />
+    <div style={{position: 'absolute', left: 32, bottom: 52, width: '32%', height: 18, borderRadius: 9, background: colors.inkFaint, opacity: 0.6}} />
   </div>
 );
 
 export const HookScene: React.FC = () => {
   const frame = useCurrentFrame();
-  const exit = progress(frame, durations.hook - 26, durations.hook - 12, ease.in);
+  const exit = progress(frame, durations.hook - 16, durations.hook - 4, ease.in);
   const morph = progress(frame, MORPH[0], MORPH[1], ease.inOut);
   const lastFade = progress(frame, durations.hook - 18, durations.hook - 4);
 
   const swiped = SWIPES.filter((s) => frame >= s).length; // cards gone or leaving
-  const question = progress(frame, 48, 66);
+  const question = progress(frame, 42, 56);
 
   return (
     <AbsoluteFill>
       {/* text */}
-      <div style={{position: 'absolute', left: 80, top: 130, opacity: 1 - exit, transform: `translateY(${-30 * exit}px)`}}>
-        <div style={{fontFamily: fonts.display, fontWeight: 800, fontSize: 116, lineHeight: 0.92, color: colors.ink}}>
+      <div style={{position: 'absolute', left: 80, top: 108, opacity: 1 - exit, transform: `translateY(${-30 * exit}px)`}}>
+        <div style={{fontFamily: fonts.display, fontWeight: 800, fontSize: 110, lineHeight: 0.92, color: colors.ink}}>
           {copy.hook.words.map((w, i) => {
             const t = progress(frame, SWIPES[i], SWIPES[i] + 10);
-            const dim = mix(1, 0.28, progress(frame, 46, 60));
+            const dim = mix(1, 0.28, progress(frame, 40, 54));
             return (
               <div key={i} style={{overflow: 'hidden', paddingBottom: '0.06em', marginBottom: '-0.06em'}}>
                 <div style={{transform: `translateX(${(1 - t) * -40}px)`, opacity: t * dim}}>{w}</div>
@@ -64,16 +64,18 @@ export const HookScene: React.FC = () => {
           style={{
             fontFamily: fonts.display,
             fontWeight: 800,
-            fontSize: 76,
-            lineHeight: 0.98,
-            color: colors.pinkText,
-            marginTop: 26,
+            fontSize: 70,
+            lineHeight: 1.14,
+            color: colors.ink, // ink on pink, always
+            marginTop: 22,
             opacity: question,
             transform: `translateY(${(1 - question) * 20}px)`,
           }}
         >
           {copy.hook.question.map((l) => (
-            <div key={l}>{l}</div>
+            <div key={l}>
+              <span style={{background: colors.pink, padding: '0 14px', marginLeft: -14}}>{l}</span>
+            </div>
           ))}
         </div>
       </div>

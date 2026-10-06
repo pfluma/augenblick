@@ -5,35 +5,37 @@ import {Background} from './components/Background';
 import {PhoneLayer} from './components/PhoneLayer';
 import {ClosingScene} from './scenes/ClosingScene';
 import {HookScene} from './scenes/HookScene';
-import {PlacesMap} from './scenes/PlacesMap';
+import {ResonanceScene} from './scenes/ResonanceScene';
 import {SafetyCallout} from './scenes/SafetyCallout';
-import {EventsText, IntroText, PlacesText, SafetyText} from './scenes/TextScenes';
+import {ConnectText, IntroText, MomentText, SafetyText, TableText} from './scenes/TextScenes';
 
-// Layer order (back → front): background, map, headlines, phone, lifted detail, hook cards, closing.
+// Layer order (back → front): paper, headlines, phone, lifted detail, notes, hook cards, closing.
 export const AugenblickVideo: React.FC = () => (
   <AbsoluteFill>
     <Background />
 
-    <Sequence from={starts.places} durationInFrames={durations.places + 30} name="Places · map">
-      <PlacesMap />
-    </Sequence>
-
     <Sequence from={starts.intro} durationInFrames={durations.intro} name="Intro · text">
       <IntroText />
     </Sequence>
-    <Sequence from={starts.events} durationInFrames={durations.events} name="Events · text">
-      <EventsText />
+    <Sequence from={starts.moment} durationInFrames={durations.moment} name="Augenblicke · text">
+      <MomentText />
     </Sequence>
-    <Sequence from={starts.safety} durationInFrames={durations.safety} name="Safety · text">
+    <Sequence from={starts.table} durationInFrames={durations.table} name="Tisch · text">
+      <TableText />
+    </Sequence>
+    <Sequence from={starts.safety} durationInFrames={durations.safety} name="Schutz · text">
       <SafetyText />
     </Sequence>
-    <Sequence from={starts.places} durationInFrames={durations.places} name="Places · text">
-      <PlacesText />
+    <Sequence from={starts.connect} durationInFrames={durations.connect} name="Verbinden · text">
+      <ConnectText />
     </Sequence>
 
     <PhoneLayer />
     <SafetyCallout />
 
+    <Sequence from={starts.resonance} durationInFrames={durations.resonance} name="Resonanz">
+      <ResonanceScene />
+    </Sequence>
     <Sequence from={starts.hook} durationInFrames={durations.hook} name="Hook">
       <HookScene />
     </Sequence>
