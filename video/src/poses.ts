@@ -24,12 +24,17 @@ export type Spin = {start: number; dur: number; dir: 1 | -1};
 // (0° → 90°), then the phone continues (back side, then front with the first screen).
 export const HOOK_SPIN: Spin = {start: at('hook', -30), dur: 38, dir: 1};
 
-export const spins: (Spin & {shot: 'festhaltenOrt' | 'festhaltenText' | 'events' | 'tischSchutz' | 'verbinden'})[] = [
-  {start: at('moment', 0), dur: SPIN, dir: -1, shot: 'festhaltenOrt'},
-  {start: at('moment', 84), dur: SPIN, dir: 1, shot: 'festhaltenText'},
-  {start: at('table', 94), dur: SPIN, dir: -1, shot: 'events'},
-  {start: at('safety', 0), dur: SPIN, dir: 1, shot: 'tischSchutz'},
-  {start: at('connect', 0), dur: SPIN, dir: -1, shot: 'verbinden'},
+// Only two spins in the whole film: the hook (above) and Events → Schutz.
+export const spins: (Spin & {shot: 'tischSchutz'})[] = [{start: at('safety', 0), dur: SPIN, dir: 1, shot: 'tischSchutz'}];
+
+// All other screen changes: the phone stands still and the new screenshot cross-fades
+// in (FADE units, ease-in-out). `at` is the middle of the fade.
+export const FADE = 12; // 0.4 s
+export const fades: {at: number; shot: 'festhaltenOrt' | 'festhaltenText' | 'events' | 'verbinden'}[] = [
+  {at: at('moment', 17), shot: 'festhaltenOrt'},
+  {at: at('moment', 101), shot: 'festhaltenText'},
+  {at: at('table', 111), shot: 'events'},
+  {at: at('connect', 17), shot: 'verbinden'},
 ];
 
 // Moment the new screenshot appears (phone exactly side-on → back facing the camera).

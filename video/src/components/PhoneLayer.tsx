@@ -6,21 +6,36 @@ import {colors} from '../config/brand';
 import {details, shots} from '../config/assets';
 import {at} from '../config/timing';
 import {ease, progress} from '../motion';
-import {cameraAt, isSpinning, spins, swapAt} from '../poses';
+import {cameraAt, FADE, fades, isSpinning, spins, swapAt} from '../poses';
 import {Phone, PhoneShadow, poseStyle} from './Phone';
 import {Screenshot} from './Screenshot';
 
-// Which screenshot the phone shows. Every change happens in the middle of a spin
-// (phone at 180°, only the back visible) – no cross-fades. The table screen is set while
-// the phone is out of frame during the resonance scene.
-const screenTimeline: {start: number; shot: keyof typeof shots}[] = [
-  {start: -Infinity, shot: 'augenblicke'},
-  ...spins.filter((s) => s.start < at('resonance', 0)).map((s) => ({start: swapAt(s), shot: s.shot})),
-  {start: at('resonance', 40), shot: 'amTisch'},
-  ...spins.filter((s) => s.start > at('resonance', 0)).map((s) => ({start: swapAt(s), shot: s.shot})),
-];
+// Which screenshot the phone shows.
+// - fade: the phone stands still and the new screen cross-fades in over FADE units
+//   (ease-in-out), starting at `start`
+// - spin: swapped instantly at 180° of the spin, when only the back is visible
+// - the table screen is set while the phone is out of frame (resonance scene)
+type ScreenChange = {start: number; shot: keyof typeof shots; fade?: boolean};
+const screenTimeline: ScreenChange[] = [
+  {start: -Infinity, shot: 'augenblicke' as const},
+  ...fades.map((f) => ({start: f.at - FADE / 2, shot: f.shot, fade: true})),
+  {start: at('resonance', 40), shot: 'amTisch' as const},
+  ...spins.map((s) => ({start: swapAt(s), shot: s.shot})),
+].sort((a, b) => a.start - b.start);
 
-const shotAt = (frame: number) => [...screenTimeline].reverse().find((s) => frame >= s.start)!.shot;
+// Layers to draw, bottom to top: the previous screen stays underneath while a new one fades in.
+const screensAt = (frame: number) => {
+  let i = 0;
+  while (i + 1 < screenTimeline.length && frame >= screenTimeline[i + 1].start) i++;
+  const cur = screenTimeline[i];
+  if (cur.fade && frame < cur.start + FADE) {
+    return [
+      {shot: screenTimeline[i - 1].shot, opacity: 1},
+      {shot: cur.shot, opacity: progress(frame, cur.start, cur.start + FADE, ease.inOut)},
+    ];
+  }
+  return [{shot: cur.shot, opacity: 1}];
+};
 
 // Zoom on the important spot of a screen: it lifts out of the phone at `lift`
 // (full size 18 units later) and sinks back at `drop`. Never during a spin.
@@ -48,7 +63,11 @@ const PhoneRig: React.FC = () => {
       <AbsoluteFill style={{opacity: cam.o}}>
         <div style={poseStyle(cam)}>
           <Phone glare={0.35 + 0.65 * side} glareShift={Math.sin((cam.ry * Math.PI) / 180)}>
-            <Screenshot shot={shots[shotAt(frame)]} />
+            {screensAt(frame).map((l) => (
+              <div key={l.shot} style={{position: 'absolute', inset: 0, opacity: l.opacity}}>
+                <Screenshot shot={shots[l.shot]} />
+              </div>
+            ))}
             {/* dims the screen while a detail is zoomed out of it */}
             <div style={{position: 'absolute', inset: 0, background: colors.paper, opacity: dim * 0.55}} />
           </Phone>

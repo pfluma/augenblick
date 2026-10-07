@@ -8,8 +8,8 @@ import {SPIN} from '../poses';
 
 // Headline blocks. The phone lives in <PhoneLayer/> so it can travel between scenes.
 // All blocks sit above y ≈ 610; the phone's top edge stays at 640.
-// Texts never move while the phone spins: in scenes that open with a spin they enter
-// after it (delay = SPIN), and they leave before the next spin starts.
+// Texts never move while the phone spins or a screen fades: in scenes that open with a
+// screen change they enter after it (delay = SPIN), and they leave before the next one.
 
 export const IntroText: React.FC = () => (
   <TextBlock
