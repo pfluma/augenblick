@@ -58,7 +58,7 @@ npm run render   # → out/augenblick.mp4
 node scripts/stills.mjs 120 300 600   # einzelne Frames → out/stills/
 ```
 
-Rendern dauert auf 4 CPU-Kernen etwa 2 Minuten (gemessen: 127 s).
+Rendern dauert auf 4 CPU-Kernen etwa 13 Minuten (gemessen: 772 s; 60 fps und Bewegungsunschärfe während der Drehungen).
 
 Ohne eigenen Remotion-Browser kannst du einen lokalen Chrome Headless Shell angeben: `REMOTION_BROWSER=/pfad/zu/headless_shell`.
 
