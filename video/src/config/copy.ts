@@ -9,7 +9,7 @@ export const copy = {
   },
   intro: {
     headline: ['Für alle Momente,', 'die fast was', 'geworden wären.'],
-    sub: 'Eine App aus Wien, die Menschen offline zusammenbringt.',
+    sub: 'Eine App, die Menschen offline zusammenbringt.',
   },
   moment: {
     label: 'Augenblicke',

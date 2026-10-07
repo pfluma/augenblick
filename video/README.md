@@ -9,7 +9,7 @@
 | # | Szene | Dauer | Was man sieht | Text | Übergang |
 |---|---|---|---|---|---|
 | 1 | Hook | 3,3 s | Neutrale Profilkarten (Silhouetten) werden weggeswipt, immer schneller | „Swipen. Swipen. Swipen.“ / auf Pink: „Und wann triffst du endlich jemanden?“ | Die letzte Karte wird zum Handy-Bildschirm. |
-| 2 | Intro | 3,0 s | Handy mit dem echten Screen „Verpasste Begegnungen“, Logo | „Für alle Momente, die fast was geworden wären.“ / „Eine App aus Wien, die Menschen offline zusammenbringt.“ | Der nächste Screen blendet über (Überblendung statt Seitwärts-Push). |
+| 2 | Intro | 3,0 s | Handy mit dem echten Screen „Verpasste Begegnungen“, Logo | „Für alle Momente, die fast was geworden wären.“ / „Eine App, die Menschen offline zusammenbringt.“ | Der nächste Screen blendet über (Überblendung statt Seitwärts-Push). |
 | 3 | Augenblicke | 4,4 s | „Augenblick festhalten“: erst Ortswahl (Café Landtmann), dann „Was ist passiert?“. Das Textfeld zoomt vergrößert aus dem Screen. | „Du hast jemanden gesehen und nichts gesagt?“ / „Halte den Moment fest: nachträglich, mit Ort und ungefährer Zeit.“ | Das Handy fährt nach unten aus dem Bild. |
 | 4 | Resonanz | 3,8 s | Zwei Zettel, pink und blau (zwei Menschen, derselbe Moment), schieben sich übereinander. Die Überlappung wird violett: „Resonanz“. | „Wenn zwei dasselbe erzählen, finden sie sich.“ / „Vorher sieht niemand einen Namen.“ | Die Zettel gehen, das Handy kommt von unten zurück. |
 | 5 | Ein Platz am Tisch | 4,4 s | Screen „Ein Platz am Tisch“, die Karte „Ich sitz allein …“ zoomt heraus, danach die Events-Liste | „Ein Stuhl ist frei? Setz dich dazu.“ / „Offene Runden und Events an echten Orten. Kein Match nötig.“ | Überblendung zum nächsten Screen. |
