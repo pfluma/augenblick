@@ -9,12 +9,12 @@ export const HEIGHT = 1920;
 export const durations = {
   hook: 100, // 3.3 s  Swipen. Swipen. Swipen.
   intro: 90, // 3.0 s  Für alle Momente, die fast was geworden wären.
-  moment: 105, // 3.5 s  Augenblick festhalten
-  resonance: 120, // 4.0 s  zwei Zettel → Resonanz
+  moment: 132, // 4.4 s  Augenblick festhalten
+  resonance: 114, // 3.8 s  zwei Zettel → Resonanz
   table: 132, // 4.4 s  Ein Platz am Tisch / Events
   safety: 120, // 4.0 s  Schutz
-  connect: 90, // 3.0 s  Verbinden per QR
-  closing: 140, // 4.7 s  Weniger swipen. Mehr erleben.
+  connect: 96, // 3.2 s  Verbinden per QR
+  closing: 126, // 4.2 s  Weniger swipen. Mehr erleben.
 };
 
 export type SceneName = keyof typeof durations;

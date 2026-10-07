@@ -1,6 +1,6 @@
 # Augenblick – Produktvideo (Remotion)
 
-9:16 · 1080×1920 · 30 fps · 29,9 s · ohne Ton · Ergebnis: `out/augenblick.mp4`
+9:16 · 1080×1920 · 30 fps · 30,3 s · ohne Ton · Ergebnis: `out/augenblick.mp4`
 
 > Dieser Ordner liegt nur auf dem Branch `ccr-dc9daf8e-yuqab9`. `main` ist die öffentliche Website.
 
@@ -9,17 +9,18 @@
 | # | Szene | Dauer | Was man sieht | Text | Übergang |
 |---|---|---|---|---|---|
 | 1 | Hook | 3,3 s | Neutrale Profilkarten (Silhouetten) werden weggeswipt, immer schneller | „Swipen. Swipen. Swipen.“ / auf Pink: „Und wann triffst du endlich jemanden?“ | Die letzte Karte wird zum Handy-Bildschirm. |
-| 2 | Intro | 3,0 s | Handy mit dem echten Screen „Verpasste Begegnungen“, Logo | „Für alle Momente, die fast was geworden wären.“ / „Eine App aus Wien, die Menschen offline zusammenbringt.“ | Kamera fährt näher, der nächste Screen schiebt sich herein. |
-| 3 | Augenblicke | 3,5 s | Nahaufnahme „Augenblick festhalten“: erst Ortswahl (Café Landtmann), dann „Was ist passiert?“ | „Du hast jemanden gesehen und nichts gesagt?“ / „Halte den Moment fest: nachträglich, mit Ort und ungefährer Zeit.“ | Das Handy fährt nach unten aus dem Bild. |
-| 4 | Resonanz | 4,0 s | Zwei Zettel, pink und blau (zwei Menschen, derselbe Moment), schieben sich übereinander. Die Überlappung wird violett: „Resonanz“. | „Wenn zwei dasselbe erzählen, finden sie sich.“ / „Vorher sieht niemand einen Namen.“ | Die Zettel gehen, das Handy kommt von unten zurück. |
-| 5 | Ein Platz am Tisch | 4,4 s | Screen „Ein Platz am Tisch“, danach die Events-Liste | „Ein Stuhl ist frei? Setz dich dazu.“ / „Offene Runden und Events an echten Orten. Kein Match nötig.“ | Push zum nächsten Screen. |
-| 6 | Schutz | 4,0 s | Screen „Tisch öffnen“. Der Ausschnitt „Wer darf anfragen? Alle / Nur Frauen“ hebt sich vergrößert heraus, dazu „Serverseitig durchgesetzt“. | „Sicherheit ist eingebaut.“ / „Wer was sehen darf, regelt die Datenbank selbst.“ | Ausschnitt sinkt zurück, Push. |
-| 7 | Verbinden | 3,0 s | Screen „Verbinden“ mit QR-Code | „Kontakt erst beim echten Treffen.“ / „Per QR-Code, wenn ihr euch gegenübersteht.“ | Das Handy fährt nach unten weg. |
-| 8 | Schluss | 4,7 s | Blauer und pinker Kreis treffen sich, die Überlappung wird violett: das Logo. Dann Wortmarke und Claim. Etwa 2 s stehendes Endbild. | „Weniger swipen.“ / auf Pink: „Mehr erleben.“ · Augenblick · „Bald in Wien.“ · pfluma.github.io/augenblick | – |
+| 2 | Intro | 3,0 s | Handy mit dem echten Screen „Verpasste Begegnungen“, Logo | „Für alle Momente, die fast was geworden wären.“ / „Eine App aus Wien, die Menschen offline zusammenbringt.“ | Der nächste Screen blendet über (Überblendung statt Seitwärts-Push). |
+| 3 | Augenblicke | 4,4 s | „Augenblick festhalten“: erst Ortswahl (Café Landtmann), dann „Was ist passiert?“. Das Textfeld zoomt vergrößert aus dem Screen. | „Du hast jemanden gesehen und nichts gesagt?“ / „Halte den Moment fest: nachträglich, mit Ort und ungefährer Zeit.“ | Das Handy fährt nach unten aus dem Bild. |
+| 4 | Resonanz | 3,8 s | Zwei Zettel, pink und blau (zwei Menschen, derselbe Moment), schieben sich übereinander. Die Überlappung wird violett: „Resonanz“. | „Wenn zwei dasselbe erzählen, finden sie sich.“ / „Vorher sieht niemand einen Namen.“ | Die Zettel gehen, das Handy kommt von unten zurück. |
+| 5 | Ein Platz am Tisch | 4,4 s | Screen „Ein Platz am Tisch“, die Karte „Ich sitz allein …“ zoomt heraus, danach die Events-Liste | „Ein Stuhl ist frei? Setz dich dazu.“ / „Offene Runden und Events an echten Orten. Kein Match nötig.“ | Überblendung zum nächsten Screen. |
+| 6 | Schutz | 4,0 s | Screen „Tisch öffnen“. Der Ausschnitt „Wer darf anfragen? Alle / Nur Frauen“ zoomt heraus, dazu „Serverseitig durchgesetzt“. | „Sicherheit ist eingebaut.“ / „Wer was sehen darf, regelt die Datenbank selbst.“ | Ausschnitt sinkt zurück, Überblendung. |
+| 7 | Verbinden | 3,2 s | Screen „Verbinden“, der QR-Code zoomt heraus | „Kontakt erst beim echten Treffen.“ / „Per QR-Code, wenn ihr euch gegenübersteht.“ | Das Handy fährt nach unten weg. |
+| 8 | Schluss | 4,2 s | Blauer und pinker Kreis treffen sich, die Überlappung wird violett: das Logo. Dann Wortmarke und Claim. Etwa 1,5 s stehendes Endbild. | „Weniger swipen.“ / auf Pink: „Mehr erleben.“ · Augenblick · „Bald in Wien.“ · pfluma.github.io/augenblick | – |
 
 ## Design „Überdruck“
 
 - **Farben:** Pink `#FF48B0` = Augenblick, Blau `#0078BF` = Struktur/Tisch. Violett `#5A3BA3` nur dort, wo sich Pink und Blau überlagern (Zettel-Überlappung, Logo). Tinte `#16244A` für Text, Papier `#F4F4F2` als Grund. Auf Pink steht immer Tinte.
+- **Zooms:** Die wichtige Stelle jedes Feature-Screens (Bereich in `details` in `src/config/assets.ts`) wächst sanft von ihrer Position im Handy auf 1,75-fache Größe, das Handy dahinter wird leicht abgeblendet. So bleibt das Handy immer ganz im Bild, außer es fährt bewusst hinaus (Resonanz, Schluss).
 - **Textur:** leichte Papierkörnung im Hintergrund und Rasterpunkte auf den Zetteln. Die Körnung liegt *unter* dem Handy, die Screenshots bleiben unverändert.
 - Alles in `src/config/brand.ts`.
 
@@ -62,9 +63,9 @@ Ohne eigenen Remotion-Browser kannst du einen lokalen Chrome Headless Shell ange
 
 - **Texte:** `src/config/copy.ts`. Ein Array-Eintrag in einer Headline ist eine Zeile.
 - **Farben, Schriften, Logo:** `src/config/brand.ts`
-- **Screenshots:** `src/config/assets.ts` (`shots`: Datei und Art, `safetyDetail`: der vergrößerte Ausschnitt). Welcher Screen wann im Handy erscheint, steht in `screenTimeline` in `src/components/PhoneLayer.tsx`.
+- **Screenshots:** `src/config/assets.ts` (`shots`: Datei und Art, `details`: der gezoomte Bereich pro Szene). Wann welcher Screen erscheint und wann gezoomt wird, steht in `screenTimeline` und `zooms` in `src/components/PhoneLayer.tsx`.
 - **Dauer:** `src/config/timing.ts`, `durations` in Frames (30 = 1 s). Spätere Szenen verschieben sich automatisch.
-- **Bildausschnitt des Handys:** `src/poses.ts`. Faustregel: Die Oberkante des Handys bleibt bei y ≥ 620, damit es nicht mit den Headlines kollidiert.
+- **Bildausschnitt des Handys:** `src/poses.ts`. Faustregeln: Die Oberkante des Handys bleibt bei y ≥ 620, damit es nicht mit den Headlines kollidiert, und das Handy bleibt ganz im Bild.
 
 ## Aufbau
 
@@ -73,6 +74,6 @@ src/
   config/      brand · copy · assets · timing        ← alles Editierbare
   components/  Phone, PhoneLayer (ein durchgehendes Handy + Kamerafahrten), Screenshot,
                TextBlock, Logo, Icon, Background (Papier, Körnung, Rasterpunkte)
-  scenes/      Hook, TextScenes, Resonance, SafetyCallout, Closing
+  scenes/      Hook, TextScenes, Resonance, DetailZoom, Closing
   Video.tsx    Ebenen- und Szenenreihenfolge
 ```

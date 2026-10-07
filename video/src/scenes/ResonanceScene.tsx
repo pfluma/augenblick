@@ -29,11 +29,11 @@ const intersect = (a: Rect, b: Rect): Rect | null => {
 
 const NoteText: React.FC<{quote: string; color: string; top: number}> = ({quote, color, top}) => (
   <div style={{position: 'absolute', left: 34, right: 34, top, color, fontFamily: fonts.text}}>
-    <div style={{fontWeight: 700, fontSize: 23, letterSpacing: '0.04em', textTransform: 'uppercase', opacity: 0.85}}>
+    <div style={{fontWeight: 700, fontSize: 23, letterSpacing: '0.04em', textTransform: 'uppercase'}}>
       {copy.resonance.place}
     </div>
     <div style={{fontWeight: 600, fontSize: 34, lineHeight: 1.22, marginTop: 12}}>{quote}</div>
-    <div style={{display: 'flex', alignItems: 'center', gap: 10, marginTop: 16, fontWeight: 600, fontSize: 21, opacity: 0.85}}>
+    <div style={{display: 'flex', alignItems: 'center', gap: 10, marginTop: 16, fontWeight: 600, fontSize: 21}}>
       <Icon name="lock" size={22} color={color} />
       {copy.resonance.hidden}
     </div>

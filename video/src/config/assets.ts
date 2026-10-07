@@ -22,9 +22,15 @@ export const shots = {
   verbinden: {src: 'screenshots/phone/07-verbinden.jpg', kind: 'phone'},
 } satisfies Record<string, Shot>;
 
-// Detail that lifts out of the phone in the safety scene: "Wer darf anfragen?"
-// (vertical range of the tischSchutz screenshot, as share of the full image height).
-export const safetyDetail = {shot: 'tischSchutz' as const, from: 0.685, to: 0.858};
+// The important spot of each feature screen. It zooms out of the phone as an enlarged
+// card so it stays readable on a small screen. from/to = vertical range of the
+// screenshot, as share of the full image height (full width is always used).
+export const details = {
+  moment: {shot: 'festhaltenText', from: 0.088, to: 0.265}, // "Was ist passiert?" text field
+  table: {shot: 'amTisch', from: 0.413, to: 0.7}, // card "Ich sitz allein …"
+  safety: {shot: 'tischSchutz', from: 0.678, to: 0.862}, // "Wer darf anfragen? Alle / Nur Frauen"
+  connect: {shot: 'verbinden', from: 0.215, to: 0.575}, // QR code + "Zeig diesen Code der Person vor dir."
+} satisfies Record<string, {shot: keyof typeof shots; from: number; to: number}>;
 
 // Optional logo file (SVG/PNG in /public). null = draw the two-circle mark in code.
 export const logoFile: string | null = null;
