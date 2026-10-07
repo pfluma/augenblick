@@ -1,5 +1,6 @@
 import React from 'react';
-import {AbsoluteFill, useCurrentFrame} from 'remotion';
+import {AbsoluteFill} from 'remotion';
+import {useT} from '../time';
 import {colors, fonts} from '../config/brand';
 import {copy} from '../config/copy';
 import {details, shots} from '../config/assets';
@@ -18,7 +19,7 @@ const TAG_SPACE = 120;
 // The important strip of the real screenshot zooms out of the phone, from exactly where it
 // sits on the screen, to a readable size. Same pixels, only enlarged. Global frames.
 export const DetailZoom: React.FC = () => {
-  const frame = useCurrentFrame();
+  const frame = useT();
   return (
     <AbsoluteFill>
       {zooms.map((z) => {

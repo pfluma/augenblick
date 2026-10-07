@@ -1,5 +1,6 @@
 import React from 'react';
 import {colors} from '../config/brand';
+import {LogoMark} from './Logo';
 
 // Device geometry in canvas pixels at scale 1 (about iPhone proportions, 9:19.5 screen).
 export const PHONE = {w: 600, h: 1240, bezel: 16, radius: 92, depth: 26};
@@ -37,7 +38,7 @@ export const screenToCanvas = (p: Pose, sx: number, sy: number) => ({
 const EDGE_LAYERS = 10;
 
 // The device: a stack of thin layers behind the front gives it a visible edge when it
-// turns. `glare` (0..1) and `glareShift` (-1..1) drive a faint reflection on the glass.
+// turns; front and back faces use backface-visibility, so each is seen only from its side. `glare` (0..1) and `glareShift` (-1..1) drive a faint reflection on the glass.
 export const Phone: React.FC<{children: React.ReactNode; glare?: number; glareShift?: number}> = ({
   children,
   glare = 0.4,
@@ -56,6 +57,23 @@ export const Phone: React.FC<{children: React.ReactNode; glare?: number; glareSh
         }}
       />
     ))}
+    {/* back: plain ink with the small two-circle mark */}
+    <div
+      style={{
+        position: 'absolute',
+        inset: 0,
+        borderRadius: PHONE.radius,
+        background: colors.ink,
+        boxShadow: 'inset 0 0 0 2px rgba(255,255,255,0.08)',
+        transform: `translateZ(${-PHONE.depth - 0.5}px) rotateY(180deg)`,
+        backfaceVisibility: 'hidden',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      <LogoMark size={64} />
+    </div>
     <div
       style={{
         position: 'absolute',
@@ -64,6 +82,7 @@ export const Phone: React.FC<{children: React.ReactNode; glare?: number; glareSh
         background: colors.device,
         padding: PHONE.bezel,
         boxShadow: 'inset 0 0 0 2px rgba(255,255,255,0.10)',
+        backfaceVisibility: 'hidden',
       }}
     >
       <div
@@ -110,12 +129,13 @@ export const Phone: React.FC<{children: React.ReactNode; glare?: number; glareSh
   </div>
 );
 
-// Soft shadow on the "table" below the phone. It is not rotated with the phone; it shifts
-// away from the side the phone turns towards and widens when the phone tilts back.
+// Soft shadow on the "table" below the phone. It is not rotated with the phone: it gets
+// narrow when the phone stands side-on and shifts slightly away from the turn.
 export const PhoneShadow: React.FC<{pose: Pose; opacity: number}> = ({pose, opacity}) => {
-  const shiftX = -pose.ry * 4.5;
+  const rad = (pose.ry * Math.PI) / 180;
+  const shiftX = -Math.sin(rad) * 90;
   const shiftY = 70 + pose.rx * 3;
-  const squeeze = Math.cos((pose.ry * Math.PI) / 180);
+  const squeeze = Math.max(0.14, Math.abs(Math.cos(rad)));
   return (
     <div
       style={{

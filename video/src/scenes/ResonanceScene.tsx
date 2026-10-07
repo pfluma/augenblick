@@ -1,5 +1,6 @@
 import React from 'react';
-import {AbsoluteFill, useCurrentFrame} from 'remotion';
+import {AbsoluteFill} from 'remotion';
+import {useT} from '../time';
 import {colors, fonts} from '../config/brand';
 import {copy} from '../config/copy';
 import {durations} from '../config/timing';
@@ -42,7 +43,7 @@ const NoteText: React.FC<{quote: string; color: string; top: number}> = ({quote,
 );
 
 export const ResonanceScene: React.FC = () => {
-  const frame = useCurrentFrame();
+  const frame = useT();
   const slide = progress(frame, 14, 50, ease.inOut);
   const exit = progress(frame, durations.resonance - 14, durations.resonance - 2, ease.in);
   const word = progress(frame, 50, 64);

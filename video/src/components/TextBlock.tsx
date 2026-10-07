@@ -1,5 +1,5 @@
 import React from 'react';
-import {useCurrentFrame} from 'remotion';
+import {useT} from '../time';
 import {colors, fonts} from '../config/brand';
 import {ease, progress} from '../motion';
 
@@ -26,7 +26,7 @@ export const TextBlock: React.FC<{
   delay?: number;
   exitAt?: number;
 }> = ({label, chip, headline, sub, x = 80, y = 150, width = 920, headlineSize = 108, subSize = 38, delay = 4, exitAt}) => {
-  const frame = useCurrentFrame();
+  const frame = useT();
   const exit = exitAt === undefined ? 0 : progress(frame, exitAt, exitAt + 12, ease.in);
   const lineDelay = 5;
   const labelIn = progress(frame, delay, delay + 16);

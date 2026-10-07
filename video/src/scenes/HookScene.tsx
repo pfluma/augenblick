@@ -1,21 +1,22 @@
 import React from 'react';
-import {AbsoluteFill, useCurrentFrame} from 'remotion';
+import {AbsoluteFill} from 'remotion';
+import {useT} from '../time';
 import {colors, fonts, tints} from '../config/brand';
 import {copy} from '../config/copy';
 import {durations} from '../config/timing';
 import {PERSPECTIVE, SCREEN} from '../components/Phone';
 import {ease, mix, progress} from '../motion';
-import {POSES} from '../poses';
+import {hookAngle, POSE} from '../poses';
 
-// Swipe cards fly off faster and faster; the last one stays and becomes the phone screen.
+// Swipe cards fly off faster and faster; the last one stays and spins into the phone:
+// it grows to the screen size while turning edge-on (0° → 90°), then the phone takes over.
 const SWIPES = [6, 18, 28, 37, 45]; // local frames
 const DIRS = [-1, 1, -1, -1, 1];
 const TINTS = [tints.blue, tints.pink, tints.blue, tints.pink, tints.blue, tints.pink];
 
-const CARD_W = SCREEN.w * POSES.intro.s;
+const CARD_W = SCREEN.w * POSE.s;
 const CARD_H = 690;
-const CENTER = {x: 540 + POSES.intro.x, y: 960 + POSES.intro.y};
-const MORPH = [durations.hook - 30, durations.hook - 8];
+const CENTER = {x: 540 + POSE.x, y: 960 + POSE.y};
 
 const ProfileCard: React.FC<{tint: string; fade?: number}> = ({tint, fade = 0}) => (
   <div style={{position: 'absolute', inset: 0, opacity: 1 - fade}}>
@@ -37,10 +38,11 @@ const ProfileCard: React.FC<{tint: string; fade?: number}> = ({tint, fade = 0}) 
 );
 
 export const HookScene: React.FC = () => {
-  const frame = useCurrentFrame();
-  const exit = progress(frame, durations.hook - 16, durations.hook - 4, ease.in);
-  const morph = progress(frame, MORPH[0], MORPH[1], ease.inOut);
-  const lastFade = progress(frame, durations.hook - 18, durations.hook - 4);
+  const frame = useT();
+  // text only fades (no movement) while the card spins
+  const exit = progress(frame, durations.hook - 14, durations.hook - 2, ease.in);
+  const angle = hookAngle(frame);
+  const morph = Math.min(1, Math.abs(angle) / 90);
 
   const swiped = SWIPES.filter((s) => frame >= s).length; // cards gone or leaving
   const question = progress(frame, 42, 56);
@@ -48,7 +50,7 @@ export const HookScene: React.FC = () => {
   return (
     <AbsoluteFill>
       {/* text */}
-      <div style={{position: 'absolute', left: 80, top: 108, opacity: 1 - exit, transform: `translateY(${-30 * exit}px)`}}>
+      <div style={{position: 'absolute', left: 80, top: 108, opacity: 1 - exit}}>
         <div style={{fontFamily: fonts.display, fontWeight: 800, fontSize: 110, lineHeight: 0.92, color: colors.ink}}>
           {copy.hook.words.map((w, i) => {
             const t = progress(frame, SWIPES[i], SWIPES[i] + 10);
@@ -89,11 +91,12 @@ export const HookScene: React.FC = () => {
         const d = Math.max(0, i - advance);
         const leave = isLast ? 0 : progress(frame, SWIPES[i], SWIPES[i] + 9, ease.in);
         if (leave >= 1) return null;
+        if (isLast && morph >= 1) return null; // edge-on: the phone continues the turn
         if (depth > 3) return null;
         const scale = 1 - Math.min(d, 3) * 0.05;
-        const w = isLast ? mix(CARD_W, SCREEN.w * POSES.intro.s, morph) : CARD_W;
-        const h = isLast ? mix(CARD_H, SCREEN.h * POSES.intro.s, morph) : CARD_H;
-        const radius = isLast ? mix(34, SCREEN.radius * POSES.intro.s, morph) : 34;
+        const w = isLast ? mix(CARD_W, SCREEN.w * POSE.s, morph) : CARD_W;
+        const h = isLast ? mix(CARD_H, SCREEN.h * POSE.s, morph) : CARD_H;
+        const radius = isLast ? mix(34, SCREEN.radius * POSE.s, morph) : 34;
         const dir = DIRS[i] ?? -1;
         return (
           <div
@@ -108,16 +111,15 @@ export const HookScene: React.FC = () => {
               overflow: 'hidden',
               background: colors.white,
               zIndex: 10 - i,
-              opacity: (isLast ? 1 - lastFade : 1) * (1 - Math.max(0, d - 2.2)),
+              opacity: 1 - Math.max(0, d - 2.2),
               boxShadow: `0 ${30 - d * 8}px ${60 - d * 12}px rgba(22,36,74,${0.16 - d * 0.03})`,
-              // the last card tilts into the phone's arrival pose while it grows into the screen
               transform: isLast
-                ? `perspective(${PERSPECTIVE}px) translateY(${d * 34}px) scale(${scale}) rotateX(${POSES.enter.rx * morph}deg) rotateY(${POSES.enter.ry * morph}deg)`
+                ? `perspective(${PERSPECTIVE}px) translateY(${d * 34}px) scale(${scale}) rotateY(${angle}deg)`
                 : `translate(${dir * leave * 900}px, ${d * 34 + leave * 60}px) rotate(${dir * leave * 16}deg) scale(${scale})`,
               transformOrigin: isLast ? '50% 50%' : '50% 100%',
             }}
           >
-            <ProfileCard tint={tint} fade={isLast ? morph : 0} />
+            <ProfileCard tint={tint} />
           </div>
         );
       }).reverse()}

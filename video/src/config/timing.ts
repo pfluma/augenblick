@@ -1,19 +1,21 @@
-// Scene lengths in frames (30 fps). Change a number here and everything after it shifts.
-// Animations inside a scene are timed from the scene start (or from its end, for exits),
-// so moderate changes keep working; very short scenes may cut animations off.
+// Timing. All numbers in this project are in UNITS of 1/30 s (30 units = 1 second),
+// independent of the render frame rate. The video renders at FPS (60) frames per second;
+// `useT()` converts the current frame into units, `toFrames()` converts back.
+// Change a scene length here and everything after it shifts.
 
-export const FPS = 30;
+export const FPS = 60;
+export const UNIT = FPS / 30; // render frames per timing unit
 export const WIDTH = 1080;
 export const HEIGHT = 1920;
 
 export const durations = {
-  hook: 100, // 3.3 s  Swipen. Swipen. Swipen.
-  intro: 90, // 3.0 s  Für alle Momente, die fast was geworden wären.
-  moment: 132, // 4.4 s  Augenblick festhalten
+  hook: 116, // 3.9 s  Swipen. Swipen. Swipen. → card spins into the phone
+  intro: 84, // 2.8 s  Für alle Momente, die fast was geworden wären.
+  moment: 184, // 6.1 s  spin → Ort wählen, spin → „Was ist passiert?“, zoom
   resonance: 114, // 3.8 s  zwei Zettel → Resonanz
-  table: 132, // 4.4 s  Ein Platz am Tisch / Events
-  safety: 120, // 4.0 s  Schutz
-  connect: 96, // 3.2 s  Verbinden per QR
+  table: 150, // 5.0 s  Ein Platz am Tisch, zoom, spin → Events
+  safety: 140, // 4.7 s  spin → Schutz, zoom
+  connect: 116, // 3.9 s  spin → Verbinden per QR, zoom
   closing: 126, // 4.2 s  Weniger swipen. Mehr erleben.
 };
 
@@ -29,9 +31,10 @@ export const starts = order.reduce(
   {} as Record<SceneName, number>,
 );
 
-export const TOTAL = starts.closing + durations.closing;
+export const TOTAL = starts.closing + durations.closing; // in units
 
-// Global frame helper: at('table', 40) = 40 frames into the table scene,
-// at('table', -10) = 10 frames before it ends.
+export const toFrames = (units: number) => Math.round(units * UNIT);
+
+// at('table', 40) = 40 units into the table scene, at('table', -10) = 10 units before it ends.
 export const at = (scene: SceneName, offset = 0) =>
   offset >= 0 ? starts[scene] + offset : starts[scene] + durations[scene] + offset;

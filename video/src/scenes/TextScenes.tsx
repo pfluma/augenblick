@@ -4,9 +4,12 @@ import {copy} from '../config/copy';
 import {durations} from '../config/timing';
 import {Lockup} from '../components/Logo';
 import {TextBlock} from '../components/TextBlock';
+import {SPIN} from '../poses';
 
 // Headline blocks. The phone lives in <PhoneLayer/> so it can travel between scenes.
-// All blocks sit above y ≈ 610; the phone's top edge never goes above 620.
+// All blocks sit above y ≈ 610; the phone's top edge stays at 640.
+// Texts never move while the phone spins: in scenes that open with a spin they enter
+// after it (delay = SPIN), and they leave before the next spin starts.
 
 export const IntroText: React.FC = () => (
   <TextBlock
@@ -16,7 +19,7 @@ export const IntroText: React.FC = () => (
     headlineSize={100}
     subSize={34}
     y={130}
-    delay={6}
+    delay={10} // after the hook spin has landed (intro + 8)
     exitAt={durations.intro - 12}
   />
 );
@@ -30,6 +33,7 @@ export const MomentText: React.FC = () => (
     headlineSize={98}
     subSize={34}
     y={120}
+    delay={SPIN}
     exitAt={durations.moment - 12}
   />
 );
@@ -51,6 +55,7 @@ export const SafetyText: React.FC = () => (
     chip={colors.blue}
     headline={copy.safety.headline}
     sub={copy.safety.sub}
+    delay={SPIN}
     exitAt={durations.safety - 12}
   />
 );
@@ -61,6 +66,7 @@ export const ConnectText: React.FC = () => (
     chip={colors.pink}
     headline={copy.connect.headline}
     sub={copy.connect.sub}
+    delay={SPIN}
     exitAt={durations.connect - 10}
   />
 );

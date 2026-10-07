@@ -1,6 +1,6 @@
 import React from 'react';
 import {AbsoluteFill, Sequence} from 'remotion';
-import {durations, starts} from './config/timing';
+import {durations, starts, toFrames} from './config/timing';
 import {Background} from './components/Background';
 import {PhoneLayer} from './components/PhoneLayer';
 import {ClosingScene} from './scenes/ClosingScene';
@@ -14,32 +14,32 @@ export const AugenblickVideo: React.FC = () => (
   <AbsoluteFill>
     <Background />
 
-    <Sequence from={starts.intro} durationInFrames={durations.intro} name="Intro · text">
+    <Sequence from={toFrames(starts.intro)} durationInFrames={toFrames(durations.intro)} name="Intro · text">
       <IntroText />
     </Sequence>
-    <Sequence from={starts.moment} durationInFrames={durations.moment} name="Augenblicke · text">
+    <Sequence from={toFrames(starts.moment)} durationInFrames={toFrames(durations.moment)} name="Augenblicke · text">
       <MomentText />
     </Sequence>
-    <Sequence from={starts.table} durationInFrames={durations.table} name="Tisch · text">
+    <Sequence from={toFrames(starts.table)} durationInFrames={toFrames(durations.table)} name="Tisch · text">
       <TableText />
     </Sequence>
-    <Sequence from={starts.safety} durationInFrames={durations.safety} name="Schutz · text">
+    <Sequence from={toFrames(starts.safety)} durationInFrames={toFrames(durations.safety)} name="Schutz · text">
       <SafetyText />
     </Sequence>
-    <Sequence from={starts.connect} durationInFrames={durations.connect} name="Verbinden · text">
+    <Sequence from={toFrames(starts.connect)} durationInFrames={toFrames(durations.connect)} name="Verbinden · text">
       <ConnectText />
     </Sequence>
 
     <PhoneLayer />
     <DetailZoom />
 
-    <Sequence from={starts.resonance} durationInFrames={durations.resonance} name="Resonanz">
+    <Sequence from={toFrames(starts.resonance)} durationInFrames={toFrames(durations.resonance)} name="Resonanz">
       <ResonanceScene />
     </Sequence>
-    <Sequence from={starts.hook} durationInFrames={durations.hook} name="Hook">
+    <Sequence from={toFrames(starts.hook)} durationInFrames={toFrames(durations.hook)} name="Hook">
       <HookScene />
     </Sequence>
-    <Sequence from={starts.closing} durationInFrames={durations.closing} name="Closing">
+    <Sequence from={toFrames(starts.closing)} durationInFrames={toFrames(durations.closing)} name="Closing">
       <ClosingScene />
     </Sequence>
   </AbsoluteFill>

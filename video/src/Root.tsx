@@ -1,9 +1,9 @@
 import React from 'react';
 import {Composition} from 'remotion';
 import './fonts';
-import {FPS, HEIGHT, TOTAL, WIDTH} from './config/timing';
+import {FPS, HEIGHT, toFrames, TOTAL, WIDTH} from './config/timing';
 import {AugenblickVideo} from './Video';
 
 export const RemotionRoot: React.FC = () => (
-  <Composition id="Augenblick" component={AugenblickVideo} durationInFrames={TOTAL} fps={FPS} width={WIDTH} height={HEIGHT} />
+  <Composition id="Augenblick" component={AugenblickVideo} durationInFrames={toFrames(TOTAL)} fps={FPS} width={WIDTH} height={HEIGHT} />
 );

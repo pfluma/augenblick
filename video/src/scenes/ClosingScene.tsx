@@ -1,5 +1,6 @@
 import React from 'react';
-import {AbsoluteFill, useCurrentFrame} from 'remotion';
+import {AbsoluteFill} from 'remotion';
+import {useT} from '../time';
 import {colors, fonts} from '../config/brand';
 import {copy} from '../config/copy';
 import {LogoMark, Wordmark} from '../components/Logo';
@@ -8,7 +9,7 @@ import {ease, mix, progress} from '../motion';
 // Two circles meet (the logo), settle into the lockup, the tagline lands,
 // then "Bald in Wien." and the address. Then: hold.
 export const ClosingScene: React.FC = () => {
-  const frame = useCurrentFrame();
+  const frame = useT();
   const appear = progress(frame, 12, 24);
   const meet = progress(frame, 14, 40, ease.inOut);
   const overlap = progress(frame, 34, 44);
