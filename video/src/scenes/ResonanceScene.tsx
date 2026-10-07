@@ -5,6 +5,7 @@ import {copy} from '../config/copy';
 import {durations} from '../config/timing';
 import {Halftone} from '../components/Background';
 import {Icon} from '../components/Icon';
+import {PERSPECTIVE} from '../components/Phone';
 import {TextBlock} from '../components/TextBlock';
 import {ease, mix, progress} from '../motion';
 
@@ -50,6 +51,14 @@ export const ResonanceScene: React.FC = () => {
   const blue: Rect = {x: mix(1080 + 40, BLUE_END.x, slide), y: BLUE_END.y, w: W, h: H};
   const both = intersect(pink, blue);
 
+  // In flight the notes are tipped in 3D, facing each other. They are flat again before
+  // they start to overlap (slide ≈ 0.81), so the violet overlap always matches both notes.
+  const tilt = ease.inOut(Math.max(0, 1 - slide / 0.78));
+  const fly = (dir: 1 | -1): React.CSSProperties => ({
+    transform: `perspective(${PERSPECTIVE}px) translateY(${-dir * 90 * tilt}px) rotateY(${dir * 38 * tilt}deg) rotateX(${-10 * tilt}deg) rotateZ(${-dir * 7 * tilt}deg) scale(${1 + 0.1 * tilt})`,
+    transformOrigin: 'center center',
+  });
+
   const box = (r: Rect, extra: React.CSSProperties = {}): React.CSSProperties => ({
     position: 'absolute',
     left: r.x,
@@ -65,16 +74,16 @@ export const ResonanceScene: React.FC = () => {
 
       <AbsoluteFill style={{transform: `rotate(${ROT}deg) translateY(${exit * 40}px)`, opacity: 1 - exit}}>
         {/* shadows sit under both notes */}
-        <div style={box(pink, {boxShadow: '0 24px 50px rgba(22,36,74,0.16)', borderRadius: 6})} />
-        <div style={box(blue, {boxShadow: '0 24px 50px rgba(22,36,74,0.16)', borderRadius: 6})} />
+        <div style={box(pink, {boxShadow: `0 ${24 + 40 * tilt}px ${50 + 40 * tilt}px rgba(22,36,74,0.16)`, borderRadius: 6, ...fly(1)})} />
+        <div style={box(blue, {boxShadow: `0 ${24 + 40 * tilt}px ${50 + 40 * tilt}px rgba(22,36,74,0.16)`, borderRadius: 6, ...fly(-1)})} />
 
-        <div style={box(pink, {background: colors.pink, borderRadius: 6, overflow: 'hidden'})}>
+        <div style={box(pink, {background: colors.pink, borderRadius: 6, overflow: 'hidden', ...fly(1)})}>
           <div style={{position: 'absolute', right: 0, top: 0}}>
             <Halftone width={150} height={110} color={colors.ink} step={14} opacity={0.18} />
           </div>
           <NoteText quote={copy.resonance.pink} color={colors.ink} top={34} />
         </div>
-        <div style={box(blue, {background: colors.blue, borderRadius: 6, overflow: 'hidden'})}>
+        <div style={box(blue, {background: colors.blue, borderRadius: 6, overflow: 'hidden', ...fly(-1)})}>
           <div style={{position: 'absolute', left: 0, bottom: 0}}>
             <Halftone width={150} height={110} color={colors.white} step={14} corner="bl" opacity={0.22} />
           </div>

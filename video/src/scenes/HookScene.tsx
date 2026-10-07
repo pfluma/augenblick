@@ -3,7 +3,7 @@ import {AbsoluteFill, useCurrentFrame} from 'remotion';
 import {colors, fonts, tints} from '../config/brand';
 import {copy} from '../config/copy';
 import {durations} from '../config/timing';
-import {SCREEN} from '../components/Phone';
+import {PERSPECTIVE, SCREEN} from '../components/Phone';
 import {ease, mix, progress} from '../motion';
 import {POSES} from '../poses';
 
@@ -110,8 +110,11 @@ export const HookScene: React.FC = () => {
               zIndex: 10 - i,
               opacity: (isLast ? 1 - lastFade : 1) * (1 - Math.max(0, d - 2.2)),
               boxShadow: `0 ${30 - d * 8}px ${60 - d * 12}px rgba(22,36,74,${0.16 - d * 0.03})`,
-              transform: `translate(${dir * leave * 900}px, ${d * 34 + leave * 60}px) rotate(${dir * leave * 16}deg) scale(${scale})`,
-              transformOrigin: '50% 100%',
+              // the last card tilts into the phone's arrival pose while it grows into the screen
+              transform: isLast
+                ? `perspective(${PERSPECTIVE}px) translateY(${d * 34}px) scale(${scale}) rotateX(${POSES.enter.rx * morph}deg) rotateY(${POSES.enter.ry * morph}deg)`
+                : `translate(${dir * leave * 900}px, ${d * 34 + leave * 60}px) rotate(${dir * leave * 16}deg) scale(${scale})`,
+              transformOrigin: isLast ? '50% 50%' : '50% 100%',
             }}
           >
             <ProfileCard tint={tint} fade={isLast ? morph : 0} />

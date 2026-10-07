@@ -21,6 +21,7 @@
 
 - **Farben:** Pink `#FF48B0` = Augenblick, Blau `#0078BF` = Struktur/Tisch. Violett `#5A3BA3` nur dort, wo sich Pink und Blau überlagern (Zettel-Überlappung, Logo). Tinte `#16244A` für Text, Papier `#F4F4F2` als Grund. Auf Pink steht immer Tinte.
 - **Zooms:** Die wichtige Stelle jedes Feature-Screens (Bereich in `details` in `src/config/assets.ts`) wächst sanft von ihrer Position im Handy auf 1,75-fache Größe, das Handy dahinter wird leicht abgeblendet. So bleibt das Handy immer ganz im Bild, außer es fährt bewusst hinaus (Resonanz, Schluss).
+- **3D-Bewegung (CSS 3D):** Das Handy kommt aus der letzten Hook-Karte leicht gedreht herein (rotateY 28°, rotateX 10°) und dreht sich im Intro ruhig auf frontal. Zwischen den Szenen schwenkt es sanft (±14°) statt nur zu schieben, und es kippt beim Hinausfahren. Eine Kante aus dünnen Lagen gibt dem Gerät Tiefe, der weiche Schatten darunter wandert mit der Drehung, und eine schwache Spiegelung liegt auf dem Glas. Die Zoom-Karten neigen sich beim Heraustreten nach vorne und liegen flach, sobald sie lesbar sind. Die Zettel der Resonanz-Szene fliegen gekippt aufeinander zu und sind flach, bevor sie sich überlagern. Die Werte stehen in `src/poses.ts` (`POSES`, `SWING`) und `src/components/Phone.tsx` (`PERSPECTIVE`, Kante, Schatten, Spiegelung).
 - **Textur:** leichte Papierkörnung im Hintergrund und Rasterpunkte auf den Zetteln. Die Körnung liegt *unter* dem Handy, die Screenshots bleiben unverändert.
 - Alles in `src/config/brand.ts`.
 
@@ -56,6 +57,8 @@ npm run studio   # Vorschau im Browser
 npm run render   # → out/augenblick.mp4
 node scripts/stills.mjs 120 300 600   # einzelne Frames → out/stills/
 ```
+
+Rendern dauert auf 4 CPU-Kernen etwa 2 Minuten (gemessen: 127 s).
 
 Ohne eigenen Remotion-Browser kannst du einen lokalen Chrome Headless Shell angeben: `REMOTION_BROWSER=/pfad/zu/headless_shell`.
 

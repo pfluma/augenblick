@@ -5,7 +5,7 @@ import {copy} from '../config/copy';
 import {details, shots} from '../config/assets';
 import {Icon} from '../components/Icon';
 import {zoomAmount, zooms} from '../components/PhoneLayer';
-import {screenToCanvas, SCREEN} from '../components/Phone';
+import {PERSPECTIVE, screenToCanvas, SCREEN} from '../components/Phone';
 import {Screenshot, shotBox} from '../components/Screenshot';
 import {mix, progress} from '../motion';
 import {cameraAt} from '../poses';
@@ -42,6 +42,11 @@ export const DetailZoom: React.FC = () => {
         const scale = mix(pose.s, END_SCALE, t);
         const left = mix(origin.x, endLeft, t);
         const top = mix(origin.y, endTop, t);
+        // centre of the card, so the 3D tilt pivots around its middle
+        const cx = left + (SCREEN.w * scale) / 2;
+        const cy = top + (h * scale) / 2;
+        // leaning forward out of the screen: tilt peaks halfway, flat when fully out (readable)
+        const lean = 4 * t * (1 - t);
         const tag = z.tag ? progress(frame, z.lift + 14, z.lift + 30) * Math.min(1, t * 1.5) : 0;
 
         return (
@@ -49,12 +54,12 @@ export const DetailZoom: React.FC = () => {
             <div
               style={{
                 position: 'absolute',
-                left,
-                top,
+                left: cx - SCREEN.w / 2,
+                top: cy - h / 2,
                 width: SCREEN.w,
                 height: h,
-                transform: `scale(${scale})`,
-                transformOrigin: '0 0',
+                transform: `perspective(${PERSPECTIVE}px) scale(${scale}) rotateX(${lean * 16}deg) rotateY(${lean * -7}deg)`,
+                transformOrigin: 'center center',
                 borderRadius: 14,
                 overflow: 'hidden',
                 boxShadow: `0 ${20 * t}px ${44 * t}px rgba(22,36,74,${0.24 * t}), 0 0 0 1.5px ${colors.inkFaint}`,

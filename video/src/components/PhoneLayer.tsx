@@ -5,7 +5,7 @@ import {details, shots} from '../config/assets';
 import {at} from '../config/timing';
 import {ease, progress} from '../motion';
 import {cameraAt} from '../poses';
-import {Phone, poseStyle} from './Phone';
+import {Phone, PhoneShadow, poseStyle} from './Phone';
 import {Screenshot} from './Screenshot';
 
 // When each screenshot appears in the phone (global frames). A screen stays until the next one.
@@ -42,25 +42,29 @@ export const PhoneLayer: React.FC = () => {
   const dim = Math.max(...zooms.map((z) => zoomAmount(frame, z)));
 
   return (
-    <AbsoluteFill style={{opacity: cam.o}}>
-      <div style={poseStyle(cam)}>
-        <Phone>
-          {screenTimeline.map((s, i) => {
-            const next = screenTimeline[i + 1];
-            if (frame < s.start) return null;
-            // hidden once the next screen has fully faded in on top
-            if (next && frame >= next.start + (next.cut ? 0 : FADE)) return null;
-            const o = s.start <= 0 || s.cut ? 1 : progress(frame, s.start, s.start + FADE, ease.inOut);
-            return (
-              <div key={s.shot} style={{position: 'absolute', inset: 0, opacity: o}}>
-                <Screenshot shot={shots[s.shot]} />
-              </div>
-            );
-          })}
-          {/* dims the screen while a detail is zoomed out of it */}
-          <div style={{position: 'absolute', inset: 0, background: colors.paper, opacity: dim * 0.55}} />
-        </Phone>
-      </div>
+    <AbsoluteFill>
+      <PhoneShadow pose={cam} opacity={cam.o} />
+      {/* opacity on a wrapper: on the 3D element itself it would flatten the device edge */}
+      <AbsoluteFill style={{opacity: cam.o}}>
+        <div style={poseStyle(cam)}>
+          <Phone glare={0.35 + 0.65 * Math.min(1, Math.abs(cam.ry) / 25)} glareShift={cam.ry / 30}>
+            {screenTimeline.map((s, i) => {
+              const next = screenTimeline[i + 1];
+              if (frame < s.start) return null;
+              // hidden once the next screen has fully faded in on top
+              if (next && frame >= next.start + (next.cut ? 0 : FADE)) return null;
+              const o = s.start <= 0 || s.cut ? 1 : progress(frame, s.start, s.start + FADE, ease.inOut);
+              return (
+                <div key={s.shot} style={{position: 'absolute', inset: 0, opacity: o}}>
+                  <Screenshot shot={shots[s.shot]} />
+                </div>
+              );
+            })}
+            {/* dims the screen while a detail is zoomed out of it */}
+            <div style={{position: 'absolute', inset: 0, background: colors.paper, opacity: dim * 0.55}} />
+          </Phone>
+        </div>
+      </AbsoluteFill>
     </AbsoluteFill>
   );
 };
