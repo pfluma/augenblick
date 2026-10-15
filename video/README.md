@@ -1,6 +1,6 @@
 # Augenblick – Produktvideo (Remotion)
 
-9:16 · 1080×1920 · 60 fps · 34,3 s · ohne Ton · Ergebnis: `out/augenblick.mp4`
+9:16 · 1080×1920 · 60 fps · 34,3 s · mit Musik · Ergebnis: `out/augenblick.mp4`
 
 > Dieser Ordner liegt nur auf dem Branch `ccr-dc9daf8e-yuqab9`. `main` ist die öffentliche Website.
 
@@ -43,6 +43,26 @@ Alle Screens im Video sind echte, unveränderte Screenshots der App. Sie wurden 
 - **Web-PNGs (`web/`):** Sie haben keine Statusleiste, beginnen unter der Kamera-Insel und werden unten beschnitten.
 - Die übrigen Dateien in `public/screenshots/` (Anmelden, Sicherheits-Check, Melden, Event starten, Plakat malen, Website-Plakatwerkstatt) sind vorhanden, werden aber nicht verwendet.
 - Die Zettel in Szene 4 sind eine Illustration, keine App-Oberfläche. Ihr Text paraphrasiert das Beispiel aus dem Screenshot „Was ist passiert?“.
+
+## Musik
+
+Die Musik ist komplett per Code erzeugt (`scripts/music.py`, keine Samples, kein fremdes Material). Damit liegen alle Rechte beim Projekt. Heller Pop, ca. 119 BPM, G-Dur (G – D – Em – C), auf das Video zugeschnitten:
+
+- unter dem Hook ein Aufbau aus Plucks, die heller werden, und ein Rauschen bis zum Drop bei 3,9 s (Intro)
+- ab dem Intro Beat, Bass und Akkorde; ab der Resonanz-Szene eine Marimba-Melodie
+- ein Glockenakkord, wenn sich die Zettel zur „Resonanz“ überlagern (14,5 s)
+- ein kurzes Anschwellen in die Drehung Events → Schutz (21,6 s)
+- ab dem Schluss (30,1 s) ohne Schlagzeug, Schlussakkord auf das Logo (31,3 s), klingt bis zum Ende aus
+
+Neu erzeugen (z. B. nach einer Änderung der Szenenlängen, die Zeitpunkte stehen oben im Skript):
+
+```bash
+pip install numpy
+python3 scripts/music.py
+ffmpeg -y -i public/audio/musik.wav -af loudnorm=I=-14:TP=-1.5:LRA=11 -c:a libmp3lame -b:a 192k public/audio/musik.mp3
+```
+
+Eingebunden wird die Musik in `src/config/audio.ts`. Dort kann auch eine andere Datei eingetragen werden. Plätze für einzelne Geräusche (`sfx`) sind vorbereitet, aber leer.
 
 ## Schriften (beide SIL Open Font License 1.1, lokal eingebunden)
 

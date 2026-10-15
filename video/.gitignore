@@ -1,3 +1,4 @@
 node_modules
 out/*
 !out/augenblick.mp4
+public/audio/*.wav
