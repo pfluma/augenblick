@@ -15,7 +15,7 @@ Die Stimme liest **nicht** die Texte im Bild vor, sie ergänzt sie.
 | 27,0–29,8 | Verbinden | Kontakt tauscht ihr erst, wenn ihr euch gegenübersteht. |
 | 31,2–33,8 | Schluss | Augenblick. Weniger swipen. Mehr erleben. |
 
-Gesamt: ca. 90 Wörter, ca. 590 Zeichen.
+Gesamt: 87 Wörter, ca. 535 Zeichen.
 
 ## Hinweise für die Aufnahme
 
