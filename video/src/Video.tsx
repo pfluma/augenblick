@@ -7,12 +7,14 @@ import {ClosingScene} from './scenes/ClosingScene';
 import {HookScene} from './scenes/HookScene';
 import {ResonanceScene} from './scenes/ResonanceScene';
 import {DetailZoom} from './scenes/DetailZoom';
+import {Soundtrack} from './components/Soundtrack';
 import {ConnectText, IntroText, MomentText, SafetyText, TableText} from './scenes/TextScenes';
 
 // Layer order (back → front): paper, headlines, phone, zoomed details, notes, hook cards, closing.
 export const AugenblickVideo: React.FC = () => (
   <AbsoluteFill>
     <Background />
+    <Soundtrack />
 
     <Sequence from={toFrames(starts.intro)} durationInFrames={toFrames(durations.intro)} name="Intro · text">
       <IntroText />
