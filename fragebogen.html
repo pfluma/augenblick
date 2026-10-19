@@ -42,7 +42,9 @@
     .karte p:last-child { margin: 0; }
     a { color: var(--blau-text); }
     footer { border-top: 2px solid var(--tinte); margin-top: 40px; padding-top: 20px; font-size: 15px; color: var(--blass); display: flex; gap: 8px 18px; flex-wrap: wrap; }
+    .altcha-feld { --altcha-border-radius: 12px; --altcha-color-border: var(--tinte); --altcha-max-width: 100%; }
   </style>
+  <script src="altcha.js" defer></script>
 </head>
 <body>
   <div class="rand">
@@ -189,6 +191,8 @@
       <div class="falle" aria-hidden="true">
         <label for="website">Bitte leer lassen <input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></label>
       </div>
+      <altcha-widget class="altcha-feld" challengeurl="https://rkfgetfazupaurgxjnkz.supabase.co/functions/v1/pruefaufgabe" auto="onload" hidelogo hidefooter strings='{"label":"Ich bin ein Mensch","verifying":"Prüfe …","verified":"Geprüft","error":"Prüfung fehlgeschlagen. Lade die Seite bitte neu.","expired":"Prüfung abgelaufen. Bitte noch einmal.","waitAlert":"Einen Moment, die Prüfung läuft …","verificationRequired":"Bitte warte kurz, bis „Geprüft“ erscheint."}'></altcha-widget>
+        <noscript><p class="fein">Für den Spam-Schutz dieses Formulars muss JavaScript eingeschaltet sein.</p></noscript>
       <button type="submit">Abschicken</button>
 
       <div class="karte">
